@@ -24,6 +24,14 @@ Plugin 'JuliaEditorSupport/julia-vim'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
+"vim-airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1
+
+"commentary
+Plugin 'tpope/vim-commentary'
+
 "UltiSnips
 " Track the engine.
 Plugin 'SirVer/ultisnips'
