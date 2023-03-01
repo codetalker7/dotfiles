@@ -1,7 +1,6 @@
-# Steps for `powerline`
+# Setup
 
-1. Install using `pip` ([instructions here](https://powerline.readthedocs.io/en/latest/installation.html)).
-2. Install fonts.
-3. My `powerline` root is `/home/codetalker7/.local/lib/python3.8/site-packages/powerline`
-4. See the config files [here](https://powerline.readthedocs.io/en/latest/configuration.html).
+1. [`tmux`](https://github.com/tmux/tmux/wiki)
+2. [`zsh`](https://www.zsh.org/) + [Oh My Zsh](https://www.zsh.org/)
+3. [`powerline`](https://github.com/powerline/powerline)
 
