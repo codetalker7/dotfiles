@@ -17,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 "NERDTree
 Plugin 'preservim/nerdtree'
 
+"fugitive; git integration
+Plugin 'tpope/vim-fugitive'
+
 "YouCompleteMe (YCM) installation
 Plugin 'ycm-core/YouCompleteMe'
 let g:ycm_filetype_blacklist = {} "YouCompleteMe for pandoc, markdown
