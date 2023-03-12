@@ -60,6 +60,13 @@ set laststatus=2    " always display status bar
 "commentary
 Plugin 'tpope/vim-commentary'
 
+"startify
+Plugin 'mhinz/vim-startify'
+
+"devicons
+Plugin 'ryanoasis/vim-devicons'
+set encoding=UTF-8
+
 "for sending lines to another window; eg a REPL
 Plugin 'karoliskoncevicius/vim-sendtowindow'
 let g:sendtowindow_use_defaults=0
