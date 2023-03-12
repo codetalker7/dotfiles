@@ -9,7 +9,6 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # neofetch
-neofetch
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
