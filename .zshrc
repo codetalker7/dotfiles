@@ -14,6 +14,9 @@ ZSH_THEME="agnoster"
 # powerline
 source /home/codetalker7/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
 
+# colorls
+source /home/codetalker7/gems/gems/colorls-1.4.6/lib/tab_complete.sh
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
