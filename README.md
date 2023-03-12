@@ -1,12 +1,12 @@
 # Setup
 
 1. [`tmux`](https://github.com/tmux/tmux/wiki)
-2. [`zsh`](https://www.zsh.org/) + [Oh My Zsh](https://ohmyz.sh/)
+2. [`zsh`](https://www.zsh.org/) + [Oh My Zsh](https://ohmyz.sh/) + [powerlevel10k](https://github.com/romkatv/powerlevel10k#fonts).
 3. [`powerline`](https://github.com/powerline/powerline)
 
 # GNOME settings
 
-I use the [`Ubunto Mono Nerd Font`](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono). Configuration is stored in `gterminal.preferences`. Use the following command to save the preferences.
+I use the [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (for `powerlevel10k`) and the [`Ubunto Mono Nerd Font`](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono). Configuration is stored in `gterminal.preferences`. Use the following command to save the preferences.
 
 ```shell
 dconf dump /org/gnome/terminal/ > ~/gterminal.preferences
