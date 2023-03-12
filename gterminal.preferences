@@ -1,0 +1,82 @@
+[legacy]
+theme-variant='dark'
+
+[legacy/profiles:]
+default='a1319883-54f2-4f9d-b907-58f668bc12da'
+list=['eaad32ba-ea9c-4763-9a4a-2fe10dedac0a', 'fecb3715-41b3-40c2-90e4-8fc0b633dc75', '9ee788da-f0d8-42f4-8b93-31eada893872', 'a1319883-54f2-4f9d-b907-58f668bc12da']
+
+[legacy/profiles:/:9ee788da-f0d8-42f4-8b93-31eada893872]
+allow-bold=true
+background-color='#101008081515'
+bold-color='#515149496868'
+bold-color-same-as-fg=true
+cursor-background-color='#515149496868'
+cursor-colors-set=true
+cursor-foreground-color='#101008081515'
+foreground-color='#515149496868'
+palette=['#24241F1F2B2B', '#919128284C4C', '#232380801C1C', '#B4B49D9D2727', '#65658080B0B0', '#67674D4D9696', '#8A8AAAAABEBE', '#525249496666', '#31312D2D3D3D', '#D5D535356C6C', '#2C2CD9D94646', '#FDFDE8E83B3B', '#9090BABAF9F9', '#A4A47979E3E3', '#ACACD4D4EBEB', '#9E9E8C8CBDBD']
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Royal'
+
+[legacy/profiles:/:a1319883-54f2-4f9d-b907-58f668bc12da]
+allow-bold=true
+background-color='#111112121313'
+bold-color='#CACACECECDCD'
+bold-color-same-as-fg=true
+cursor-background-color='#CACACECECDCD'
+cursor-colors-set=true
+cursor-foreground-color='#111112121313'
+font='UbuntuMono Nerd Font 12'
+foreground-color='#CACACECECDCD'
+palette=['#323232323232', '#C2C228283232', '#8E8EC4C43D3D', '#E0E0C6C64F4F', '#4343A5A5D5D5', '#8B8B5757B5B5', '#8E8EC4C43D3D', '#EEEEEEEEEEEE', '#323232323232', '#C2C228283232', '#8E8EC4C43D3D', '#E0E0C6C64F4F', '#4343A5A5D5D5', '#8B8B5757B5B5', '#8E8EC4C43D3D', '#FFFFFFFFFFFF']
+use-system-font=false
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Seti'
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+background-color='rgb(0,0,0)'
+bold-color='rgb(204,89,89)'
+bold-color-same-as-fg=true
+bold-is-bright=true
+font='UbuntuMono Nerd Font 12'
+foreground-color='rgb(255,255,255)'
+highlight-colors-set=false
+palette=['rgb(0,0,0)', 'rgb(170,0,0)', 'rgb(0,170,0)', 'rgb(170,85,0)', 'rgb(0,0,170)', 'rgb(170,0,170)', 'rgb(0,170,170)', 'rgb(170,170,170)', 'rgb(85,85,85)', 'rgb(255,85,85)', 'rgb(85,255,85)', 'rgb(255,255,85)', 'rgb(85,85,255)', 'rgb(255,85,255)', 'rgb(85,255,255)', 'rgb(255,255,255)']
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=true
+use-transparent-background=false
+
+[legacy/profiles:/:eaad32ba-ea9c-4763-9a4a-2fe10dedac0a]
+allow-bold=true
+background-color='#0F0F16161010'
+bold-color='#63637D7D7575'
+bold-color-same-as-fg=true
+cursor-background-color='#63637D7D7575'
+cursor-colors-set=true
+cursor-foreground-color='#0F0F16161010'
+foreground-color='#63637D7D7575'
+palette=['#111126261616', '#7F7F2B2B2727', '#2F2F7E7E2525', '#71717F7F2424', '#2F2F6A6A7F7F', '#474758587F7F', '#32327F7F7777', '#64647D7D7575', '#3C3C48481212', '#E0E080800909', '#1818E0E00000', '#BDBDE0E00000', '#0000AAAAE0E0', '#00005858E0E0', '#0000E0E0C4C4', '#7373FAFA9191']
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Alien Blood'
+
+[legacy/profiles:/:fecb3715-41b3-40c2-90e4-8fc0b633dc75]
+allow-bold=true
+background-color='#0A0A0E0E1414'
+bold-color='#B3B3B1B1ADAD'
+bold-color-same-as-fg=true
+cursor-background-color='#E6E6B4B45050'
+cursor-colors-set=true
+cursor-foreground-color='#0A0A0E0E1414'
+foreground-color='#B3B3B1B1ADAD'
+palette=['#0A0A0E0E1414', '#FFFF33333333', '#C2C2D9D94C4C', '#FFFF8F8F4040', '#5959C2C2FFFF', '#FFFFEEEE9999', '#9595E6E6CBCB', '#B3B3B1B1ADAD', '#4D4D55556666', '#FFFF33333333', '#C2C2D9D94C4C', '#FFFF8F8F4040', '#5959C2C2FFFF', '#FFFFEEEE9999', '#9595E6E6CBCB', '#B3B3B1B1ADAD']
+use-theme-background=false
+use-theme-colors=false
+use-theme-transparency=false
+visible-name='Ayu Dark'
