@@ -20,3 +20,4 @@ cat ~/gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
 
 See this post for more details: https://askubuntu.com/questions/774394/wheres-the-gnome-terminal-config-file-located. 
 
+[`Gogh`](https://github.com/Gogh-Co/Gogh) offers a nice set of color schemes.
