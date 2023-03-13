@@ -37,6 +37,14 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 "let g:airline#extensions#tabline#enabled = 1
 
 "powerline
+python3 << EOF
+import sys, subprocess
+try:
+    import powerline
+except ModuleNotFoundError:
+    print("Installing powerline in your python environment.")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "powerline-status"]) 
+EOF
 python3 from powerline.vim import setup as powerline_setup
 python3 powerline_setup()
 python3 del powerline_setup
