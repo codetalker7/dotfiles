@@ -27,6 +27,7 @@ export POWERLINE_COMMAND=/home/codetalker7/.local/bin/powerline
 
 # colorls
 source /home/codetalker7/gems/gems/colorls-1.4.6/lib/tab_complete.sh
+alias lc='colorls'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
