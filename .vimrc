@@ -11,6 +11,9 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
+"fzf
+set rtp+=~/.fzf
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -75,7 +78,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'ryanoasis/vim-devicons'
 set encoding=UTF-8
 
-"for sending lines to another window; eg a REPL
+"for sending lines to another vim pane; eg a REPL
 Plugin 'karoliskoncevicius/vim-sendtowindow'
 let g:sendtowindow_use_defaults=0
 nmap <Space><Right> <Plug>SendRight
@@ -86,6 +89,13 @@ nmap <Space><Up> <Plug>SendUp
 xmap <Space><Up> <Plug>SendUpV
 nmap <Space><Down> <Plug>SendDown
 xmap <Space><Down> <Plug>SendDownV
+
+"vim-slime; to send to another tmux pane for instance
+Plugin 'jpalardy/vim-slime'
+let g:slime_target="tmux"
+let g:slime_paste_file=expand("$HOME/.slime_paste")
+let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"} " set the default target pane to the second pane in the current window
+
 
 "UltiSnips
 " Track the engine.
