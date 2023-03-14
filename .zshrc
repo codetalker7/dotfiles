@@ -136,6 +136,9 @@ export PATH=$PATH:~/julia-1.7.2/bin/
 export GEM_HOME="$HOME/gems"
 export PATH="$HOME/gems/bin:$PATH"
 
+# PATH for bat
+export PATH=$PATH:~/bat-v0.22.1-x86_64-unknown-linux-gnu/
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
