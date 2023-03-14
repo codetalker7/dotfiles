@@ -6,7 +6,9 @@
 
 # `tmux` setup
 
-Since we're using `Oh my tmux`, the `.tmux.conf` file here can be ignored. To set up `Oh my tmux`, do the following steps (the steps given in the docs for `Oh my tmux` are a bit messy).
+If you're going to use `Oh my tmux`, IGNORE THE `.tmux.conf` FILE IN THIS REPO.
+
+To set up `Oh my tmux`, do the following steps (the steps given in the docs for `Oh my tmux` are a bit messy).
 
 ```shell
 git clone https://github.com/gpakosz/.tmux.git "~/oh-my-tmux"   # clone
