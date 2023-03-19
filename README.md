@@ -21,7 +21,7 @@ After this, DON'T touch the file `.tmux.conf`. Make all modifications required t
 
 # GNOME settings
 
-I use the [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts) (for `powerlevel10k`) and the [`Ubunto Mono Nerd Font`](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono). Configuration is stored in `gterminal.preferences`. Use the following command to save the preferences.
+I use the  [Ubunto Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono) (for `powerlevel10k`) and the [Meslo Nerd Font](https://github.com/romkatv/powerlevel10k#fonts). Configuration is stored in `gterminal.preferences`. Use the following command to save the preferences.
 
 ```shell
 dconf dump /org/gnome/terminal/ > ~/gterminal.preferences
