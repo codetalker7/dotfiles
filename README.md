@@ -18,6 +18,9 @@ cp ~/oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local     # only make changes to t
 
 After this, DON'T touch the file `.tmux.conf`. Make all modifications required to `~/.tmux.conf.local` (see the documentation for `Oh my tmux`).
 
+## A useful tutorial for setting up copy-paste in `tmux`
+
+This is a nice tutorial for setting up a convenient method for copy-pasting in `tmux`: https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/.
 
 # GNOME settings
 
