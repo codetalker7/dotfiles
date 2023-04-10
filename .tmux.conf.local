@@ -337,7 +337,7 @@ tmux_conf_theme_clock_style="24"
 #   - disabled
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel, xclip or wl-copy
-tmux_conf_copy_to_os_clipboard=false
+tmux_conf_copy_to_os_clipboard=true
 
 
 # -- user customizations -------------------------------------------------------
@@ -416,6 +416,12 @@ tmux_conf_uninstall_plugins_on_reload=true
 #set -g @plugin 'tmux-plugins/tmux-continuum'
 #set -g @continuum-restore 'on'
 
+## tmux-yank plugin
+set -g mouse on
+set -g @plugin 'tmux-plugins/tmux-yank'
+bind -T copy-mode    C-c send -X copy-pipe-no-clear "xclip -i --clipboard"
+bind -T copy-mode-vi C-c send -X copy-pipe-no-clear "xclip -i --clipboard"
+set -g @yank_action 'copy-pipe-no-clear'    # don't clear selection on raising mouse
 
 # -- custom variables ----------------------------------------------------------
 
