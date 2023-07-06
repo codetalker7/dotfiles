@@ -132,7 +132,11 @@ export EDITOR=vim
 export VISUAL=vim
 
 # PATH for julia
-export PATH=$PATH:~/julia-1.7.2/bin/
+export PATH=$PATH:~/julia-1.9.0/bin/
+
+# PATH for CUDA
+export PATH=$PATH:/usr/local/cuda-12.1/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.1/lib64
 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
@@ -145,3 +149,6 @@ export PATH=$PATH:~/bat-v0.22.1-x86_64-unknown-linux-gnu/
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# PATH for neovim
+export PATH="$PATH:$HOME/neovim/bin"
