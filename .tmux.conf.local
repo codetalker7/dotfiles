@@ -423,6 +423,15 @@ bind -T copy-mode    C-c send -X copy-pipe-no-clear "xclip -i --clipboard"
 bind -T copy-mode-vi C-c send -X copy-pipe-no-clear "xclip -i --clipboard"
 set -g @yank_action 'copy-pipe-no-clear'    # don't clear selection on raising mouse
 
+# dracula theme
+## theme loader
+themes_folder='~/.config/oh-my-tmux/themes/'
+
+## dracula theme
+theme="dracula.conf"
+
+if "[ -d ${themes_folder} ]" "source ${themes_folder}${theme}"
+
 # -- custom variables ----------------------------------------------------------
 
 # to define a custom #{foo} variable, define a POSIX shell function between the
