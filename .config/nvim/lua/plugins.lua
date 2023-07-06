@@ -37,4 +37,8 @@ return require('packer').startup(function(use)
 
   -- for dracula theme
   use 'ray-x/starry.nvim' 
+
+  -- devicons
+  use 'nvim-tree/nvim-web-devicons'
+
 end)
