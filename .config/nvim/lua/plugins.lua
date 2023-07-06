@@ -35,5 +35,6 @@ return require('packer').startup(function(use)
 
   use 'sunjon/shade.nvim'
 
-  use 'Abstract-IDE/Abstract-cs'
+  -- for dracula theme
+  use 'ray-x/starry.nvim' 
 end)
