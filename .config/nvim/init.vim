@@ -1,6 +1,7 @@
 "load ./lua/plugins.lua
 lua require('plugins')
 
+"setup nvim-cmp
 lua <<EOF
   -- Set up nvim-cmp.
   local cmp = require'cmp'
@@ -71,3 +72,18 @@ lua <<EOF
     capabilities = capabilities
   }
 EOF
+
+"setup Shade.nvim
+lua <<EOF
+  require'shade'.setup({
+    overlay_opacity = 50,
+    opacity_step = 1,
+    keys = {
+      brightness_up    = '<C-Up>',
+      brightness_down  = '<C-Down>',
+      toggle           = '<Leader>s',
+    }
+  }) 
+EOF
+
+colorscheme abscs

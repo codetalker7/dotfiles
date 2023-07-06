@@ -32,4 +32,8 @@ return require('packer').startup(function(use)
     branch = 'chad',
     run = 'python3 -m chadtree deps'
   }
+
+  use 'sunjon/shade.nvim'
+
+  use 'Abstract-IDE/Abstract-cs'
 end)

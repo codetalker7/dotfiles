@@ -5,4 +5,4 @@ copy:
 	cp ~/.vimrc ./
 	cp ~/.zshrc ./
 	cp ~/gterminal.preferences ./
-	cp -r ~/.config/nvim/ ./.config/nvim
+	cp -r ~/.config/nvim/ ./.config/
