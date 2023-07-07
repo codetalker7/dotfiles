@@ -79,11 +79,6 @@ _G.packer_plugins = {
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
     url = "https://github.com/akinsho/bufferline.nvim"
   },
-  chadtree = {
-    loaded = true,
-    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/chadtree",
-    url = "https://github.com/ms-jpq/chadtree"
-  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -134,19 +129,33 @@ _G.packer_plugins = {
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
-  ["nvim-docs-view"] = {
-    commands = { "DocsViewToggle" },
-    config = { "\27LJ\2\nU\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\2\rposition\nright\nwidth\3<\nsetup\14docs-view\frequire\0" },
+  ["nvim-code-action-menu"] = {
+    commands = { "CodeActionMenu" },
     loaded = false,
-    needs_bufread = false,
+    needs_bufread = true,
     only_cond = false,
-    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/opt/nvim-docs-view",
-    url = "https://github.com/amrbashir/nvim-docs-view"
+    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/opt/nvim-code-action-menu",
+    url = "https://github.com/weilbith/nvim-code-action-menu"
+  },
+  ["nvim-lightbulb"] = {
+    loaded = true,
+    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/nvim-lightbulb",
+    url = "https://github.com/kosayoda/nvim-lightbulb"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -189,12 +198,12 @@ time([[Defining packer_plugins]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.api.nvim_create_user_command, 'DocsViewToggle', function(cmdargs)
-          require('packer.load')({'nvim-docs-view'}, { cmd = 'DocsViewToggle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+pcall(vim.api.nvim_create_user_command, 'CodeActionMenu', function(cmdargs)
+          require('packer.load')({'nvim-code-action-menu'}, { cmd = 'CodeActionMenu', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'nvim-docs-view'}, {}, _G.packer_plugins)
-          return vim.fn.getcompletion('DocsViewToggle ', 'cmdline')
+          require('packer.load')({'nvim-code-action-menu'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('CodeActionMenu ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
 

@@ -37,29 +37,23 @@ return require('packer').startup(function(use)
     requires = { 'nvim-tree/nvim-web-devicons', opt = true }
   }
 
-  -- for documentation from lsp
-  use {
-    "amrbashir/nvim-docs-view",
-    cmd = { "DocsViewToggle" },
-    config = function()
-      require("docs-view").setup {
-        position = "right",
-        width = 60,
-      }
-    end
-  }
-
-  use {
-    'ms-jpq/chadtree',
-    branch = 'chad',
-    run = 'python3 -m chadtree deps'
-  }
+  --file explorer
+  use 'nvim-tree/nvim-tree.lua'
 
   -- for dracula theme
   use 'ray-x/starry.nvim' 
 
   -- devicons
   use 'nvim-tree/nvim-web-devicons'
+
+  -- config for nvim-treesitter
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+        local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+        ts_update()
+    end,
+  }
 
   use "lukas-reineke/indent-blankline.nvim"
 
@@ -68,11 +62,18 @@ return require('packer').startup(function(use)
 
   use {
     'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    requires = { 'nvim-tree/nvim-web-devicons'},
   }
 
   -- tabline
   use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
   use 'RRethy/vim-illuminate'
+
+  use 'kosayoda/nvim-lightbulb'
+
+  require('packer').use({
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  })
 end)

@@ -1,3 +1,9 @@
+" disable netrw at the very start of your init.lua; for nvim-tree.lua
+lua <<EOF
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+EOF
+
 "loa ./lua/plugins.lua
 lua require('plugins')
 
@@ -17,6 +23,7 @@ set hlsearch
 " This unsets the last search pattern register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
+set nu
 
 "setup nvim-cmp
 lua <<EOF
@@ -218,6 +225,14 @@ lua << EOF
   require("bufferline").setup{}
 EOF
 
+"config for nvim-treesitter
+function FoldConfig()
+	set foldmethod=expr
+	set foldexpr=nvim_treesitter#foldexpr()
+endfunction
+
+autocmd BufAdd,BufEnter,BufNew,BufNewFile,BufWinEnter * :call FoldConfig()
+
 "indent-blankline
 lua << EOF
   vim.opt.list = true
@@ -226,7 +241,14 @@ lua << EOF
   require("indent_blankline").setup {
     show_end_of_line = true,
     space_char_blankline = " ",
-    show_current_context = true,
     show_current_context_start = true,
   }
+EOF
+
+" for nvim-lightbulb
+autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb()
+
+"file explorer
+lua <<EOF
+  require("nvim-tree").setup()
 EOF
