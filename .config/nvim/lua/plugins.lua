@@ -76,4 +76,15 @@ return require('packer').startup(function(use)
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
   })
+
+  use 'jpalardy/vim-slime'
+
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+
 end)

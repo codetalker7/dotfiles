@@ -252,3 +252,9 @@ autocmd CursorHold,CursorHoldI * lua require('nvim-lightbulb').update_lightbulb(
 lua <<EOF
   require("nvim-tree").setup()
 EOF
+
+"vim slime; to send to another tmux pane for instance
+let g:slime_target="tmux"
+let g:slime_paste_file=expand("$HOME/.slime_paste")
+let g:slime_default_config = {"socket_name": get(split($TMUX, ","), 0), "target_pane": ":.2"} " set the default target pane to the second pane in the current window
+
