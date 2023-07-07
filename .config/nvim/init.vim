@@ -5,6 +5,7 @@ lua require('plugins')
 lua <<EOF
   -- Set up nvim-cmp.
   local cmp = require'cmp'
+  local lspkind = require('lspkind')
 
   cmp.setup({
     snippet = {
@@ -15,6 +16,14 @@ lua <<EOF
         -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
         -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
       end,
+    },
+    formatting = {
+      -- lspkind-nvim
+      format = lspkind.cmp_format({
+         mode = 'symbol_text',
+	 maxwidth = 50,
+	 ellipsis_char = '...',
+      })
     },
     window = {
       -- completion = cmp.config.window.bordered(),
@@ -190,4 +199,14 @@ EOF
 set termguicolors
 lua << EOF
   require("bufferline").setup{}
+EOF
+
+"indent-blankline
+lua << EOF
+  vim.opt.list = true
+  vim.opt.listchars:append "eol:↴"
+
+  require("indent_blankline").setup {
+    show_end_of_line = true,
+  }
 EOF

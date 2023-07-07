@@ -27,6 +27,28 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
 
+  -- in conjunction with nvim-cmp
+  use 'onsails/lspkind.nvim'
+
+  -- for trouble.nvim
+  use 'folke/lsp-colors.nvim'
+  use {
+    'folke/trouble.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- for documentation from lsp
+  use {
+    "amrbashir/nvim-docs-view",
+    cmd = { "DocsViewToggle" },
+    config = function()
+      require("docs-view").setup {
+        position = "right",
+        width = 60,
+      }
+    end
+  }
+
   use {
     'ms-jpq/chadtree',
     branch = 'chad',
@@ -39,17 +61,10 @@ return require('packer').startup(function(use)
   -- devicons
   use 'nvim-tree/nvim-web-devicons'
 
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- start screen
-  use {
-    'glepnir/dashboard-nvim',
-    event = 'VimEnter',
-    config = function()
-      require('dashboard').setup {
-        -- config
-      }
-    end,
-    requires = {'nvim-tree/nvim-web-devicons'}
-  }
+  use 'mhinz/vim-startify'
 
   use {
     'nvim-lualine/lualine.nvim',
@@ -58,4 +73,6 @@ return require('packer').startup(function(use)
 
   -- tabline
   use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
+
+  use 'RRethy/vim-illuminate'
 end)
