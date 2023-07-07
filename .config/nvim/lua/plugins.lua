@@ -33,12 +33,29 @@ return require('packer').startup(function(use)
     run = 'python3 -m chadtree deps'
   }
 
-  use 'sunjon/shade.nvim'
-
   -- for dracula theme
   use 'ray-x/starry.nvim' 
 
   -- devicons
   use 'nvim-tree/nvim-web-devicons'
 
+  -- start screen
+  use {
+    'glepnir/dashboard-nvim',
+    event = 'VimEnter',
+    config = function()
+      require('dashboard').setup {
+        -- config
+      }
+    end,
+    requires = {'nvim-tree/nvim-web-devicons'}
+  }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  -- tabline
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 end)
