@@ -1,6 +1,23 @@
 "loa ./lua/plugins.lua
 lua require('plugins')
 
+"some indentation settings
+" show existing tab with x spaces width
+set tabstop=4
+
+" when indenting with '>', use x spaces width 
+set shiftwidth=4
+
+" on pressing tab, insert spaces
+set expandtab
+
+" highlight text during search
+set hlsearch
+
+" This unsets the last search pattern register by hitting return
+nnoremap <CR> :noh<CR><CR>
+
+
 "setup nvim-cmp
 lua <<EOF
   -- Set up nvim-cmp.
@@ -208,5 +225,8 @@ lua << EOF
 
   require("indent_blankline").setup {
     show_end_of_line = true,
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
   }
 EOF
