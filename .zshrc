@@ -21,10 +21,11 @@ export DEFAULT_USER="$(whoami)"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="agnoster"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-ZSH_THEME="dracula"
-DRACULA_DISPLAY_TIME=1
-DRACULA_DISPLAY_FULL_CWD=1
+ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="dracula"
+# DRACULA_DISPLAY_TIME=1
+# DRACULA_DISPLAY_FULL_CWD=1
+#ZSH_THEME="spaceship"
 
 # powerline
 . /home/codetalker7/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
@@ -99,6 +100,7 @@ plugins=(
     zsh-autosuggestions
     zsh-syntax-highlighting
     zsh-vi-mode
+    #spaceship-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
