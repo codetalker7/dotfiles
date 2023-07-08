@@ -174,3 +174,6 @@ eval "$(pyenv init -)"
 # # the following to ~/.bashrc:
 #
 eval "$(pyenv virtualenv-init -)"
+
+# clangd LSP server
+alias clangd=clangd-12
