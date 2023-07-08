@@ -102,4 +102,6 @@ return require('packer').startup(function(use)
   }
 
   use 'ray-x/lsp_signature.nvim'
+
+  use 'goerz/jupytext.vim'
 end)

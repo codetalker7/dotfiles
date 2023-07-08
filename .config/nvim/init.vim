@@ -107,6 +107,9 @@ lua <<EOF
   require('lspconfig')['pyright'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['marksman'].setup {
+    capabilities = capabilities
+  }
 EOF
 
 "setup dracula theme

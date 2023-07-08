@@ -161,3 +161,16 @@ export PATH="$PATH:$HOME/neovim/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# path for marksman
+export PATH="$PATH:$HOME/.local/bin/"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# # Load pyenv-virtualenv automatically by adding
+# # the following to ~/.bashrc:
+#
+eval "$(pyenv virtualenv-init -)"

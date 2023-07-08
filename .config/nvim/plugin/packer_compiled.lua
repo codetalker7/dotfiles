@@ -115,6 +115,11 @@ _G.packer_plugins = {
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
+  ["jupytext.vim"] = {
+    loaded = true,
+    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/jupytext.vim",
+    url = "https://github.com/goerz/jupytext.vim"
+  },
   ["lsp-colors.nvim"] = {
     loaded = true,
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
