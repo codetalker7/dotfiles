@@ -251,6 +251,7 @@ lua << EOF
   require("indent_blankline").setup {
     show_end_of_line = true,
     space_char_blankline = " ",
+    show_current_context = true,
     show_current_context_start = true,
   }
 EOF
@@ -423,3 +424,21 @@ keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 -- Floating terminal
 keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
 EOF
+
+"markdown preview
+" let g:mkdp_preview_options = {
+" 	'katex': {
+" 		'macros': {"\\R": "\\mathbb{R}"}
+" 	},
+" }
+
+let g:mkdp_preview_options = {
+    \ 'katex': {
+		\ 'macros': {
+			\ "\\R": "\\mathbb{R}",
+			\ "\\E": "\\mathbb{E}",
+			\ "\\Z": "\\mathbb{Z}",
+			\ "\\norm": "\\lVert#1\\rVert",
+        \ }
+	\ },
+\ }

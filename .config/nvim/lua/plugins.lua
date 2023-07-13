@@ -104,4 +104,9 @@ return require('packer').startup(function(use)
   use 'ray-x/lsp_signature.nvim'
 
   use 'goerz/jupytext.vim'
+
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)
