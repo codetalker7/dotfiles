@@ -114,6 +114,9 @@ lua <<EOF
     capabilities = capabilities,
     cmd = {"clangd-12"},
   }
+  require('lspconfig')['jdtls'].setup {
+    capabilities = capabilities
+  }
 EOF
 
 "setup dracula theme

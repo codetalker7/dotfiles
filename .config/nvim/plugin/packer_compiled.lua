@@ -105,11 +105,6 @@ _G.packer_plugins = {
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-vsnip"] = {
-    loaded = true,
-    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
-  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
@@ -206,6 +201,12 @@ _G.packer_plugins = {
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/trouble.nvim",
     url = "https://github.com/folke/trouble.nvim"
   },
+  ultisnips = {
+    config = { "\27LJ\2\nÌ\2\0\0\2\0\v\0\0216\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0'\1\a\0=\1\6\0006\0\0\0009\0\1\0'\1\t\0=\1\b\0006\0\0\0009\0\1\0)\1\0\0=\1\n\0K\0\1\0&UltiSnipsRemoveSelectModeMappings\15<c-x><c-s>\26UltiSnipsListSnippets$<Plug>(ultisnips_jump_backward)!UltiSnipsJumpBackwardTrigger#<Plug>(ultisnips_jump_forward) UltiSnipsJumpForwardTrigger\29<Plug>(ultisnips_expand)\27UltiSnipsExpandTrigger\6g\bvim\0" },
+    loaded = true,
+    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
+  },
   ["vim-illuminate"] = {
     loaded = true,
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/vim-illuminate",
@@ -226,23 +227,31 @@ _G.packer_plugins = {
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/vim-slime",
     url = "https://github.com/jpalardy/vim-slime"
   },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/vim-snippets/.",
+    url = "https://github.com/honza/vim-snippets"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/vim-startify",
     url = "https://github.com/mhinz/vim-startify"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/codetalker7/.local/share/nvim/site/pack/packer/start/vim-vsnip",
-    url = "https://github.com/hrsh7th/vim-vsnip"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Runtimepath customization
+time([[Runtimepath customization]], true)
+vim.o.runtimepath = vim.o.runtimepath .. ",/home/codetalker7/.local/share/nvim/site/pack/packer/start/vim-snippets/."
+time([[Runtimepath customization]], false)
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
 time([[Config for Comment.nvim]], false)
+-- Config for: ultisnips
+time([[Config for ultisnips]], true)
+try_loadstring("\27LJ\2\nÌ\2\0\0\2\0\v\0\0216\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0'\1\5\0=\1\4\0006\0\0\0009\0\1\0'\1\a\0=\1\6\0006\0\0\0009\0\1\0'\1\t\0=\1\b\0006\0\0\0009\0\1\0)\1\0\0=\1\n\0K\0\1\0&UltiSnipsRemoveSelectModeMappings\15<c-x><c-s>\26UltiSnipsListSnippets$<Plug>(ultisnips_jump_backward)!UltiSnipsJumpBackwardTrigger#<Plug>(ultisnips_jump_forward) UltiSnipsJumpForwardTrigger\29<Plug>(ultisnips_expand)\27UltiSnipsExpandTrigger\6g\bvim\0", "config", "ultisnips")
+time([[Config for ultisnips]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
