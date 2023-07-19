@@ -140,8 +140,8 @@ export VISUAL=vim
 export PATH=$PATH:~/julia-1.9.0/bin/
 
 # PATH for CUDA
-export PATH=$PATH:/usr/local/cuda-12.1/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.1/lib64
+export PATH=$PATH:/usr/local/cuda-12.2/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.2/lib64
 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
@@ -177,3 +177,12 @@ eval "$(pyenv virtualenv-init -)"
 
 # clangd LSP server
 alias clangd=clangd-12
+
+# maven
+export PATH=$PATH:$HOME/apache-maven-3.9.3/bin
+
+# jdk
+export PATH=/usr/lib/jvm/jdk-20/bin/:$PATH
+
+# jdt-language-server
+export PATH=$PATH:$HOME/jdt-language-server/bin/
