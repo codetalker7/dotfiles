@@ -39,3 +39,17 @@ cat ~/gterminal.preferences | dconf load /org/gnome/terminal/legacy/profiles:/
 See this post for more details: https://askubuntu.com/questions/774394/wheres-the-gnome-terminal-config-file-located. 
 
 [`Gogh`](https://github.com/Gogh-Co/Gogh) offers a nice set of color schemes.
+
+# Steps to carry out
+
+1. **Installing Alacritty**: Instructions are here: https://github.com/alacritty/alacritty/blob/master/INSTALL.md.
+    - Install the dependencies: `apt install cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3`.
+    - Also need to install Rust (https://www.rust-lang.org/tools/install):
+            ```
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+            rustup override set stable
+            rustup update stable
+            ```
+    - Build the repository using `cargo build` (by following the given instructions).
+    - Make sure terminfo for `alacritty` is installed: `infocmp alacritty`. If not, install it (see the instructions page).
+    - Also make sure to have a desktop entry (given in the instructions).
