@@ -117,6 +117,10 @@ lua <<EOF
   require('lspconfig')['jdtls'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['golangci_lint_ls'].setup {
+    capabilities = capabilities
+  }
+
 EOF
 
 "setup dracula theme
@@ -445,3 +449,10 @@ let g:mkdp_preview_options = {
         \ }
 	\ },
 \ }
+
+"vim-markdown
+let g:vim_markdown_math = 1
+let g:vim_markdown_folding_disabled = 1
+
+
+

@@ -141,7 +141,7 @@ export PATH=$PATH:~/julia-1.9.0/bin/
 
 # PATH for CUDA
 export PATH=$PATH:/usr/local/cuda-12.2/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.2/lib64
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-12.2/lib64
 
 # Install Ruby Gems to ~/gems
 export GEM_HOME="$HOME/gems"
@@ -186,3 +186,11 @@ export PATH=/usr/lib/jvm/jdk-20/bin/:$PATH
 
 # jdt-language-server
 export PATH=$PATH:$HOME/jdt-language-server/bin/
+
+# go binary and gopath
+export PATH=$PATH:/usr/local/go/binary
+export PATH=$PATH:$HOME/go/bin
+export GO111MODULE=on
+
+# racket path
+export PATH=$PATH:$HOME/racket/bin

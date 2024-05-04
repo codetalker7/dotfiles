@@ -110,6 +110,8 @@ return require('packer').startup(function(use)
     run = function() vim.fn["mkdp#util#install"]() end,
   })
 
-  use 'vim-pandoc/vim-pandoc'
-  use 'vim-pandoc/vim-pandoc-syntax'
+  use 'godlygeek/tabular'
+  use 'preservim/vim-markdown'
+  -- use 'vim-pandoc/vim-pandoc'
+  -- use 'vim-pandoc/vim-pandoc-syntax'
 end)
