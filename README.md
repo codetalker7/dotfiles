@@ -11,7 +11,7 @@ If you're going to use `Oh my tmux`, IGNORE THE `.tmux.conf` FILE IN THIS REPO.
 To set up `Oh my tmux`, do the following steps (the steps given in the docs for `Oh my tmux` are a bit messy).
 
 ```shell
-git clone https://github.com/gpakosz/.tmux.git "~/oh-my-tmux"   # clone
+git clone https://github.com/gpakosz/.tmux.git ~/oh-my-tmux   # clone
 ln -s ~/oh-my-tmux/.tmux.conf ~/.tmux.conf    # create symbolic link pointing to the file in oh-my-tmux
 cp ~/oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local     # only make changes to this file
 ```
@@ -53,3 +53,12 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
     - Build the repository using `cargo build` (by following the given instructions).
     - Make sure terminfo for `alacritty` is installed: `infocmp alacritty`. If not, install it (see the instructions page).
     - Also make sure to have a desktop entry (given in the instructions).
+
+2. **Installing tmux:** Just do it form their manual page: https://github.com/tmux/tmux/wiki/Installing#building-dependencies.
+3. **Installing Oh my tmux:** As I mentioned above, the official instruction page is a bit messy. Just do the following:
+        ```
+        git clone https://github.com/gpakosz/.tmux.git ~/oh-my-tmux   # clone
+        ln -s ~/oh-my-tmux/.tmux.conf ~/.tmux.conf    # create symbolic link pointing to the file in oh-my-tmux
+        cp ~/oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local     # only make changes to this file
+        ```
+    From here, only make changes to `~/.tmux.conf.local`. For any other steps, check the official repo.
