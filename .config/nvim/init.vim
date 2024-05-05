@@ -123,28 +123,57 @@ lua <<EOF
 
 EOF
 
-"setup dracula theme
-let starry_bold = v:true  "set to false to disable bold globally
-let starry_italic = v:true "set to false to disable italic globally
-let starry_italic_comments = v:true
-let starry_italic_string = v:false
-let starry_italic_keywords = v:false
-let starry_italic_functions = v:false
-let starry_italic_variables = v:false
-let starry_contrast = v:true
-let starry_borders = v:false
-let starry_disable_background = v:false  "set to true to disable background and allow transparent background
-let starry_style_fix=v:true  "disable random loading
-let starry_style="moonlight"  "load moonlight everytime or
-let starry_darker_contrast=v:true  "darker background
-let starry_deep_black=v:false       "OLED deep black
-let starry_italic_keywords=v:false
-let starry_italic_functions=v:false
-let starry_set_hl=v:false " Note: enable for nvim 0.6+, it is faster (loading time down to 4~6s from 7~11s), but it does
-" not overwrite old values and may has some side effects
-let starry_daylight_switch=v:false  "this allow using brighter color
-" other themes: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana, emerald, middlenight_blue 
-colorscheme dracula
+"setup dracula theme for starry
+lua <<EOF
+
+local config = {
+  border = false, -- Split window borders
+  italics = {
+    comments = false, -- Italic comments
+    strings = false, -- Italic strings
+    keywords = false, -- Italic keywords
+    functions = false, -- Italic functions
+    variables = false -- Italic variables
+  },
+
+  contrast = { -- Select which windows get the contrast background
+    enable = true, -- Enable contrast
+    terminal = true, -- Darker terminal
+    filetypes = {}, -- Which filetypes get darker? e.g. *.vim, *.cpp, etc.
+  },
+
+  text_contrast = {
+    lighter = false, -- Higher contrast text for lighter style
+    darker = false -- Higher contrast text for darker style
+  },
+
+  disable = {
+    background = false, -- true: transparent background
+    term_colors = false, -- Disable setting the terminal colors
+    eob_lines = false -- Make end-of-buffer lines invisible
+  },
+
+  style = {
+    name = 'moonlight', -- Theme style name (moonlight, earliestsummer, etc.)
+    -- " other themes: dracula, oceanic, dracula_blood, 'deep ocean', darker, palenight, monokai, mariana, emerald, middlenight_blue
+    disable = {},  -- a list of styles to disable, e.g. {'bold', 'underline'}
+    fix = true,
+    darker_contrast = false, -- More contrast for darker style
+    daylight_swith = false, -- Enable day and night style switching
+    deep_black = false, -- Enable a deeper black background
+  },
+
+  custom_colors = {
+    variable = '#f797d7',
+  },
+  custom_highlights = {
+    LineNr = { fg = '#777777' },
+    Idnetifier = { fg = '#ff4797' },
+  }
+}
+require('starry').setup(config)
+
+EOF
 
 "devicons
 lua <<EOF
@@ -252,15 +281,7 @@ autocmd BufAdd,BufEnter,BufNew,BufNewFile,BufWinEnter * :call FoldConfig()
 
 "indent-blankline
 lua << EOF
-  vim.opt.list = true
-  vim.opt.listchars:append "eol:↴"
-
-  require("indent_blankline").setup {
-    show_end_of_line = true,
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
-  }
+  require("ibl").setup()
 EOF
 
 " for nvim-lightbulb
