@@ -82,3 +82,8 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
     - Configure/update all the neovim plugins from the config file. Some plugins break when new versions are introduced, so need to make the appropriate changes.
     - Install the LSP servers mentioned in the section on `lspconfig` in the config file. Do `:help lspconfig-all`.
     - Also install the treesitter parsers! As a start, you can begin with the following (`TSInstall <lspname>`): `c`, `cuda`, `go`, `java`, `julia`, `lua`, `markdown`, `markdown_inline`, `python`, `rust`.
+
+7. **Configuring `alacritty`:** Move the config file: `cp -r .config/alacritty ~/.config/alacritty`.
+    - Setup the `dracula` theme: https://draculatheme.com/alacritty.
+
+8. **Dracula theme for `tmux`:** Copy the `dracula.conf` file from https://github.com/atgmello/dracula.omt to `~/.config/oh-my-tmux/themes`.
