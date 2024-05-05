@@ -74,4 +74,11 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
     - Install the `Meslo Nerd Font` or the `Ubuntu Mono Nerd Font`: https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#meslo-nerd-font-patched-for-powerlevel10k or https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono (Ubuntu's font is better).
     - Put the `powerlevel10k` config file in the home directory: `cp .p10k.zsh ~/.p10k.zsh`.
     - Install all the plugins mentioned in `.zshrc` from instructions in their corresponding repos.
-    - Install `colorls`: https://github.com/athityakumar/colorls?tab=readme-ov-file#installation.
+    - Install `colorls`: https://github.com/athityakumar/colorls?tab=readme-ov-file#installation and move the config file: `cp -r .config/colorls ~/.config/colorls`.
+
+6. **Installing `nvim`:** from https://github.com/neovim/neovim/blob/master/INSTALL.md. Use a binary to install, and append the location to `.zshrc`'s PATH.
+    - Move the config files: `cp -r .config/nvim ~/.config/nvim`.
+    - Install `packer.nvim`: https://github.com/wbthomason/packer.nvim.
+    - Configure/update all the neovim plugins from the config file. Some plugins break when new versions are introduced, so need to make the appropriate changes.
+    - Install the LSP servers mentioned in the section on `lspconfig` in the config file. Do `:help lspconfig-all`.
+    - Also install the treesitter parsers! As a start, you can begin with the following (`TSInstall <lspname>`): `c`, `cuda`, `go`, `java`, `julia`, `lua`, `markdown`, `markdown_inline`, `python`, `rust`.
