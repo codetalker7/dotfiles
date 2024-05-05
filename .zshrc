@@ -28,7 +28,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="spaceship"
 
 # powerline
-# . /home/codetalker7/.local/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+# . /home/codetalker7/.local/lib/python3.10/site-packages/powerline/bindings/zsh/powerline.zsh
 # export POWERLINE_COMMAND=/home/codetalker7/.local/bin/powerline
 
 # colorls
