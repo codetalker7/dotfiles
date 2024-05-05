@@ -65,3 +65,13 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
     - Copy the tmux config: `cp .tmux.conf.local ~/.tmux.conf.local`.
     - Set up copy-paste in `tmux` from here: https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/.
     - Also need to install `xclip` for step 5. to work; see the `.tmux.conf.local` file for more details.
+4. **Installing zsh and Oh-my-zsh:** Installation instructions for `zsh` are here: https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH. Instructions for
+    Oh-my-zsh are here: https://github.com/ohmyzsh/ohmyzsh.
+    - Then put the config file on your home folder: `cp .zshrc ~/.zshrc`.
+
+5. **Installing stuff required for zsh:**
+    - Install `powerlevel10k`: https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#meslo-nerd-font-patched-for-powerlevel10k in the Oh-my-zsh section.
+    - Install the `Meslo Nerd Font` or the `Ubuntu Mono Nerd Font`: https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#meslo-nerd-font-patched-for-powerlevel10k or https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono (Ubuntu's font is better).
+    - Put the `powerlevel10k` config file in the home directory: `cp .p10k.zsh ~/.p10k.zsh`.
+    - Install all the plugins mentioned in `.zshrc` from instructions in their corresponding repos.
+    - Install `colorls`: https://github.com/athityakumar/colorls?tab=readme-ov-file#installation.
