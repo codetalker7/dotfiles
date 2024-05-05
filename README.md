@@ -62,3 +62,6 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
         cp ~/oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local     # only make changes to this file
         ```
     From here, only make changes to `~/.tmux.conf.local`. For any other steps, check the official repo.
+4. Copy the tmux config: `cp .tmux.conf.local ~/.tmux.conf.local`.
+5. Set up copy-paste in `tmux` from here: https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/.
+6. Also need to install `xclip` for step 5. to work; see the `.tmux.conf.local` file for more details.
