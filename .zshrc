@@ -156,7 +156,7 @@ export PATH=$PATH:~/bat-v0.22.1-x86_64-unknown-linux-gnu/
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # PATH for neovim
-export PATH="$PATH:$HOME/neovim/bin"
+export PATH="$PATH:$HOME/nvim-linux64/bin"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
