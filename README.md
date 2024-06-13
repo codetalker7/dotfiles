@@ -100,7 +100,7 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 
 I largely followed [Evan Chen's local text setup]()
 
-1. We'll use `evince` as our pdf viewer: https://wiki.gnome.org/Apps/Evince. It is super smooth. Check `man evince` to see how to use it.
+1. We'll use `zathura` as our pdf viewer: https://pwmt.org/projects/zathura/installation/. It is super smooth. Check `man zathura` to see how to use it.
 
 2. **Install `TeX Live`:** I largely followed this tutorial for Jammy Jellyfish: https://linuxconfig.org/how-to-install-latex-on-ubuntu-22-04-jammy-jellyfish-linux. I installed the `texlive-latex-extra` package from `apt`. Next, check the `tlgmr` version:
 
