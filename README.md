@@ -90,4 +90,6 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 
 9. **Install the `Xfce` desktop environment:** Known to be faster than KDE. I followed this guide: https://www.linuxcapable.com/how-to-install-xfce-on-ubuntu-linux/.
 
-10. **Istall `fzf`:** A must needed fuzzy finder for linux. Install from here: https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages.
+10. **Install `fzf`:** A must needed fuzzy finder for linux. Install from here: https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages.
+
+11. **Install `ripgrep`:** Needed for some features in `telescope.nvim`. Install from here: https://github.com/BurntSushi/ripgrep.
