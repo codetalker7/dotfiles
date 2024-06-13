@@ -56,11 +56,13 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 
 2. **Installing tmux:** Just do it form their manual page: https://github.com/tmux/tmux/wiki/Installing#building-dependencies.
 3. **Installing Oh my tmux:** As I mentioned above, the official instruction page is a bit messy. Just do the following:
+
         ```
         git clone https://github.com/gpakosz/.tmux.git ~/oh-my-tmux   # clone
         ln -s ~/oh-my-tmux/.tmux.conf ~/.tmux.conf    # create symbolic link pointing to the file in oh-my-tmux
         cp ~/oh-my-tmux/.tmux.conf.local ~/.tmux.conf.local     # only make changes to this file
         ```
+
     From here, only make changes to `~/.tmux.conf.local`. For any other steps, check the official repo.
     - Copy the tmux config: `cp .tmux.conf.local ~/.tmux.conf.local`.
     - Set up copy-paste in `tmux` from here: https://www.seanh.cc/2020/12/27/copy-and-paste-in-tmux/.
