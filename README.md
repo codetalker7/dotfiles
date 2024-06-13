@@ -100,7 +100,11 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 
 I largely followed [Evan Chen's local text setup]()
 
-1. We'll use `zathura` as our pdf viewer: https://pwmt.org/projects/zathura/installation/. It is super smooth. Check `man zathura` to see how to use it.
+1. We'll use `zathura` as our pdf viewer: https://pwmt.org/projects/zathura/installation/. It is super smooth. Check `man zathura` to see how to use it. The config is in `.config/zathura/zathurarc`. Move it to the required location:
+    
+    ```
+    cp .config/zathura/zathurarc ~/.config/zathura/zathurarc
+    ```
 
 2. **Install `TeX Live`:** I largely followed this tutorial for Jammy Jellyfish: https://linuxconfig.org/how-to-install-latex-on-ubuntu-22-04-jammy-jellyfish-linux. I installed the `texlive-latex-extra` package from `apt`. Next, check the `tlgmr` version:
 

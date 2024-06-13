@@ -7,3 +7,4 @@ copy:
 	cp ~/gterminal.preferences ./
 	cp -r ~/.config/nvim/ ./.config/
 	cp ~/.config/alacritty/alacritty.yml ./.config/alacritty/
+	cp ~/.config/zathura/zathurarc .config/zathura/zathurarc
