@@ -127,3 +127,5 @@ article
     tlmgr install latex latex-bin latexconfig latex-fonts
     tlmgr install amsmath babel carlisle ec geometry graphics hyperref lm  marvosym oberdiek parskip graphics-def url
     ```
+
+5. **Install `vimtex` and related LSP for `nvim`:** See https://github.com/lervag/vimtex?tab=readme-ov-file for the `nvim` plugin; there's also an LSP server for latex, called `texlab`: https://github.com/latex-lsp/texlab. Also, make sure to install the `treesitter` parser for `latex`. Try to do `TSInstall latex`. We probably need `tree-sitter CLI` for this: https://github.com/tree-sitter/tree-sitter/blob/master/cli/README.md.
