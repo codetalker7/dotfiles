@@ -89,3 +89,5 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 8. **Dracula theme for `tmux`:** Copy the `dracula.conf` file from https://github.com/atgmello/dracula.omt to `~/.config/oh-my-tmux/themes`.
 
 9. **Install the `Xfce` desktop environment:** Known to be faster than KDE. I followed this guide: https://www.linuxcapable.com/how-to-install-xfce-on-ubuntu-linux/.
+
+10. **Istall `fzf`:** A must needed fuzzy finder for linux. Install from here: https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages.
