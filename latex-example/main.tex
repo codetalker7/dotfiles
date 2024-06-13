@@ -1,14 +1,42 @@
 \documentclass{article}
 \usepackage{hyperref}
 \usepackage{amsmath}
+%% bibliography
+\usepackage{natbib} % has a nice set of citation styles and commands
+\renewcommand{\bibsection}{\subsubsection*{References}}
+
 \begin{document}
+\title{A document}
+\author{Siddhant Chaudhary}
+\date{1 September 2024}
+\maketitle
+\begin{abstract}
+    This is a sample document, just to illustrate the use of \texttt{latexmk} and other utilities. The config file for \texttt{latexmk} is in the same directory, with the name \texttt{latexmkrc}.
+\end{abstract}
+
+\section{A section}
+
 Hello world \LaTeX
 
 \url{https://linuxconfig.org}
 
-Here's a math equation:
+Use \texttt{:VimtexCompile} to compile the tex file on every save!
 
-\begin{align}
-    \int_0^1 f(x)dx
-\end{align}
+\subsection{A subsection containing a math equation}
+
+Here's a math equation: 
+
+\begin{align*}
+    \begin{bmatrix}
+        0 & 1\\
+        1 & 0
+    \end{bmatrix} = \int_0^1 f(x)dx
+\end{align*}
+
+\subsubsection{A subsubsection containing citations}
+\cite{mansour2013complexity}
+
+\bibliographystyle{unsrtnat}
+\bibliography{bibmobility}
+
 \end{document}

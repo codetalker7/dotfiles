@@ -1,0 +1,110 @@
+@misc{mansour2013complexity,
+      title={On the Complexity of Policy Iteration}, 
+      author={Yishay Mansour and Satinder Singh},
+      year={2013},
+      eprint={1301.6718},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI}
+}
+
+
+@InProceedings{pmlr-v115-taraviya20a,
+  title = 	 {A Tighter Analysis of Randomised Policy Iteration},
+  author =       {Taraviya, Meet and Kalyanakrishnan, Shivaram},
+  booktitle = 	 {Proceedings of The 35th Uncertainty in Artificial Intelligence Conference},
+  pages = 	 {519--529},
+  year = 	 {2020},
+  editor = 	 {Adams, Ryan P. and Gogate, Vibhav},
+  volume = 	 {115},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {22--25 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {http://proceedings.mlr.press/v115/taraviya20a/taraviya20a.pdf},
+  url = 	 {https://proceedings.mlr.press/v115/taraviya20a.html},
+  abstract = 	 {Policy Iteration (PI) is a popular family of algorithms to compute an optimal policy for a givenMarkov Decision Problem (MDP). Starting from an arbitrary initial policy, PI repeatedly performs locally-improving switches until an optimal policy is found. The exact form of the switching rule gives rise to different variants of PI. Two decades ago, Mansour and Singh [1999] provided the first non-trivial “strong” upper bound on the number of iterations taken by “Howard’s PI” (HPI), a widelyused variant of PI (strong bounds depend only on the number of states and actions in the MDP). They also proposed a randomised variant (RPI) and showed an even tighter strong upper bound. Their bounds for HPI and RPI have not been improved subsequently.\\{We} revisit the algorithms and analysis of Mansour and Singh [1999]. We prove a novel result on the structure of the policy space for k-action MDPs, $k\geq 2$, which generalises a result known for k = 2. Also proposing a new counting argument, we obtain a strong bound of (O$(\sqrt{k \log k}))^n$ iterations for an algorithm akin to RPI, improving significantly upon Mansour and Singh’s original bound of roughly O($(k/2)^n$). Similar analysis of a randomised variant of HPI also yields a strong upper bound of (O($\sqrt{k \log k}))^n$ iterations, registering the first exponential improvement for HPI over the trivial bound of $k^n$. Our other contributions include a lower bound of  $\Omega(n)$ iterations for RPI and an upper bound of $1.6001^n$ iterations for a randomised variant of “Batch-Switching PI” [Kalyanakrishnan et al., 2016a] on 2-action MDPs—the tightest strong upper bound shown yet for the PI family.}
+}
+
+@inproceedings{bspi,
+author = {Kalyanakrishnan, Shivaram and Mall, Utkarsh and Goyal, Ritish},
+title = {Batch-switching policy iteration},
+year = {2016},
+isbn = {9781577357704},
+publisher = {AAAI Press},
+abstract = {Policy Iteration (PI) is a widely-used family of algorithms for computing an optimal policy for a given Markov Decision Problem (MDP). Starting with an arbitrary initial policy, PI repeatedly updates to a dominating policy until an optimal policy is found. The update step involves switching the actions corresponding to a set of "improvable" states, which are easily identified. Whereas progress is guaranteed even if just one improvable state is switched at every step, the canonical variant of PI, attributed to Howard [1960], switches every improvable state in order to obtain the next iterate. For MDPs with  n  states and 2 actions per state, the tightest known bound on the complexity of Howard's PI is  O(2 n/n)  iterations. To date, the tightest bound known across all variants of PI is  O (1.7172  n ) expected iterations for a randomised variant introduced by Mansour and Singh [1999].We introduce Batch-Switching Policy Iteration (BSPI), a family of deterministic PI algorithms that switches states in "batches", taking the batch size  b  as a parameter. By varying  b , BSPI interpolates between Howard's PI and another previously-studied variant called Simple PI [Melekopoglou and Condon, 1994]. Our main contribution is a bound of  O (1.6479  n ) on the number of iterations taken by an instance of BSPI. We believe this is the tightest bound shown yet for any variant of PI. We also present experimental results that suggest Howard's PI might itself enjoy an even tighter bound.},
+booktitle = {Proceedings of the Twenty-Fifth International Joint Conference on Artificial Intelligence},
+pages = {3147–3153},
+numpages = {7},
+location = {New York, New York, USA},
+series = {IJCAI'16}
+}
+
+@misc{hollanders2015complexity,
+      title={A complexity analysis of Policy Iteration through combinatorial matrices arising from Unique Sink Orientations}, 
+      author={Romain Hollanders and Balázs Gerencsér and Jean-Charles Delvenne and Raphaël M. Jungers},
+      year={2015},
+      eprint={1407.4293},
+      archivePrefix={arXiv},
+      primaryClass={cs.DM}
+}
+
+@misc{hollanders2014improved,
+      title={Improved bound on the worst case complexity of Policy Iteration}, 
+      author={Romain Hollanders and Balázs Gerencsér and Jean-Charles Delvenne and Raphaël M. Jungers},
+      year={2014},
+      eprint={1410.7583},
+      archivePrefix={arXiv},
+      primaryClass={cs.CC}
+}
+
+@inproceedings{hansen2010,
+author = {Hansen, Thomas and Zwick, Uri},
+year = {2010},
+month = {12},
+pages = {415-426},
+title = {Lower Bounds for Howard’s Algorithm for Finding Minimum Mean-Cost Cycles},
+isbn = {978-3-642-17516-9},
+doi = {10.1007/978-3-642-17517-6_37}
+}
+
+@inproceedings{gupta2017,
+  author    = {Anchit Gupta and Shivaram Kalyanakrishnan},
+  title     = {Improved Strong Worst-case Upper Bounds for MDP Planning},
+  booktitle = {Proceedings of the Twenty-Sixth International Joint Conference on
+               Artificial Intelligence, {IJCAI-17}},
+  pages     = {1788--1794},
+  year      = {2017},
+  doi       = {10.24963/ijcai.2017/248},
+  url       = {https://doi.org/10.24963/ijcai.2017/248},
+}
+
+@InProceedings{Taraviya+Kalyanakrishnan:2019,
+  author =       "Taraviya, Meet and Kalyanakrishnan, Shivaram",
+  title =        "A Tighter Analysis of Randomised Policy Iteration",
+  booktitle =    "Proceedings of the Thirty-fifth Conference on Uncertainty in Artificial Intelligence (UAI 2019)",
+  note =         "ID 174",
+  year =         "2019",
+  publisher =    "AUAI Press",
+}                   
+
+@misc{post2013simplex,
+      title={The simplex method is strongly polynomial for deterministic Markov decision processes}, 
+      author={Ian Post and Yinyu Ye},
+      year={2013},
+      eprint={1208.5083},
+      archivePrefix={arXiv},
+      primaryClass={cs.DS}
+}
+
+@article{Cherrat_2023,
+   title={Quantum reinforcement learning via policy iteration},
+   volume={5},
+   ISSN={2524-4914},
+   url={http://dx.doi.org/10.1007/s42484-023-00116-1},
+   DOI={10.1007/s42484-023-00116-1},
+   number={2},
+   journal={Quantum Machine Intelligence},
+   publisher={Springer Science and Business Media LLC},
+   author={Cherrat, El Amine and Kerenidis, Iordanis and Prakash, Anupam},
+   year={2023},
+   month=jul }
+
