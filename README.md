@@ -93,3 +93,31 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 10. **Install `fzf`:** A must needed fuzzy finder for linux. Install from here: https://github.com/junegunn/fzf?tab=readme-ov-file#linux-packages.
 
 11. **Install `ripgrep`:** Needed for some features in `telescope.nvim`. Install from here: https://github.com/BurntSushi/ripgrep.
+
+# LaTeX installation and setup
+
+I largely followed [Evan Chen's local text setup]()
+
+1. We'll use `evince` as our pdf viewer: https://wiki.gnome.org/Apps/Evince. It is super smooth. Check `man evince` to see how to use it.
+
+2. **Install `TeX Live`:** I largely followed this tutorial for Jammy Jellyfish: https://linuxconfig.org/how-to-install-latex-on-ubuntu-22-04-jammy-jellyfish-linux. I installed the `texlive-latex-extra` package from `apt`. Next, check the `tlgmr` version:
+
+    ```
+    tlmgr --version
+    ```
+    I had the `2021` version. Installing/managing packages using `tlmgr` requires the local repository and the CTAN mirror to have the same versions (see the **Past releases** section here: https://tug.org/texlive/acquire.html). So, we set the `2021` remote version as follows:
+
+    ```
+    tlmgr option repository https://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2021/tlnet-final
+    ```
+    
+    To see the default directories and other environement variables related to `tlmgr`, you can do `tlmgr conf` (all of this info is available in `man tlmgr`). For instance, packages are installed in the directory specified by `TEXMFHOME`.
+
+3. **Install and configure latexmk:** I followed instructions from this page: https://mg.readthedocs.io/latexmk.html#. 
+article
+4. **Install some basic latex packages:** 
+
+    ```
+    tlmgr install latex latex-bin latexconfig latex-fonts
+    tlmgr install amsmath babel carlisle ec geometry graphics hyperref lm  marvosym oberdiek parskip graphics-def url
+    ```
