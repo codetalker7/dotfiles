@@ -475,3 +475,11 @@ let g:mkdp_preview_options = {
 "vim-markdown
 let g:vim_markdown_math = 1
 let g:vim_markdown_folding_disabled = 1
+
+"loading telescope-fzf-native
+
+lua << EOF
+
+require('telescope').load_extension('fzf')
+
+EOF
