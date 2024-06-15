@@ -4,6 +4,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 EOF
 
+syntax enable
+
 "loa ./lua/plugins.lua
 lua require('plugins')
 
@@ -118,6 +120,9 @@ lua <<EOF
     capabilities = capabilities
   }
   require('lspconfig')['golangci_lint_ls'].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')['texlab'].setup {
     capabilities = capabilities
   }
 
@@ -483,3 +488,6 @@ lua << EOF
 require('telescope').load_extension('fzf')
 
 EOF
+
+"setting up vimtex
+let g:vimtex_view_method = 'zathura'
