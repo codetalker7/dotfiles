@@ -120,4 +120,10 @@ return require('packer').startup(function(use)
   use {  "lervag/vimtex", tag = "v2.15" } 
 
   use { "junegunn/vim-easy-align" }
+
+  use {'kenn7/vim-arsync',
+    requires = {
+        {'prabirshrestha/async.vim'}
+    }
+  }
 end)
