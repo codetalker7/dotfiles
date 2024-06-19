@@ -194,3 +194,15 @@ export GO111MODULE=on
 
 # racket path
 export PATH=$PATH:$HOME/racket/bin
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+path=('/home/codetalker7/.juliaup/bin' $path)
+export PATH
+
+# <<< juliaup initialize <<<
+#
+# on opening zathura, detach from terminal
+alias zathura='zathura -l error --fork $(fzf -m)'
