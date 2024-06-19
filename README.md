@@ -96,6 +96,8 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 
 11. **Install `ripgrep`:** Needed for some features in `telescope.nvim`. Install from here: https://github.com/BurntSushi/ripgrep.
 
+12. **Insall Tridactyl for firefox:** Vim-like keybinds for Firefox, see https://github.com/tridactyl/tridactyl.
+
 # LaTeX installation and setup
 
 I largely followed [Evan Chen's local text setup]()
