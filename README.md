@@ -98,6 +98,8 @@ See this post for more details: https://askubuntu.com/questions/774394/wheres-th
 
 12. **Insall Tridactyl for firefox:** Vim-like keybinds for Firefox, see https://github.com/tridactyl/tridactyl.
 
+13. **Install Vimium for chromium-browsers:** https://vimium.github.io/.
+
 # LaTeX installation and setup
 
 I largely followed [Evan Chen's local text setup]()
