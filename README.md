@@ -133,3 +133,7 @@ article
     ```
 
 5. **Install `vimtex` and related LSP for `nvim`:** See https://github.com/lervag/vimtex?tab=readme-ov-file for the `nvim` plugin; there's also an LSP server for latex, called `texlab`: https://github.com/latex-lsp/texlab. Also, make sure to install the `treesitter` parser for `latex`. Try to do `TSInstall latex`. We probably need `tree-sitter CLI` for this: https://github.com/tree-sitter/tree-sitter/blob/master/cli/README.md.
+
+# A TUI file manager
+
+I use [`yazi`](https://yazi-rs.github.io/docs/installation/), a fast TUI file-manager. Check out their docs for installation steps! 
