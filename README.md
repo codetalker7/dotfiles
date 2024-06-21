@@ -145,3 +145,11 @@ I use [`yazi`](https://yazi-rs.github.io/docs/installation/), a fast TUI file-ma
 # Pandoc setup
 
 1. Install from here: https://pandoc.org/installing.html.
+
+# Image viewer
+
+For this, [`feh`](https://feh.finalrewind.org/) seems to be a really efficient option. GNOME's [`eog`](https://help.gnome.org/users/eog/stable/) is also nice.
+
+- # Screen recorder
+
+[`byzanz-record`](https://linux.die.net/man/1/byzanz-record) is a really good option for this.
