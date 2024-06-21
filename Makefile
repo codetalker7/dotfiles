@@ -9,3 +9,4 @@ copy:
 	cp ~/.config/alacritty/alacritty.yml ./.config/alacritty/
 	cp ~/.config/zathura/zathurarc .config/zathura/zathurarc
 	cp -r ~/.config/xfce4 .config/
+	cp -r ~/.config/papis .config/
