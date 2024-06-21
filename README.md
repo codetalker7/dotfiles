@@ -150,6 +150,6 @@ I use [`yazi`](https://yazi-rs.github.io/docs/installation/), a fast TUI file-ma
 
 For this, [`feh`](https://feh.finalrewind.org/) seems to be a really efficient option. GNOME's [`eog`](https://help.gnome.org/users/eog/stable/) is also nice.
 
-- # Screen recorder
+# Screen recorder
 
-[`byzanz-record`](https://linux.die.net/man/1/byzanz-record) is a really good option for this.
+[`byzanz-record`](https://linux.die.net/man/1/byzanz-record) is a really good option for this. To get the screen coordinates, we can use `xwininfo`. See this thread: https://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast.
