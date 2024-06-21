@@ -202,7 +202,10 @@ export PATH=$PATH:$HOME/racket/bin
 path=('/home/codetalker7/.juliaup/bin' $path)
 export PATH
 
-# <<< juliaup initialize <<<
-#
 # on opening zathura, detach from terminal
-alias zathura='zathura -l error --fork $(fzf -m)'
+alias zathura='zathura -l error --fork'
+alias fzathura='zathura -l error --fork $(fzf -m)'
+# <<< juliaup initialize <<<
+
+# lilypond
+export PATH=$PATH:/home/codetalker7/bin
