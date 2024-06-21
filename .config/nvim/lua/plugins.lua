@@ -106,7 +106,7 @@ return require('packer').startup(function(use)
   use 'godlygeek/tabular'
   use 'preservim/vim-markdown'
   use 'vim-pandoc/vim-pandoc'
-  use 'vim-pandoc/vim-pandoc-syntax'
+  -- use 'vim-pandoc/vim-pandoc-syntax'
   
   use "tpope/vim-fugitive"
 
