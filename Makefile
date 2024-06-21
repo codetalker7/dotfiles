@@ -8,4 +8,4 @@ copy:
 	cp -r ~/.config/nvim/ ./.config/
 	cp ~/.config/alacritty/alacritty.yml ./.config/alacritty/
 	cp ~/.config/zathura/zathurarc .config/zathura/zathurarc
-	cp -r ~/.config/xfce4 .config/xfce4
+	cp -r ~/.config/xfce4 .config/
