@@ -137,3 +137,7 @@ article
 # File managers 
 
 I use [`yazi`](https://yazi-rs.github.io/docs/installation/), a fast TUI file-manager. Check out their docs for installation steps! A nice alternative is [`fman`](https://fman.io/), which has Vim-like key bindings!
+
+# Pandoc setup
+
+1. Install from here: https://pandoc.org/installing.html.
