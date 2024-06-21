@@ -105,7 +105,7 @@ return require('packer').startup(function(use)
 
   use 'godlygeek/tabular'
   use 'preservim/vim-markdown'
-  use 'vim-pandoc/vim-pandoc'
+  -- use 'vim-pandoc/vim-pandoc'
   -- use 'vim-pandoc/vim-pandoc-syntax'
   
   use "tpope/vim-fugitive"
@@ -126,4 +126,13 @@ return require('packer').startup(function(use)
         {'prabirshrestha/async.vim'}
     }
   }
+
+  use({
+    "tadmccorkle/markdown.nvim",
+    config = function()
+      require("markdown").setup({
+        -- configuration here or empty for defaults
+      })
+    end,
+  })
 end)
