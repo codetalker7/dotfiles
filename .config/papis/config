@@ -10,4 +10,5 @@ search-engine = https://www.google.com
 
 [papers]
 dir = ~/research-paper-notes/papers
+notes-template = ~/research-paper-notes/notes-template.md
 opentool = zathura
