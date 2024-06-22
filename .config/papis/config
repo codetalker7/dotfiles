@@ -4,7 +4,7 @@ browser = brave-browser
 default-library = papers
 editor = nvim
 formatter = python
-notes-name = notes_{doc[ref]}.tex
+notes-name = notes_{doc[ref]}.md
 picktool = fzf
 search-engine = https://www.google.com
 
