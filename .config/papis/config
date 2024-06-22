@@ -9,6 +9,7 @@ default-library = papers
 editor = nvim
 notes-name = notes.md
 picktool = fzf
+search-engine = https://www.google.com
 
 [tui]
 editmode = nvim
