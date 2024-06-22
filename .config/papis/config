@@ -1,15 +1,13 @@
-[papers]
-dir = ~/research-paper-notes/papers
-opentool = zathura
-
 [settings]
 add-confirm = true
 browser = brave-browser
 default-library = papers
 editor = nvim
-notes-name = notes.md
+formatter = python
+notes-name = notes_{doc[ref]}.tex
 picktool = fzf
 search-engine = https://www.google.com
 
-[tui]
-editmode = nvim
+[papers]
+dir = ~/research-paper-notes/papers
+opentool = zathura
