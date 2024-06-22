@@ -154,6 +154,10 @@ For this, [`feh`](https://feh.finalrewind.org/) seems to be a really efficient o
 
 [`byzanz-record`](https://linux.die.net/man/1/byzanz-record) is a really good option for this. To get the screen coordinates, we can use `xwininfo`. See this thread: https://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast.
 
-# [`tldr pages`](https://tldr.sh/).
+# [`tldr pages`](https://tldr.sh/): friendly `man` pages.
 
 Community driven man pages. Must have! Combine this with `man`, and you'll never have to read online documentation!
+
+# [`rclone`](https://rclone.org/)
+
+`rsync`, but for cloud storage. A must have!
