@@ -161,3 +161,7 @@ Community driven man pages. Must have! Combine this with `man`, and you'll never
 # [`rclone`](https://rclone.org/)
 
 `rsync`, but for cloud storage. A must have!
+
+# Managing secrets in `git` repos
+
+Use [`git-secret`](https://sobolevn.me/git-secret/). A really nice solucion to this!
