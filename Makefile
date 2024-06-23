@@ -10,3 +10,4 @@ copy:
 	cp ~/.config/zathura/zathurarc .config/zathura/zathurarc
 	cp -r ~/.config/xfce4 .config/
 	cp -r ~/.config/papis .config/
+	cp -r ~/.config/rclone .config/
