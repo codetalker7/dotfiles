@@ -156,7 +156,7 @@ For this, [`feh`](https://feh.finalrewind.org/) seems to be a really efficient o
 
 # [`tldr pages`](https://tldr.sh/): friendly `man` pages.
 
-Community driven man pages. Must have! Combine this with `man`, and you'll never have to read online documentation!
+Community driven man pages. Must have! Combine this with `man`, and you'll never have to read online documentation! Also consider installing [`tldr++`](https://isacikgoz.me/tldr/) with this.
 
 # [`rclone`](https://rclone.org/)
 
