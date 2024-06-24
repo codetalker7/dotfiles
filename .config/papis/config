@@ -4,11 +4,11 @@ browser = brave-browser
 default-library = papers
 editor = nvim
 formatter = python
-notes-name = notes_{doc[ref]}.md
 picktool = fzf
 search-engine = https://www.google.com
 
 [papers]
 dir = ~/research-paper-notes/papers
-notes-template = ~/research-paper-notes/notes-template.md
+notes-name = notes_{doc[ref]}.tex
+notes-template = ~/research-paper-notes/notes-template.tex
 opentool = zathura
