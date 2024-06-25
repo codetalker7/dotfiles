@@ -165,3 +165,7 @@ Community driven man pages. Must have! Combine this with `man`, and you'll never
 # Managing secrets in `git` repos
 
 Use [`git-secret`](https://sobolevn.me/git-secret/). A really nice solucion to this!
+
+# Viewing system resources
+
+[`htop`](https://htop.dev/) for CPU processes, and [`nvtop`](https://github.com/Syllo/nvtop) for GPU processes.
