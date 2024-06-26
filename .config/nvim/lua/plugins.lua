@@ -146,4 +146,19 @@ return require('packer').startup(function(use)
   }
 
   use { "David-Kunz/gen.nvim" }
+
+  use { "nvim-telescope/telescope-ui-select.nvim" }
+
+  use { "martineausimon/nvim-lilypond-suite", 
+    config = function ()
+      require('nvls').setup({
+      -- edit config here (see "Customize default settings" in wiki)
+        lilypond = {
+          options = {
+            pdf_viewer = 'zathura',
+          }
+        }
+      })
+    end,
+  }
 end)
