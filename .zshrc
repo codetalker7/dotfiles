@@ -102,6 +102,7 @@ plugins=(
     zsh-vi-mode
     #spaceship-vi-mode
 )
+export ZVM_VI_EDITOR=nvim
 
 source $ZSH/oh-my-zsh.sh
 
@@ -209,3 +210,6 @@ alias fzathura='zathura -l error --fork $(fzf -m)'
 
 # lilypond
 export PATH=$PATH:/home/codetalker7/bin
+
+# ccache
+export PATH=$PATH:/home/codetalker7/bin/ccache-4.10-linux-x86_64/
