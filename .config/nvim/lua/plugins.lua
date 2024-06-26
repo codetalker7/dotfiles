@@ -144,4 +144,6 @@ return require('packer').startup(function(use)
       require"telescope".load_extension("bibtex")
     end,
   }
+
+  use { "David-Kunz/gen.nvim" }
 end)
