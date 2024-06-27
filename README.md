@@ -154,9 +154,10 @@ For this, [`feh`](https://feh.finalrewind.org/) seems to be a really efficient o
 
 [`byzanz-record`](https://linux.die.net/man/1/byzanz-record) is a really good option for this. To get the screen coordinates, we can use `xwininfo`. See this thread: https://askubuntu.com/questions/107726/how-to-create-animated-gif-images-of-a-screencast.
 
-# [`tldr pages`](https://tldr.sh/): friendly `man` pages.
+# [`tldr pages`](https://tldr.sh/): friendly `man` pages. [`navi`](https://github.com/denisidoro/navi?tab=readme-ov-file) for cheatsheets
 
 Community driven man pages. Must have! Combine this with `man`, and you'll never have to read online documentation! Also consider installing [`tldr++`](https://isacikgoz.me/tldr/) with this.
+To maintain cheatsheets for commands, [`navi`](https://github.com/denisidoro/navi?tab=readme-ov-file) seems to be a really powerful tool. 
 
 # [`rclone`](https://rclone.org/)
 
@@ -168,4 +169,4 @@ Use [`git-secret`](https://sobolevn.me/git-secret/). A really nice solucion to t
 
 # Viewing system resources
 
-[`htop`](https://htop.dev/) for CPU processes, and [`nvtop`](https://github.com/Syllo/nvtop) for GPU processes.
+[`htop`](https://htop.dev/) for CPU processes, and [`nvtop`](https://github.com/Syllo/nvtop) for GPU processes. Also, [`duf`](https://github.com/muesli/duf), a better `df` alternative. 
