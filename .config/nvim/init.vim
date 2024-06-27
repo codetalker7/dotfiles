@@ -497,7 +497,7 @@ let g:vimtex_view_general_viewer = 'zathura'
 lua << EOF
 
 require('gen').setup({
-    model = "llama3", -- The default model to use.
+    model = "codellama:13b-instruct", -- The default model to use.
     host = "localhost", -- The host running the Ollama service.
     port = "11434", -- The port on which the Ollama service is listening.
     quit_map = "q", -- set keymap for close the response window
