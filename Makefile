@@ -11,3 +11,4 @@ copy:
 	cp -r ~/.config/xfce4 .config/
 	cp -r ~/.config/papis .config/
 	cp -r ~/.config/rclone .config/
+	cp -r ~/.config/navi .config/
