@@ -1,0 +1,31 @@
+% papis
+
+; add commands
+# add local paper
+papis -l <library> --add <file-or-url> \
+    --set author <author> \
+    --set title <title> \
+    --set year <year> \
+    --set tags <tags> \
+
+# from importer
+papis -l <library> --add \
+    --from <importer> <url> \
+    --set tags "<space_separated_tags>" \
+    --set unread "true"
+
+# clear cache
+papis --cc
+
+; addto commands
+# add file to a document from url
+papis -l <library> addto --urls <url>
+
+; bibtex commands
+# export to bibtex 
+papis -l <library> export --all --out bibmobility.bib
+
+# duplicates check
+papis -l <library> bibtex read bibmobility.bib unique -k title 
+
+$ library: python3 ~/.config/navi/cheats/papis_get_libs.py 
