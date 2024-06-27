@@ -170,3 +170,7 @@ Use [`git-secret`](https://sobolevn.me/git-secret/). A really nice solucion to t
 # Viewing system resources
 
 [`htop`](https://htop.dev/) for CPU processes, and [`nvtop`](https://github.com/Syllo/nvtop) for GPU processes. Also, [`duf`](https://github.com/muesli/duf), a better `df` alternative. 
+
+# Rendering markdown in the terminal
+
+See [`glow`](https://github.com/charmbracelet/glow).
