@@ -2,8 +2,14 @@
 
 set -eu
 
+# XGD Base Directory Specification
+XDG_DATA_HOME="$HOME/.local/share"
+XDG_CONFIG_HOME="$HOME/.config/"
+XDG_STATE_HOME="$HOME/.local/state"
+
 CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 sh $CURRENTDIR/setup_git
 sh $CURRENTDIR/utils
 sh $CURRENTDIR/setup_ruby
+sh $CURRENTDIR/setup_fish
