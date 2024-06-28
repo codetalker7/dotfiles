@@ -6,3 +6,7 @@
 # set -gx XDG_CACHE_HOME "$HOME/.cache"
 
 set -g fish_key_bindings fish_vi_key_bindings 
+
+# editors
+set -gx VISUAL "nvim"
+set -gx EDITOR "nvim"
