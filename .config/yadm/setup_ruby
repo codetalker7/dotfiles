@@ -3,6 +3,7 @@
 # using ruby-install; https://github.com/postmodern/ruby-install#readme
 RUBY_INSTALL_VERSION="0.9.3"
 RUBY_VERSION="3.3.3"
+RUBY_PATH=$HOME/.rubies/ruby-$RUBY_VERSION/bin/
 
 wget https://github.com/postmodern/ruby-install/releases/download/v$RUBY_INSTALL_VERSION/ruby-install-$RUBY_INSTALL_VERSION.tar.gz
 tar -xzvf ruby-install-$RUBY_INSTALL_VERSION.tar.gz
@@ -13,4 +14,7 @@ sudo make install
 # installing latest stable version of ruby
 cd
 ruby-install ruby $RUBY_VERSION
-$HOME/.rubies/ruby-$RUBY_VERSION/bin/ruby --version
+$RUBY_PATH/ruby --version
+
+# installing needed ruby gems
+$RUBY_PATH/gem install colorls 
