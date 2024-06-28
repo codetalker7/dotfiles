@@ -1,3 +1,9 @@
 #!/usr/bin/env fish
 
+# latest nvm
 nvm install latest
+nvm --version
+
+# latest node
+nvm install latest
+npm --version
