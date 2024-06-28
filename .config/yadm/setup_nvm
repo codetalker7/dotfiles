@@ -4,7 +4,9 @@ set NVM_VERSION "0.39.7"
 set PROFILE "/dev/null"             # don't modify shell config
 set NVM_DIR "$HOME/.nvm"
 
-git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
-cd "$NVM_DIR"
-git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
-$NVM_DIR/nvm.sh
+if not test -d $NVM_DIR 
+    git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+    cd "$NVM_DIR"
+    git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+    $NVM_DIR/nvm.sh
+end
