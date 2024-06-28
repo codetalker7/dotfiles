@@ -1,0 +1,19 @@
+[user]
+	name = Siddhant Chaudhary
+	email = urssidd@gmail.com
+	username = codetalker7
+[core]
+	editor = nvim
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[init]
+	defaultBranch = main
+[github]
+	user = codetalker7
+[web]
+	browser = brave-browse
+[commit]
+	gpgsign = false
