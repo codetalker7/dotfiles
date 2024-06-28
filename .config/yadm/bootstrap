@@ -2,5 +2,7 @@
 
 set -eu
 
+CURRENTDIR="${BASH_SOURCE[0]}"
+
 # setup git
-./setup_git
+$CURRENTDIR/setup_git
