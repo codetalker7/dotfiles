@@ -12,6 +12,7 @@ CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 $CURRENTDIR/setup_git
 $CURRENTDIR/utils
 $CURRENTDIR/setup_fish
+$CURRENTDIR/setup_fish_plugins
 
 # all installs below assume that fish have been set up
 $CURRENTDIR/setup_ruby
