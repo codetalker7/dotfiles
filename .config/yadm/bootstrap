@@ -9,7 +9,9 @@ XDG_STATE_HOME="$HOME/.local/state"
 
 CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-sh $CURRENTDIR/setup_git
-sh $CURRENTDIR/utils
-sh $CURRENTDIR/setup_ruby
-sh $CURRENTDIR/setup_fish
+$CURRENTDIR/setup_git
+$CURRENTDIR/utils
+$CURRENTDIR/setup_fish
+
+# all installs below assume that fish have been set up
+$CURRENTDIR/setup_ruby

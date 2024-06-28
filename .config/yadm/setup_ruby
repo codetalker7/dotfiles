@@ -1,23 +1,25 @@
 # !/usr/bin/fish
 
 # using ruby-install; https://github.com/postmodern/ruby-install#readme
-RUBY_INSTALL_VERSION="0.9.3"
-RUBY_VERSION="3.3.3"
-RUBY_PATH=$HOME/.rubies/ruby-$RUBY_VERSION/bin/
+set RUBY_INSTALL_VERSION "0.9.3"
+set RUBY_VERSION "3.3.3"
+set RUBY_PATH "$HOME/.rubies/ruby-$RUBY_VERSION/bin/"
 
-wget https://github.com/postmodern/ruby-install/releases/download/v$RUBY_INSTALL_VERSION/ruby-install-$RUBY_INSTALL_VERSION.tar.gz
-tar -xzvf ruby-install-$RUBY_INSTALL_VERSION.tar.gz
-rm ruby-install-$RUBY_INSTALL_VERSION.tar.gz
-cd ruby-install-$RUBY_INSTALL_VERSION/
-sudo make install
+if not ruby-install --version 
+    wget https://github.com/postmodern/ruby-install/releases/download/v$RUBY_INSTALL_VERSION/ruby-install-$RUBY_INSTALL_VERSION.tar.gz
+    tar -xzvf ruby-install-$RUBY_INSTALL_VERSION.tar.gz
+    rm ruby-install-$RUBY_INSTALL_VERSION.tar.gz
+    cd ruby-install-$RUBY_INSTALL_VERSION/
+    sudo make install
+    cd                                                                      # go back to home
+end
 
 # installing latest stable version of ruby
-cd
-ruby-install ruby $RUBY_VERSION
-$RUBY_PATH/ruby --version
+if not test -d $RUBY_PATH
+    ruby-install ruby $RUBY_VERSION
+    $RUBY_PATH/ruby --version
+    fish_add_path $RUBY_PATH                                                # add to fish path 
+end
 
 # installing needed ruby gems
-$RUBY_PATH/gem install colorls 
-
-# add to fish path
-fish_add_path $RUBY_PATH
+gem install colorls 
