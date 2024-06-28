@@ -18,3 +18,6 @@ $RUBY_PATH/ruby --version
 
 # installing needed ruby gems
 $RUBY_PATH/gem install colorls 
+
+# add to fish path
+fish_add_path $RUBY_PATH
