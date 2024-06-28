@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+set NVM_VERSION "0.39.7"
+set PROFILE "/dev/null"             # don't modify shell config
+
+wget -qO- "https://raw.githubusercontent.com/nvm-sh/nvm/v$NVM_VERSION/install.sh" | bash
+

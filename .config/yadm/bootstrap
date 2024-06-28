@@ -15,3 +15,4 @@ $CURRENTDIR/setup_fish
 
 # all installs below assume that fish have been set up
 $CURRENTDIR/setup_ruby
+$CURRENTDIR/setup_nvm
