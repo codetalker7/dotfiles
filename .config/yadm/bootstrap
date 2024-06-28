@@ -18,3 +18,4 @@ $CURRENTDIR/setup_tmux
 # all installs below assume that fish have been set up
 $CURRENTDIR/setup_ruby
 $CURRENTDIR/setup_nvm
+$CURRENTDIR/setup_rust
