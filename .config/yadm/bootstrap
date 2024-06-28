@@ -5,4 +5,4 @@ set -eu
 CURRENTDIR="${BASH_SOURCE[0]}"
 
 # setup git
-$CURRENTDIR/setup_git
+sh $CURRENTDIR/setup_git
