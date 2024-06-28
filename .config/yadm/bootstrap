@@ -6,3 +6,4 @@ CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 sh $CURRENTDIR/setup_git
 sh $CURRENTDIR/utils
+sh $CURRENTDIR/setup_ruby
