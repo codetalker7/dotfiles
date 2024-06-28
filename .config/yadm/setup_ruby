@@ -1,4 +1,4 @@
-# !/usr/bin/fish
+#!/usr/bin/env fish
 
 # using ruby-install; https://github.com/postmodern/ruby-install#readme
 set RUBY_INSTALL_VERSION "0.9.3"
@@ -18,8 +18,8 @@ end
 if not test -d $RUBY_PATH
     ruby-install ruby $RUBY_VERSION
     $RUBY_PATH/ruby --version
-    fish_add_path $RUBY_PATH                                                # add to fish path 
 end
+fish_add_path $RUBY_PATH                                                    # add to fish path 
 
 # installing needed ruby gems
 gem install colorls 
