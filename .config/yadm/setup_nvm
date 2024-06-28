@@ -2,6 +2,9 @@
 
 set NVM_VERSION "0.39.7"
 set PROFILE "/dev/null"             # don't modify shell config
+set NVM_DIR "$HOME/.nvm"
 
-wget -qO- "https://raw.githubusercontent.com/nvm-sh/nvm/v$NVM_VERSION/install.sh" | bash
-
+git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+cd "$NVM_DIR"
+git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+$NVM_DIR/nvm.sh
