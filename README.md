@@ -10,8 +10,15 @@ This config assumes the defaults of the [`XDG Base Directory specification`](htt
 
 ## Use [`yadm`](https://yadm.io/docs/overview#) clone
 
-I use [`yadm`](https://yadm.io/docs/install#) to maintain my dotfiles. You'll need to install it on your system to clone use this config. For Ubuntu/Debian, standard package repositories can be used.
+I use [`yadm`](https://yadm.io/docs/install#) to maintain my dotfiles. You'll need to install it on your system to clone use this config. For Ubuntu/Debian, standard package repositories can be used:
 
-```shell
     sudo apt-get install yadm
-```
+
+After a successfull install, you can clone this repository:
+
+    yadm clone https://github.com/codetalker7/dotfiles.git
+    yadm status
+
+To run the initialization setup, you may use the `bootstrap` command:
+
+    yadm bootstrap
