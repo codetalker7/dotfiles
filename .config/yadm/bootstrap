@@ -2,7 +2,7 @@
 
 set -eu
 
-CURRENTDIR="${BASH_SOURCE[0]}"
+CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
 # setup git
 sh $CURRENTDIR/setup_git
