@@ -12,7 +12,7 @@ sudo apt install curl
 curl --version
 
 # xclip
-sudo apt-get intsall xclip
+sudo apt-get install xclip
 xclip -version
 
 # fuzzy finder
