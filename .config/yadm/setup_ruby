@@ -1,4 +1,4 @@
-# !/bin/bash
+# !/usr/bin/fish
 
 # using ruby-install; https://github.com/postmodern/ruby-install#readme
 RUBY_INSTALL_VERSION="0.9.3"
