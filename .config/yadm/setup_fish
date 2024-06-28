@@ -10,4 +10,6 @@ fish --version
 chsh -s $(which fish)                   
 
 # install fisher; https://github.com/jorgebucaran/fisher 
-source $(curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish) && fisher install jorgebucaran/fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish > fishfile.fish
+source fishfile.fish && fisher install jorgebucaran/fisher
+rm fishfile.fish
