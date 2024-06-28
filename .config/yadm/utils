@@ -1,0 +1,28 @@
+# !/bin/bash
+
+# updates
+sudo apt update
+sudo apt upgrade
+
+sudo apt-get update
+sudo apt-get upgrade
+
+# curl
+sudo apt install curl
+curl --version
+
+# xclip
+sudo apt-get intsall xclip
+xclip -version
+
+# fuzzy finder
+sudo apt install fzf
+fzf --version
+
+# batcat
+sudo apt install bat
+batcat --version
+
+# ripgrep
+sudo apt-get install ripgrep
+rg --version

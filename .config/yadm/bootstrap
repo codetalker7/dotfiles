@@ -4,5 +4,5 @@ set -eu
 
 CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-# setup git
 sh $CURRENTDIR/setup_git
+sh $CURRENTDIR/utils
