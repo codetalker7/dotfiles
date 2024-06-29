@@ -4,7 +4,7 @@
 julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
 
 # pyright
-python -m pip install pyright
+python3 -m pip install pyright
 
 # marksman
 sudo snap install marksman
