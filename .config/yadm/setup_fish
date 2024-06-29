@@ -1,10 +1,12 @@
 #!/bin/bash
 
 # install fish
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update
-sudo apt install fish
-fish --version
+if not fish --version
+    sudo apt-add-repository ppa:fish-shell/release-3
+    sudo apt update
+    sudo apt install fish
+    fish --version
+end
 
 # set default shell 
 chsh -s $(which fish)                   
