@@ -1,8 +1,11 @@
 #!/usr/bin/env fish
 
-curl -fsSL https://install.julialang.org | sh
-fish_add_path $HOME/.juliaup/bin                                                     
-julia --version
+if not juliaup --version
+    curl -fsSL https://install.julialang.org | sh
+    fish_add_path $HOME/.juliaup/bin                                                     
+    juliaup --version
+    julia --version
+end
 
 # install some basic packages
 julia -e 'using Pkg; Pkg.add(["Revise", "Debugger"]);'
