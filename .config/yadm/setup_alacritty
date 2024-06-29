@@ -19,5 +19,7 @@ rm -rf alacritty
 
 # Ubuntu Mono Nerd Font; https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/UbuntuMono/Regular
 mkdir -p $HOME/.local/share/fonts
-wget -O $HOME/.local/share/fonts/font.ttf https://github.com/ryanoasis/nerd-fonts/blob/11ab9428938a6ecbd8d308d6d552d767db6046cc/patched-fonts/UbuntuMono/Regular/UbuntuMonoNerdFont-Regular.ttf
-fc-cache -f -vfc-list | grep "Ubuntu"
+wget -O $HOME/.local/share/fonts/UbuntuMonoNerdFont-Regular.ttf https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/UbuntuMono/Regular/UbuntuMonoNerdFont-Regular.ttf 
+fc-cache -f -v 
+fc-list | grep "Ubuntu"
+
