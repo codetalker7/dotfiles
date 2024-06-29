@@ -8,3 +8,6 @@ nvm --version
 nvm install latest
 nvm use latest
 npm --version
+
+# apps
+npm install -g tldr

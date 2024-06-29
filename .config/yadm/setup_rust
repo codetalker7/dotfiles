@@ -7,6 +7,5 @@ if not type -q rustup
     cargo --version
 end
 
-
 # rust crates
 cargo install eza 
