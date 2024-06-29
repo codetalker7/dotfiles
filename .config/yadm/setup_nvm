@@ -2,10 +2,7 @@
 
 # latest nvm
 nvm install latest
-nvm --version
-
-# latest node
-nvm install latest
+node --version
 nvm use latest
 npm --version
 
