@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
 # install fisher; https://github.com/jorgebucaran/fisher 
-if not fisher --version
+if not type -q fisher
     curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 end
 fisher update

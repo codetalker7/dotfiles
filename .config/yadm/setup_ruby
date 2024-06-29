@@ -5,7 +5,7 @@ set RUBY_INSTALL_VERSION "0.9.3"
 set RUBY_VERSION "3.3.3"
 set RUBY_PATH "$HOME/.rubies/ruby-$RUBY_VERSION/bin/"
 
-if not ruby-install --version 
+if not type -q ruby-install
     wget https://github.com/postmodern/ruby-install/releases/download/v$RUBY_INSTALL_VERSION/ruby-install-$RUBY_INSTALL_VERSION.tar.gz
     tar -xzvf ruby-install-$RUBY_INSTALL_VERSION.tar.gz
     rm ruby-install-$RUBY_INSTALL_VERSION.tar.gz

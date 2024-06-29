@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if not rustup --version
+if not type -q rustup
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     rustup --version
     cargo --version

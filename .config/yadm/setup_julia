@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-if not juliaup --version
+if not type -q juliaup
     curl -fsSL https://install.julialang.org | sh
     fish_add_path $HOME/.juliaup/bin                                                     
     juliaup --version
