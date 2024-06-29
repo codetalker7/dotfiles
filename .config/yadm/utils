@@ -30,3 +30,6 @@ rg --version
 # zathura
 sudo apt install zathura
 zahura --version
+
+# htop
+sudo apt install htop
