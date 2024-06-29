@@ -1,5 +1,5 @@
 return {
-    use "godlygeek/tabular",
+    "godlygeek/tabular",
     version = "*",
     lazy = false,
 }
