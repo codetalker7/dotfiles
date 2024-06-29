@@ -17,6 +17,3 @@ vim.o.nu = true
 
 -- enable syntax, if it isn't
 vim.cmd('syntax enable')
-
--- load plugins
-require("plugins")
