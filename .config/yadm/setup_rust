@@ -1,5 +1,10 @@
 #!/usr/bin/env fish
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup --version
-cargo --version
+if not rustup --version
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    rustup --version
+    cargo --version
+end
+
+# rust crates
+cargo install eza 
