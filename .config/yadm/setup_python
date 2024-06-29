@@ -14,3 +14,6 @@ if not type -q pyenv
 
     pyenv install 3:latest
 end
+
+# python packages
+python3 -m pip install papis
