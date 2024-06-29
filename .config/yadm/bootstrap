@@ -21,3 +21,5 @@ $CURRENTDIR/setup_rust
 $CURRENTDIR/setup_alacritty
 $CURRENTDIR/setup_tmux
 $CURRENTDIR/setup_nvim
+$CURRENTDIR/setup_julia
+$CURRENTDIR/setup_lsp_servers
