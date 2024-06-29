@@ -2,7 +2,6 @@
 
 if not type -q pyenv
     curl https://pyenv.run | bash
-    pyenv --version
 
     set -Ux PYENV_ROOT $HOME/.pyenv
     fish_add_path $PYENV_ROOT/bin
