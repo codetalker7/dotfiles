@@ -9,17 +9,31 @@ XDG_STATE_HOME="$HOME/.local/state"
 
 CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
+# git and standard utils
 $CURRENTDIR/setup_git
 $CURRENTDIR/utils
+
+# tmux
+$CURRENTDIR/setup_tmux
+
+# fish and fish plugins
 $CURRENTDIR/setup_fish
 $CURRENTDIR/setup_fish_plugins
 
-# all installs below assume that fish have been set up
+#### all installs below assume that fish has been set up ####
+# julia and related
+$CURRENTDIR/setup_julia
+
+# ruby and ruby gems
 $CURRENTDIR/setup_ruby
+
+# nvm, npm, node
 $CURRENTDIR/setup_nvm
+
+# rust and crates
 $CURRENTDIR/setup_rust
 $CURRENTDIR/setup_alacritty
-$CURRENTDIR/setup_tmux
+
+# nvim and lsp servers
 $CURRENTDIR/setup_nvim
-$CURRENTDIR/setup_julia
 $CURRENTDIR/setup_lsp_servers
