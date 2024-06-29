@@ -1,5 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 curl -fsSL https://install.julialang.org | sh
+fish_add_path $HOME/.juliaup/bin                                                     
 julia --version
 
