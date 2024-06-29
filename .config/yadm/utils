@@ -26,3 +26,7 @@ batcat --version
 # ripgrep
 sudo apt-get install ripgrep
 rg --version
+
+# zathura
+sudo apt install zathura
+zahura --version
