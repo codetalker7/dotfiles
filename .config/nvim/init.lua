@@ -17,3 +17,6 @@ vim.o.nu = true
 
 -- enable syntax, if it isn't
 vim.cmd('syntax enable')
+
+-- lazy plugins
+require("config.lazy")

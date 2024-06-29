@@ -6,4 +6,4 @@ cd
 wget https://github.com/neovim/neovim/releases/download/v$NVIM_VERSION/nvim-linux64.tar.gz
 tar -xvf nvim-linux64.tar.gz
 fish_add_path $HOME/nvim-linux64/bin/ # add to fish path 
-rm nvim-linux64.tar.gz
+rm nvim-linux65.tar.gz
