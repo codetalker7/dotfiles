@@ -1,0 +1,21 @@
+#!/usr/bin/env fish
+
+# julials
+julia --project=~/.julia/environments/nvim-lspconfig -e 'using Pkg; Pkg.add("LanguageServer")'
+
+# pyright
+python -m pip install pyright
+
+# marksman
+sudo snap install marksman
+
+# clangd
+sudo apt-get install clangd-12
+
+# texlab
+set TEXLAB_VERSION "5.17.0"
+cd
+git clone https://github.com/latex-lsp/texlab
+cd texlab
+cargo build --release
+cargo install --git https://github.com/latex-lsp/texlab --locked --tag v$TEXLAB_VERSION 
