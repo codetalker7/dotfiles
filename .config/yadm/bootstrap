@@ -20,3 +20,4 @@ $CURRENTDIR/setup_nvm
 $CURRENTDIR/setup_rust
 $CURRENTDIR/setup_alacritty
 $CURRENTDIR/setup_tmux
+$CURRENTDIR/setup_nvim
