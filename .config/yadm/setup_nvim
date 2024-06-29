@@ -8,3 +8,6 @@ tar -xvf nvim-linux64.tar.gz
 fish_add_path $HOME/nvim-linux64/bin/ # add to fish path 
 rm nvim-linux64.tar.gz
 
+# install packer
+git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+ $XDG_DATA_HOME/nvim/site/pack/packer/start/packer.nvim
