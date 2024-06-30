@@ -10,3 +10,6 @@ set -g fish_key_bindings fish_vi_key_bindings
 # editors; invoke with Alt+E to edit command in fish
 set -gx VISUAL "nvim"
 set -gx EDITOR "nvim"
+
+# load pyenv
+pyenv init - | source
