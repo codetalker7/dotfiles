@@ -56,3 +56,6 @@ All config files can be found either in the project root or in `.config/`. Insta
     - [`navi`](https://github.com/denisidoro/navi/blob/master/docs/installation.md), a cheatsheet maintainer.
     - [`papis`](https://github.com/papis/papis), a library and bibliography manager.
 - **Signing commits**: I use my GPG key to sign `git` commits. More information is available in [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) and [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+- **LaTeX**: a [`texlive`](https://tug.org/texlive/acquire-netinstall.html) distribution. [More details are available in my old branch](https://github.com/codetalker7/dotfiles/tree/old-dotfiles?tab=readme-ov-file#latex-installation-and-setup).
+    - `zathura`.
+    - [`latexmk`](https://mg.readthedocs.io/latexmk.html#).
