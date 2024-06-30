@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+set PYTHON_VERSION "3.10.12"
+
 if not type -q pyenv
     curl https://pyenv.run | bash
 
@@ -11,8 +13,9 @@ if not type -q pyenv
         libbz2-dev libreadline-dev libsqlite3-dev curl git \
         libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
 
-    pyenv install 3:latest
+    pyenv install $PYTHON_VERSION
+    pyenv global $PYTHON_VERSION
 end
 
 # python packages
-python3 -m pip install papis
+python3 -m pip install papis tldr
