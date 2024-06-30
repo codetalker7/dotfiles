@@ -2,6 +2,7 @@
 	name = Siddhant Chaudhary
 	email = urssidd@gmail.com
 	username = codetalker7
+	signingkey = 8CE8854D1BDF9FD9
 [core]
 	editor = nvim
 [filter "lfs"]
@@ -16,4 +17,4 @@
 [web]
 	browser = brave-browse
 [commit]
-	gpgsign = false
+	gpgsign = true
