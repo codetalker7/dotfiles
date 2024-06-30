@@ -13,6 +13,7 @@ CURRENTDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 $CURRENTDIR/setup_git
 $CURRENTDIR/utils
 $CURRENTDIR/setup_rclone
+$CURRENTDIR/setup_xfce
 
 # tmux
 $CURRENTDIR/setup_tmux
