@@ -23,6 +23,8 @@ To run the initialization setup, you may use the `bootstrap` command:
 
     yadm bootstrap
 
+**Note**: All encrypted files in this repository have been encrypted with [`git-secret`](https://sobolevn.me/git-secret/) and not `yadm encrypt`. Essentially, just replace `git` with `yadm`.
+
 ## Keys and other secrets
 
 It's never a good idea to store keys and other private data on cloud (even a private repository on GitHub). For this config, I'm assuming that all private keys (for `ssh`, `gpg` or `pgp`) have been setup already.
@@ -53,3 +55,4 @@ All config files can be found either in the project root or in `.config/`. Insta
     - [`pandoc`](https://pandoc.org/installing.html#linux), converting between markup formats. 
     - [`navi`](https://github.com/denisidoro/navi/blob/master/docs/installation.md), a cheatsheet maintainer.
     - [`papis`](https://github.com/papis/papis), a library and bibliography manager.
+- **Signing commits**: I use my GPG key to sign `git` commits. More information is available in [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) and [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
