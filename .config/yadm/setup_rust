@@ -10,3 +10,4 @@ end
 # rust crates
 cargo install eza 
 cargo install --locked navi
+cargo install --locked starship

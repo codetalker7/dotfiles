@@ -13,3 +13,6 @@ set -gx EDITOR "nvim"
 
 # load pyenv
 pyenv init - | source
+
+# starship prompt
+starship init fish | source
