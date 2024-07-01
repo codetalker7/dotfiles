@@ -20,3 +20,6 @@ vim.cmd('syntax enable')
 
 -- lazy plugins
 require("config.lazy")
+
+-- gen prompts
+require("gen_prompts")
