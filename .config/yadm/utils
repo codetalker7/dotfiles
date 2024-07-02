@@ -42,3 +42,6 @@ sudo apt update && sudo apt install glow
 
 # pandoc
 sudo apt install pandoc
+
+# pass; local password management
+sudo apt-get install pass
