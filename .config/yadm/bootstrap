@@ -14,6 +14,7 @@ $CURRENTDIR/setup_git
 $CURRENTDIR/utils
 $CURRENTDIR/setup_rclone
 $CURRENTDIR/setup_xfce
+$CURRENTDIR/setup_i3
 
 # tmux
 $CURRENTDIR/setup_tmux
