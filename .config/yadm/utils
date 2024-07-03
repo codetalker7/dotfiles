@@ -45,3 +45,6 @@ sudo apt install pandoc
 
 # pass; local password management
 sudo apt-get install pass
+
+# cryfs; for filesystem encryption
+sudo apt install cryfs
