@@ -6,5 +6,4 @@ node --version
 nvm use latest
 npm --version
 
-# apps
-npm install -g tldr
+set -gx nvm_default_version latest 
