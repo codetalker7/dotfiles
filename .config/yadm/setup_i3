@@ -17,3 +17,5 @@ Section "InputClass"
     Option "Tapping" "on"
 EndSection
 " > /etc/X11/xorg.conf.d/90-touchpad.conf
+
+# i3-customization: https://itsfoss.com/i3-customization/ 
