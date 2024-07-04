@@ -38,6 +38,7 @@ All config files can be found either in the project root or in `.config/`. Insta
 - **DE**: [xfce](https://wiki.archlinux.org/title/Xfce)
     - **Config manager**: [`xfconf-query`](https://docs.xfce.org/xfce/xfconf/xfconf-query).
 - **Terminal Emulator**: [`alacritty`](https://github.com/alacritty/alacritty/blob/master/INSTALL.md).
+- **WM**: [`i3`](https://i3wm.org/).
 - **Shell**: [`fish`](https://fishshell.com/). 
 - **Terminal Multiplexer:** [`tmux`](https://github.com/tmux/tmux/wiki/).
 - **Editor**: [`nvim`](https://neovim.io/).
