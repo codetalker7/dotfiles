@@ -183,6 +183,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# my own colors
+client.focused  #ffffff #ffffff #000000 #ffffff #ffffff
+
 bar {
-    status_command i3status
+    colors {
+        active_workspace #000000 #ffffff #000000        # black, white, black
+        background #000000
+        binding_mode #000000 #39ff14 #00000R            # black, neon, black
+        focused_workspace #000000 #ffffff #000000       # black, white, black
+        statusline #ffffff
+    }
+    font pango:UbuntuMono Nerd Font 15
+    position top
+    tray_output none                                    # disable wifi, keyboard layout
 }
