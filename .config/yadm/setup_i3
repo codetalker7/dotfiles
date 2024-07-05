@@ -19,3 +19,23 @@ EndSection
 " > /etc/X11/xorg.conf.d/90-touchpad.conf
 
 # i3-customization: https://itsfoss.com/i3-customization/ 
+sudo apt install gnome-themes-standard gtk2-engines-murrine
+sudo apt install lxappearance
+
+## tela circle icon theme
+cd
+git clone https://github.com/vinceliuice/Tela-circle-icon-theme
+cd Tela-circle-icon-theme
+./install.sh -c black
+cd ..
+rm -rf Tela-circle-icon-theme
+
+## graphite gtk theme
+cd
+git clone https://github.com/vinceliuice/Graphite-gtk-theme.git
+cd Graphite-gtk-theme
+./install.sh --tweaks black
+cd ..
+rm -rf Graphite-gtk-theme
+
+## from here, use lxappearance to set the theme
