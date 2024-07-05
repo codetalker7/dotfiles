@@ -47,6 +47,10 @@ All config files can be found either in the project root or in `.config/`. Insta
 - **Image Viewer**: [`eog`](https://help.gnome.org/users/eog/stable/).
 - **Utils**: Here's a list of utilities that I use:
     - [git-secret](https://sobolevn.me/git-secret/), for managing secrets.
+        
+            $ git secret --version
+            0.5.0
+    
     - [`xclip`](https://linux.die.net/man/1/xclip), clipboards.
     - [`fzf`](https://github.com/junegunn/fzf), a fuzzy-finder.
     - [`bat`](https://github.com/sharkdp/bat), a better `cat`.
@@ -57,7 +61,32 @@ All config files can be found either in the project root or in `.config/`. Insta
     - [`navi`](https://github.com/denisidoro/navi/blob/master/docs/installation.md), a cheatsheet maintainer.
     - [`papis`](https://github.com/papis/papis), a library and bibliography manager.
     - [`encfs`](https://wiki.archlinux.org/title/EncFS) or [`cryfs`](https://www.cryfs.org/), encrypting filesystems.
+            
+            $ cryfs --version
+            CryFS Version 0.10.2
+
 - **Signing commits**: I use my GPG key to sign `git` commits. More information is available in [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key) and [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits).
+    
+        $ gpg --version
+        gpg (GnuPG) 2.2.27
+        libgcrypt 1.9.4
+        Copyright (C) 2021 Free Software Foundation, Inc.
+        License GNU GPL-3.0-or-later <https://gnu.org/licenses/gpl.html>
+        This is free software: you are free to change and redistribute it.
+        There is NO WARRANTY, to the extent permitted by law.
+
+        Home: /home/codetalker7/.gnupg
+        Supported algorithms:
+        Pubkey: RSA, ELG, DSA, ECDH, ECDSA, EDDSA
+        Cipher: IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,
+                CAMELLIA128, CAMELLIA192, CAMELLIA256
+        Hash: SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+        Compression: Uncompressed, ZIP, ZLIB, BZIP2
+        
 - **LaTeX**: a [`texlive`](https://tug.org/texlive/acquire-netinstall.html) distribution. [More details are available in my old branch](https://github.com/codetalker7/dotfiles/tree/old-dotfiles?tab=readme-ov-file#latex-installation-and-setup).
     - `zathura`.
     - [`latexmk`](https://mg.readthedocs.io/latexmk.html#).
+
+
+> [!CAUTION]
+> Make sure to keep track of all crypto-related tools you're using to sign/encrypt/decrypt stuff. It's usually best practice to stick to the same version (so as to prevent any differences across the encryption/decryption algorithm over version changes; if any unforeseen change happens, you might lose your data). Always keep an unencrypted version of your files somewhere safe. 
