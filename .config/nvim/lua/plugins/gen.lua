@@ -1,5 +1,7 @@
 return {
     "David-Kunz/gen.nvim",
+    version = "*",
+    lazy = false,
     opts = {
         model = "codellama:13b-instruct",
         host = "localhost",
