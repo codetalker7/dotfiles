@@ -18,4 +18,4 @@ if not type -q pyenv
 end
 
 # python packages
-python3 -m pip install papis tldr
+python3 -m pip install papis tldr jupytext
