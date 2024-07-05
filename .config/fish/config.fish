@@ -19,3 +19,7 @@ pyenv init - | source
 
 # starship prompt
 starship init fish | source
+
+# aliases
+alias zathura="zathura -l error --fork"
+alias fzathura='zathura -l error --fork $(fzf -m)'
