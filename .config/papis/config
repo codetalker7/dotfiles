@@ -15,3 +15,10 @@ opentool = zathura
 
 [books]
 dir = ~/MyFavoriteBooks
+
+[obsidian_research_paper_notes]
+add-folder-name = ``{doc[title]}``
+dir = ~/obsidian-vault/research_paper_notes
+notes-name = notes_{doc[ref]}.tex
+notes-template = ~/obsidian-vault/research_paper_notes/notes-template.md
+opentool = zathura
