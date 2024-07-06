@@ -1,0 +1,20 @@
+{
+  "Math aligned block": {
+    "prefix": ["$", "$$"],
+    "body": [
+        "\\$\\$",
+        "\t\\begin{aligned}",
+        "\t\t$1 &= $2",
+        "\t\\end{aligned}",
+        "\\$\\$"
+    ],
+    "description": "Aligned math block."
+  },
+  "Fractions": {
+    "prefix": ["fr", "fra", "frac"],
+    "body": [
+        "\\frac{$1}{$2}"
+    ],
+    "description": "Fractions."
+  }
+}
