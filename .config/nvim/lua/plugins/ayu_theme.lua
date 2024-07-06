@@ -1,5 +1,7 @@
 return {
     "ayu-theme/ayu-vim",
+    version = "*",
+    lazy = false,
     config = function()
         vim.cmd [[
             set termguicolors     " enable true colors support
