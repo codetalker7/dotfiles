@@ -1,6 +1,13 @@
 {
+  "Inline math": {
+    "prefix": ["$"],
+    "body": [
+        "\\$$1\\$"
+    ],
+    "description": "Inline math."
+  },
   "Math aligned block": {
-    "prefix": ["$", "$$"],
+    "prefix": ["$$"],
     "body": [
         "\\$\\$",
         "\t\\begin{aligned}",
@@ -16,5 +23,40 @@
         "\\frac{$1}{$2}"
     ],
     "description": "Fractions."
+  },
+  "Subscripts": {
+    "prefix": ["_"],
+    "body": [
+        "_{$1}"
+    ],
+    "description": "Subscripts."
+  },
+  "Superscripts": {
+    "prefix": ["^"],
+    "body": [
+        "^{$1}"
+    ],
+    "description": "Superscripts."
+  },
+  "Square brackets": {
+    "prefix": ["["],
+    "body": [
+        "\\left\\[$1\\right\\]"
+    ],
+    "description": "Square braces"
+  },
+  "Braces": {
+    "prefix": ["{"],
+    "body": [
+        "\\left{$1\\right}"
+    ],
+    "description": "Square braces"
+  },
+  "Round brackets": {
+    "prefix": ["("],
+    "body": [
+        "\\left($1\\right)"
+    ],
+    "description": "Square braces"
   }
 }
