@@ -87,6 +87,9 @@ All config files can be found either in the project root or in `.config/`. Insta
     - `zathura`.
     - [`latexmk`](https://mg.readthedocs.io/latexmk.html#).
 
+- **Sync**: [`rclone`](https://rclone.org/) for cloud, [`syncthing`](https://syncthing.net/) for device sync.
+
+- **Knowledge Base management:** [`obsidian`](https://obsidian.md/) and [`papis`](https://github.com/papis/papis).
 
 > [!CAUTION]
 > Make sure to keep track of all crypto-related tools you're using to sign/encrypt/decrypt stuff. It's usually best practice to stick to the same version (so as to prevent any differences across the encryption/decryption algorithm over version changes; if any unforeseen change happens, you might lose your data). Always keep an unencrypted version of your files somewhere safe. 
