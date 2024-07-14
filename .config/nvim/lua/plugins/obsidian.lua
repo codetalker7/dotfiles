@@ -27,5 +27,9 @@ return {
                 strict = true,
             },
         },
+        follow_url_func = function(url)
+            -- Open the URL in the default web browser.
+            vim.fn.jobstart({"xdg-open", url})  -- linux
+        end,
     },
 }
