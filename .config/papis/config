@@ -1,5 +1,7 @@
+; install papis from source, by cloning the git repo
+
 [settings]
-add-confirm = true
+add-confirm = True
 browser = brave-browser
 default-library = papers
 editor = nvim
@@ -17,8 +19,10 @@ opentool = zathura
 dir = ~/MyFavoriteBooks
 
 [obsidian_research_paper_notes]
-add-folder-name = ``{doc[title]}``
+add-folder-name = {doc[title]}
 dir = ~/obsidian-vault/research_paper_notes
-notes-name = notes_{doc[ref]}.md
+doc-paths-lowercase = False 
+notes-name = {doc[ref]}.md
 notes-template = ~/obsidian-vault/research_paper_notes/notes-template.md
 opentool = zathura
+ref-format = '{doc[author_list][0][family]}{doc[year]}{doc[title]:.6}'
