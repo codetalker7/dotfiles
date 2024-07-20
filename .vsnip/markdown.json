@@ -58,5 +58,19 @@
         "\\left($1\\right)"
     ],
     "description": "Square braces"
+  },
+  "Bold": {
+    "prefix": ["**"],
+    "body": [
+        "**$1**"
+    ],
+    "description": "Bold text"
+  },
+  "Italic": {
+    "prefix": ["*"],
+    "body": [
+        "*$1*"
+    ],
+    "description": "Italic text"
   }
 }
