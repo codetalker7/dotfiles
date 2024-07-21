@@ -48,3 +48,6 @@ sudo apt-get install pass
 
 # cryfs; for filesystem encryption
 sudo apt install cryfs
+
+# jq; for processing json
+sudo apt-get install jq

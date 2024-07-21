@@ -60,6 +60,7 @@ All config files can be found either in the project root or in `.config/`. Insta
     - [`pandoc`](https://pandoc.org/installing.html#linux), converting between markup formats. 
     - [`navi`](https://github.com/denisidoro/navi/blob/master/docs/installation.md), a cheatsheet maintainer.
     - [`papis`](https://github.com/papis/papis), a library and bibliography manager.
+    - [`jq`](https://jqlang.github.io/jq/download/), a very handy tool for processing `.json` data.
     - [`encfs`](https://wiki.archlinux.org/title/EncFS) or [`cryfs`](https://www.cryfs.org/), encrypting filesystems.
             
             $ cryfs --version
