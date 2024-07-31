@@ -27,5 +27,5 @@ multiple-authors-format = {au[family]}-{au[given]}
 multiple-authors-separator = ,
 notes-name = {doc[ref]}.md
 notes-template = ~/obsidian-vault/research_paper_notes/notes-template.md
-opentool = zathura
+opentool = sioyek
 ref-format = '{doc[author_list][0][family]}{doc[year]}{doc[title]:.6}'
