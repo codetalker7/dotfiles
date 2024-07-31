@@ -5,6 +5,7 @@
 	signingkey = 8CE8854D1BDF9FD9
 [core]
 	editor = nvim
+    pager = delta
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
@@ -12,8 +13,16 @@
 	smudge = git-lfs smudge -- %f
 [init]
 	defaultBranch = main
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
 [github]
 	user = codetalker7
+[merge]
+    conflictstyle = diff3
+[diff]
+    colorMoved = default
 [web]
 	browser = brave-browse
 [commit]
