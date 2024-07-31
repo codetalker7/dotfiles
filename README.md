@@ -42,7 +42,10 @@ All config files can be found either in the project root or in `.config/`. Insta
 - **Shell**: [`fish`](https://fishshell.com/). 
 - **Terminal Multiplexer:** [`tmux`](https://github.com/tmux/tmux/wiki/).
 - **Editor**: [`nvim`](https://neovim.io/).
-- **Browser**: [`brave-browser`](https://brave.com/download/) with the [`Vimium`](https://vimium.github.io/) extension.
+- **Browser**: [`brave-browser`](https://brave.com/download/).
+    - **Extensions**:
+        - [Vimium](https://vimium.github.io/).
+        - [Dark Reader](https://darkreader.org/).
 - **PDF Viewer**: [`zathura`](https://pwmt.org/projects/zathura/installation/).
 - **Image Viewer**: [`eog`](https://help.gnome.org/users/eog/stable/).
 - **Utils**: Here's a list of utilities that I use:
