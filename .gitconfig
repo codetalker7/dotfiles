@@ -1,33 +1,45 @@
-[user]
-	name = Siddhant Chaudhary
-	email = urssidd@gmail.com
-	username = codetalker7
-	signingkey = 8CE8854D1BDF9FD9
+[commit]
+	gpgsign = true
+
 [core]
 	editor = nvim
+
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+
+[difftool]
+	prompt = false
+
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
-[init]
-	defaultBranch = main
+
 [github]
 	user = codetalker7
-[web]
-	browser = brave-browse
-[commit]
-	gpgsign = true
-[diff "jupyternotebook"]
-	command = git-nbdiffdriver diff
+
+[init]
+	defaultBranch = main
+
 [merge "jupyternotebook"]
 	driver = git-nbmergedriver merge %O %A %B %L %P
 	name = jupyter notebook merge driver
-[difftool "nbdime"]
-	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
-[difftool]
-	prompt = false
-[mergetool "nbdime"]
-	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
 [mergetool]
 	prompt = false
+
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
+[user]
+	name = Siddhant Chaudhary
+	email = urssidd@gmail.com
+	username = codetalker7
+	signingkey = 8CE8854D1BDF9FD9
+
+[web]
+	browser = brave-browse
