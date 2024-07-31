@@ -7,6 +7,9 @@
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
 
+[diff "odf"]
+    textconv=odt2txt
+
 [difftool]
 	prompt = false
 

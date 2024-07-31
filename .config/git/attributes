@@ -1,0 +1,5 @@
+*.ipynb	diff=jupyternotebook
+*.ipynb	merge=jupyternotebook
+*.ods diff=odf
+*.odt diff=odf
+*.odp diff=odf
