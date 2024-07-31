@@ -54,6 +54,9 @@ All config files can be found either in the project root or in `.config/`. Insta
             $ git secret --version
             0.5.0
     
+    - `git diff` tools:
+        - [`nbdime`](https://nbdime.readthedocs.io/en/latest/), for diffing jupyter notebooks.
+        - [`odt2txt`](https://github.com/dstosberg/odt2txt), for diffing Open Document formats.
     - [`xclip`](https://linux.die.net/man/1/xclip), clipboards.
     - [`fzf`](https://github.com/junegunn/fzf), a fuzzy-finder.
     - [`bat`](https://github.com/sharkdp/bat), a better `cat`.
