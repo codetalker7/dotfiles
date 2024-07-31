@@ -46,7 +46,9 @@ All config files can be found either in the project root or in `.config/`. Insta
     - **Extensions**:
         - [Vimium](https://vimium.github.io/).
         - [Dark Reader](https://darkreader.org/).
-- **PDF Viewer**: [`zathura`](https://pwmt.org/projects/zathura/installation/).
+- **PDF Viewers**:
+    - [`zathura`](https://pwmt.org/projects/zathura/installation/).
+    - [`sioyek`](https://github.com/ahrm/sioyek/releases). This is the best for reading research papers.
 - **Image Viewer**: [`eog`](https://help.gnome.org/users/eog/stable/).
 - **Utils**: Here's a list of utilities that I use:
     - [git-secret](https://sobolevn.me/git-secret/), for managing secrets.
