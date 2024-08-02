@@ -1,2 +1,4 @@
 set sandbox none
 set selection-clipboard clipboard
+set recolor
+set recolor-keephue
