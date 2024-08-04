@@ -28,6 +28,9 @@
 [init]
 	defaultBranch = main
 
+[interactive]
+	diffFilter = riff --color=on
+
 [merge "jupyternotebook"]
 	driver = git-nbmergedriver merge %O %A %B %L %P
 	name = jupyter notebook merge driver
@@ -37,6 +40,11 @@
 
 [mergetool "nbdime"]
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+
+[pager]
+	diff = riff
+	show = riff
+	log = riff
 
 [user]
 	name = Siddhant Chaudhary
