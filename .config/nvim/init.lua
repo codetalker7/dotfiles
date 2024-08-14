@@ -19,7 +19,7 @@ vim.o.nu = true
 vim.cmd('syntax enable')
 
 -- always copy to system clipboard
-vim.api.nvim_set_option("clipboard", "unnamed")
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 -- lazy plugins
 require("config.lazy")
