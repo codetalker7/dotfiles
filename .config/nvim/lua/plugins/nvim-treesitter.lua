@@ -15,7 +15,6 @@ return {
                 "html",
                 "java",
                 "julia",
-                "latex",
                 "lua",
                 "markdown",
                 "markdown_inline",
