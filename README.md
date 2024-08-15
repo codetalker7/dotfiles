@@ -102,3 +102,29 @@ All config files can be found either in the project root or in `.config/`. Insta
 
 > [!CAUTION]
 > Make sure to keep track of all crypto-related tools you're using to sign/encrypt/decrypt stuff. It's usually best practice to stick to the same version (so as to prevent any differences across the encryption/decryption algorithm over version changes; if any unforeseen change happens, you might lose your data). Always keep an unencrypted version of your files somewhere safe. 
+
+# Installing `texlive`
+
+1. [Follow the steps from the official Tug documentation for `texlive`](https://www.tug.org/texlive/doc/texlive-en/texlive-en.html#installation). For me, the directory specification was as follows (these are all defaults):
+    - `TEXDIR`: `/usr/local/texlive/2024`
+    - `TEXMFLOCAL`: `/usr/local/texlive/texmf-local`
+    - `TEXMFSYSVAR`: `/usr/local/texlive/2024/texmf-var`
+    - `TEXMFSYSCONFIG`: `/usr/local/texlive/2024/texmf-config`
+    - `TEXMFVAR`: `~/.texlive2024/texmf-var`
+    - `TEXMFCONFIG`: `~/.texlive2024/texmf-config`
+    - `TEXMFHOME`: `~/texmf`
+
+2. After the installation is complete, set some paths; since I'm using `fish`, I did it like this (do all these *only once*):
+        
+        set -U fish_user_paths /usr/local/texlive/2024/bin/x86_64-linux $fish_user_paths          
+
+    To set the `MANPATH`, use the local `~/.manpath` file (see `man man` or [this post](https://unix.stackexchange.com/questions/344603/how-to-append-to-manpath)):
+        
+        # in ~/.manpath
+        MANDATORY_MANPATH /usr/local/texlive/2024/texmf-dist/doc/man
+
+3. Try installing a couple of useful packages:
+
+        sudo $(which tlmgr) install latex latex-bin latexconfig latex-fonts  
+        sudo $(which tlmgr) install amsmath babel carlisle ec geometry graphics hyperref lm  marvosym oberdiek parskip graphics-def url
+

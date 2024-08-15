@@ -33,5 +33,5 @@ SETUVAR fish_pager_color_description:yellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/home/codetalker7/\x2erubies/ruby\x2d3\x2e1\x2e0/bin\x1e/home/codetalker7/\x2erubies/ruby\x2d3\x2e3\x2e3/bin\x1e/home/codetalker7/\x2epyenv/bin\x1e/home/codetalker7/nvim\x2dlinux64/bin\x1e/home/codetalker7/\x2efzf/bin
+SETUVAR fish_user_paths:/usr/local/texlive/2024/bin/x86_64\x2dlinux\x1e/home/codetalker7/\x2erubies/ruby\x2d3\x2e1\x2e0/bin\x1e/home/codetalker7/\x2erubies/ruby\x2d3\x2e3\x2e3/bin\x1e/home/codetalker7/\x2epyenv/bin\x1e/home/codetalker7/nvim\x2dlinux64/bin\x1e/home/codetalker7/\x2efzf/bin
 SETUVAR nvm_default_version:v22\x2e3\x2e0
