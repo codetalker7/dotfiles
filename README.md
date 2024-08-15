@@ -128,3 +128,7 @@ All config files can be found either in the project root or in `.config/`. Insta
         sudo $(which tlmgr) install latex latex-bin latexconfig latex-fonts  
         sudo $(which tlmgr) install amsmath babel carlisle ec geometry graphics hyperref lm  marvosym oberdiek parskip graphics-def url
 
+
+    Also, install `latexmk`:
+
+        sudo $(which tlmgr) install latexmk
