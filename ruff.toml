@@ -1,0 +1,12 @@
+line-length = 80 
+
+[format]
+docstring-code-format = true
+docstring-code-line-length = 80 
+
+[lint.flake8-errmsg]
+max-string-length = 20
+
+[lint.pycodestyle]
+# E501 reports lines that exceed the length of 100.
+max-line-length = 100
