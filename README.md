@@ -132,3 +132,7 @@ All config files can be found either in the project root or in `.config/`. Insta
     Also, install `latexmk`:
 
         sudo $(which tlmgr) install latexmk
+
+    Use `latexmk` to automate building and compiling the necessary files.
+
+4. The installed packages can be found in `TEXDIR/texmf-dist/tex/`. 
