@@ -7,5 +7,7 @@ return {
     config = function()
         -- vim.api.nvim_set_keymap("", "T", ":Telescope")
         vim.api.nvim_set_keymap("", "T", ":Telescope<CR>", { noremap = true })
+        vim.api.nvim_set_keymap("", "B", ":Telescope buffers<CR>", { noremap = true })
+        vim.api.nvim_set_keymap("", "F", ":Telescope find_files<CR>", { noremap = true })
     end,
 }
