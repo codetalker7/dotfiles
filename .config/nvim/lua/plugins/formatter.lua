@@ -34,13 +34,13 @@ return {
                 -- files. or just read the docs on github
                 return {
                   exe = "julia",
+                  cwd = pwd,
                   args = {
                     "--project=dev/",
-                    "-e",
-                    '"using JuliaFormatter; print(format_text(ARGS[1], SciMLStyle(), indent=4, margin=80))"',
-                    "'" .. get_visual_selection() .. "'",            -- string concatenation
+                    "dev/format.jl",
+                    util.escape_path(util.get_current_buffer_file_path()),
                   },
-                  stdin = true,
+                  stdin = false,
                 }
               end
             },
