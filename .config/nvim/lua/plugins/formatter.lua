@@ -44,6 +44,21 @@ return {
                 }
               end
             },
+            python = {
+              function()
+                -- Full specification of configurations is down below and in Vim help
+                -- files. or just read the docs on github
+                return {
+                  exe = "ruff",
+                  cwd = pwd,
+                  args = {
+                    "format",
+                    util.escape_path(util.get_current_buffer_file_path()),
+                  },
+                  stdin = false,
+                }
+              end
+            },
 
             -- Use the special "*" filetype for defining formatter configurations on
             -- any filetype
