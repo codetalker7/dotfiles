@@ -21,6 +21,9 @@ vim.cmd('syntax enable')
 -- always copy to system clipboard
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
+-- for obsidian conceal level
+vim.opt.conceallevel = 1
+
 -- lazy plugins
 require("config.lazy")
 
