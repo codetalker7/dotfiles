@@ -18,6 +18,7 @@ return {
                 "lua",
                 "markdown",
                 "markdown_inline",
+                -- "mchat",        -- for model.nvim
                 "python",
                 "query",
                 "rust",

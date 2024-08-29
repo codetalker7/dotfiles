@@ -28,6 +28,18 @@ return {
           log_level = vim.log.levels.WARN,
           -- All formatter configurations are opt-in
           filetype = {
+            lua = {
+              function()
+                return {
+                  exe = "stylua",
+                  cwd = pwd,
+                  args = {
+                    util.escape_path(util.get_current_buffer_file_path()),
+                  },
+                  stdin = false,
+                }
+              end
+            },
             julia = {
               function()
                 -- Full specification of configurations is down below and in Vim help
