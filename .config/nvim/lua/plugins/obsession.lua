@@ -1,5 +1,5 @@
 return {
-    "tpope/vim-obsession",
-    version = "*",
-    lazy = false,
+	"tpope/vim-obsession",
+	version = "*",
+	lazy = false,
 }

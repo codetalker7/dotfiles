@@ -1,5 +1,5 @@
 return {
-    "godlygeek/tabular",
-    version = "*",
-    lazy = false,
+	"godlygeek/tabular",
+	version = "*",
+	lazy = false,
 }

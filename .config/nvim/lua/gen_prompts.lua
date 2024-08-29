@@ -1,5 +1,5 @@
 require("gen").prompts["JuliaDocstring"] = {
-    prompt = [[
+	prompt = [[
         You are an expert in writing Julia docstrings. Here is an example of a Julia docstring:
 
         ```julia
@@ -31,5 +31,5 @@ require("gen").prompts["JuliaDocstring"] = {
 
         $input
     ]],
-    extract = "```julia\n(.-)```",
+	extract = "```julia\n(.-)```",
 }

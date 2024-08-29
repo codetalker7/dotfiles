@@ -1,5 +1,5 @@
 return {
-    "dhruvasagar/vim-table-mode",
-    version = "*",
-    lazy = false,
+	"dhruvasagar/vim-table-mode",
+	version = "*",
+	lazy = false,
 }

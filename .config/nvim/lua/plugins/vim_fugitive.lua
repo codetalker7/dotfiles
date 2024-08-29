@@ -1,5 +1,5 @@
 return {
-    "tpope/vim-fugitive",
-    version = "*",
-    lazy = false,
+	"tpope/vim-fugitive",
+	version = "*",
+	lazy = false,
 }

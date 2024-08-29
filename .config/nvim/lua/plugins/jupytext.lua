@@ -1,5 +1,5 @@
 return {
-    "goerz/jupytext.vim",
-    version = "*",
-    lazy = false,
+	"goerz/jupytext.vim",
+	version = "*",
+	lazy = false,
 }
