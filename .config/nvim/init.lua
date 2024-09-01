@@ -29,3 +29,4 @@ require("config.lazy")
 
 -- gen prompts
 require("gen_prompts")
+
