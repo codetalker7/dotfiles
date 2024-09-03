@@ -12,8 +12,15 @@ vim.o.shiftwidth = 4 -- number of spaces per indent level
 vim.o.hlsearch = true -- highlight text during search
 vim.keymap.set("n", "CR", ":noh<CR><CR>") -- remove the search highlight; see :help noh
 
--- line numbers
+-- line numbers; hybrid mode. See https://jeffkreeftmeijer.com/vim-number/
 vim.o.nu = true
+vim.cmd([[
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:augroup END
+]])
 
 -- enable syntax, if it isn't
 vim.cmd("syntax enable")
