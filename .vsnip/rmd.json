@@ -9,7 +9,7 @@
   "Bold math": {
     "prefix": ["bm"],
     "body": [
-        "\\bm{$1}"
+        "\\boldsymbol{$1}"
     ],
     "description": "LaTeX bm."
   },
@@ -31,6 +31,24 @@
     ],
     "description": "Aligned math block."
   },
+  "Bookdown equations" : {
+    "prefix": ["eq", "equation"],
+    "body": [
+        "\\begin{equation}",
+        "\\begin{split}",
+        "\t$1 &= $2", 
+        "\\end{split}",
+        "(\\#eq:label)",
+        "\\end{equation}"
+    ]
+  }, 
+  "Theorem envs" : {
+    "prefix": ["th", "thm", "theorem"],
+    "body": [
+        "::: {.theorem #label name=\"name\"}",
+        ":::"
+     ]
+  }, 
   "Fractions": {
     "prefix": ["fr", "fra", "frac"],
     "body": [
@@ -86,5 +104,19 @@
         "*$1*"
     ],
     "description": "Italic text"
+  },
+  "BoldAndItalic": {
+    "prefix": ["***"],
+    "body": [
+        "***$1***"
+    ],
+    "description": "Bold and Italic text"
+  },
+  "Norm": {
+    "prefix": ["norm"],
+    "body": [
+        "\\left\\lVert$1\\right\\rVert"
+    ],
+    "description": "Norms"
   }
 }
