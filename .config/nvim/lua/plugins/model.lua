@@ -112,6 +112,17 @@ return {
 					end,
 					run = groq_fmt.chat,
 				},
+				["groq:llama-3.3-70b-versatile"] = {
+					provider = groq,
+					options = {
+						model = "llama-3.3-70b-versatile",
+					},
+					create = function(input, context)
+						return context.selection and input or ""
+					end,
+					run = groq_fmt.chat,
+				},
+
 				["groq:deepseek-r1-distill-llama-70b"] = {
 					provider = groq,
 					options = {
