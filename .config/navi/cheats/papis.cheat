@@ -3,10 +3,11 @@
 ; add commands
 # add local paper
 papis -l <library> add <file-or-url> \
-    --set author <author> \
-    --set title <title> \
+    --set author "<author>" \
+    --set title "<title>" \
     --set year <year> \
-    --set tags <tags> \
+    --set tags "<space_separated_tags>" \
+    --set unread "true"
 
 # from importer
 papis -l <library> add \

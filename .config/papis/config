@@ -1,5 +1,3 @@
-; install papis from source, by cloning the git repo
-
 [settings]
 add-confirm = True
 browser = brave-browser
@@ -22,10 +20,23 @@ dir = ~/MyFavoriteBooks
 add-folder-name = {doc[title]}
 dir = ~/obsidian-vault/research_paper_notes
 doc-paths-extra-chars = "_"
-doc-paths-lowercase = False 
+doc-paths-lowercase = False
 multiple-authors-format = {au[family]}-{au[given]}
 multiple-authors-separator = ,
 notes-name = {doc[ref]}.md
 notes-template = ~/obsidian-vault/research_paper_notes/notes-template.md
 opentool = zathura
 ref-format = '{doc[author_list][0][family]}{doc[year]}{doc[title]:.6}'
+
+[songs]
+dir = /home/codetalker7/songs
+opentool = ffplay -v 0 -nodisp -autoexit
+editor = nvim
+use-git = False
+notes-name = notes.tex
+database-backend = papis
+bibtex-unicode = False
+ref-format = {doc[title]:.15} {doc[author]:.6} {doc[year]}
+multiple-authors-format = {au[family]}, {au[given]}
+citations-file-name = citations.yaml
+
