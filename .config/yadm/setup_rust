@@ -11,3 +11,7 @@ end
 cargo install eza 
 cargo install --locked navi
 cargo install --locked starship
+cargo install --git https://github.com/MordechaiHadad/bob.git   # nvim version manager
+
+# add the nvim path
+fish_add_path $HOME/.local/share/bob/nvim-bin

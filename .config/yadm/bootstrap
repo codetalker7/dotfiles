@@ -38,7 +38,7 @@ $CURRENTDIR/setup_rust
 $CURRENTDIR/setup_alacritty
 
 # nvim and lsp servers
-$CURRENTDIR/setup_nvim
+# $CURRENTDIR/setup_nvim
 $CURRENTDIR/setup_lsp_servers
 
 # pyenv and python stuff

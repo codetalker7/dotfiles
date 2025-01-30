@@ -41,7 +41,7 @@ All config files can be found either in the project root or in `.config/`. Insta
 - **WM**: [`i3`](https://i3wm.org/).
 - **Shell**: [`fish`](https://fishshell.com/). 
 - **Terminal Multiplexer:** [`tmux`](https://github.com/tmux/tmux/wiki/).
-- **Editor**: [`nvim`](https://neovim.io/).
+- **Editor**: [`nvim`](https://neovim.io/). I use the [`bob`](https://github.com/MordechaiHadad/bob) for version management.
 - **Browser**: [`brave-browser`](https://brave.com/download/).
     - **Extensions**:
         - [Vimium](https://vimium.github.io/).
