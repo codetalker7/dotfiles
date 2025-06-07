@@ -18,6 +18,7 @@ alias gl="git pull"
 alias gd="git diff"
 
 # system and utils
+alias ll="ls -alh"
 alias md="mkdir -p"        # Make directory (parent-safe)
 
 # fish shell
