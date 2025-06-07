@@ -1,9 +1,12 @@
 #!/usr/bin/env fish
 
-set NVIM_VERSION "0.9.5"
+## update: consider this file to be obsolete; it's better to use bob to version manage nvim
+## see setup_rust to install bob, or better yet, go through it's documentation
 
-cd
-wget https://github.com/neovim/neovim/releases/download/v$NVIM_VERSION/nvim-linux64.tar.gz
-tar -xvf nvim-linux64.tar.gz
-fish_add_path $HOME/nvim-linux64/bin/ # add to fish path 
-rm nvim-linux64.tar.gz
+# set NVIM_VERSION "0.9.5"
+#
+# cd
+# wget https://github.com/neovim/neovim/releases/download/v$NVIM_VERSION/nvim-linux64.tar.gz
+# tar -xvf nvim-linux64.tar.gz
+# fish_add_path $HOME/nvim-linux64/bin/ # add to fish path 
+# rm nvim-linux64.tar.gz
