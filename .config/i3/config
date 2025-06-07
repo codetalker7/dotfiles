@@ -187,6 +187,7 @@ bindsym $mod+r mode "resize"
 client.focused  #ffffff #ffffff #000000 #ffffff #ffffff
 
 bar {
+    status_command i3status
     colors {
         active_workspace #000000 #ffffff #000000        # black, white, black
         background #000000
