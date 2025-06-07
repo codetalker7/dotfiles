@@ -22,4 +22,4 @@ end
 fish_add_path $RUBY_PATH                                                    # add to fish path 
 
 # installing needed ruby gems
-gem install colorls
+# gem install colorls

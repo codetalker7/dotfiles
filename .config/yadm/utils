@@ -19,9 +19,9 @@ xclip -version
 sudo apt install fzf
 fzf --version
 
-# batcat
-sudo apt install bat
-batcat --version
+# # batcat
+# sudo apt install bat
+# batcat --version
 
 # ripgrep
 sudo apt-get install ripgrep
@@ -34,11 +34,11 @@ zahura --version
 # htop
 sudo apt install htop
 
-# glow
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
-sudo apt update && sudo apt install glow
+# # glow
+# sudo mkdir -p /etc/apt/keyrings
+# curl -fsSL https://repo.charm.sh/apt/gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+# echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | sudo tee /etc/apt/sources.list.d/charm.list
+# sudo apt update && sudo apt install glow
 
 # pandoc
 sudo apt install pandoc

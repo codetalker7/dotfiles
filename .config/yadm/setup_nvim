@@ -10,3 +10,8 @@
 # tar -xvf nvim-linux64.tar.gz
 # fish_add_path $HOME/nvim-linux64/bin/ # add to fish path 
 # rm nvim-linux64.tar.gz
+
+cargo install --git https://github.com/MordechaiHadad/bob.git   # nvim version manager
+
+# add the nvim path
+fish_add_path $HOME/.local/share/bob/nvim-bin

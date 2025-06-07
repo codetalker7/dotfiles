@@ -65,9 +65,7 @@ correct order using `yadm bootstrap`.
     - [Dark Reader](https://darkreader.org/).
 - **PDF Viewers**:
   - [`zathura`](https://pwmt.org/projects/zathura/installation/).
-  - [`sioyek`](https://github.com/ahrm/sioyek/releases). This is the best for
-    reading research papers.
-- **Image Viewer**: [`eog`](https://help.gnome.org/users/eog/stable/).
+- **Image Viewer**: [`eog`](https://help.gnome.org/users/eog/stable/) or `feh`.
 - **Utils**: Here's a list of utilities that I use:
   - [git-secret](https://sobolevn.me/git-secret/), for managing secrets.
 
@@ -81,17 +79,9 @@ correct order using `yadm bootstrap`.
       Document formats.
   - [`xclip`](https://linux.die.net/man/1/xclip), clipboards.
   - [`fzf`](https://github.com/junegunn/fzf), a fuzzy-finder.
-  - [`bat`](https://github.com/sharkdp/bat), a better `cat`.
-  - [`eza`](https://github.com/eza-community/eza/tree/main), a better and faster
-    `ls`.
   - [`htop`](https://htop.dev/) and [`nvtop`](https://github.com/Syllo/nvtop).
-  - [`glow`](https://github.com/charmbracelet/glow), render markdown on the CLI.
   - [`pandoc`](https://pandoc.org/installing.html#linux), converting between
     markup formats.
-  - [`navi`](https://github.com/denisidoro/navi/blob/master/docs/installation.md),
-    a cheatsheet maintainer.
-  - [`papis`](https://github.com/papis/papis), a library and bibliography
-    manager.
   - [`jq`](https://jqlang.github.io/jq/download/), a very handy tool for
     processing `.json` data.
   - [`encfs`](https://wiki.archlinux.org/title/EncFS) or
@@ -129,7 +119,7 @@ correct order using `yadm bootstrap`.
   - [`latexmk`](https://mg.readthedocs.io/latexmk.html#).
 
 - **Sync**: [`rclone`](https://rclone.org/) for cloud,
-  [`syncthing`](https://syncthing.net/) for device sync.
+  [`syncthing`](https://syncthing.net/), `rsync` for device sync.
 
 - **Knowledge Base management:** [`obsidian`](https://obsidian.md/) and
   [`papis`](https://github.com/papis/papis).

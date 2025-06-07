@@ -17,14 +17,15 @@ set -gx EDITOR "nvim"
 # load pyenv
 pyenv init - | source
 
-# starship prompt
-starship init fish | source
+# # starship prompt
+# starship init fish | source
+source $HOME/.config/fish/prompt.fish
 
 # aliases
 alias zathura="zathura -l error --fork"
 alias fzathura='zathura -l error --fork $(fzf -m)'
-alias sioyek="nohup sioyek $argv > /dev/null & disown"
-alias fsioyek='sioyek $(fzf)'
+# alias sioyek="nohup sioyek $argv > /dev/null & disown"
+# alias fsioyek='sioyek $(fzf)'
 
 # ollama models dir
 set -gx OLLAMA_MODELS $HOME/models/ollama/
