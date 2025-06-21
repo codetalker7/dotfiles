@@ -25,6 +25,17 @@ vim.cmd([[
 :augroup END
 ]])
 
+-- -- disable arrow keys; encourage hjkl
+-- vim.cmd([[
+--      noremap! <Up> <Esc>
+--      noremap  <Down> ""
+--      noremap! <Down> <Esc>
+--      noremap  <Left> ""
+--      noremap! <Left> <Esc>
+--      noremap  <Right> ""
+--      noremap! <Right> <Esc>
+-- ]])
+
 -- enable syntax, if it isn't
 vim.cmd("syntax enable")
 
@@ -38,5 +49,4 @@ vim.opt.conceallevel = 1
 require("config.lazy")
 
 -- gen prompts
-require("gen_prompts")
-
+-- require("gen_prompts")
