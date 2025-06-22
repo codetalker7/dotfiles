@@ -2,3 +2,6 @@
 !*.secret
 .ssh/config
 .config/fish/private.fish
+vpn/pass.txt
+vpn/*.ovpn
+vpn/vpn.md
