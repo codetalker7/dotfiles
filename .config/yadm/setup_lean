@@ -1,0 +1,7 @@
+#!/usr/bin/env fish
+
+## we'll use elan, the lean version manager; see https://github.com/leanprover/elan
+curl https://elan.lean-lang.org/elan-init.sh -sSf | sh
+
+## add to the fish path
+fish_add_path $HOME/.elan/bin
