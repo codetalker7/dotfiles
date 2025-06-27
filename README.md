@@ -63,6 +63,7 @@ correct order using `yadm bootstrap`.
   - **Extensions**:
     - [Vimium](https://vimium.github.io/).
     - [Dark Reader](https://darkreader.org/).
+    - [Bitwarden Password Manager](https://chromewebstore.google.com/detail/bitwarden-password-manage/nngceckbapebfimnlniiiahkandclblb)
 - **PDF Viewers**:
   - [`zathura`](https://pwmt.org/projects/zathura/installation/).
 - **Image Viewer**: [`eog`](https://help.gnome.org/users/eog/stable/) or `feh`.
