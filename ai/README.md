@@ -6,3 +6,4 @@
    with something like
    [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim).
 4. [NotebookLM](https://notebooklm.google/), for working with PDFs of papers.
+5. [Gemini CLI](https://github.com/google-gemini/gemini-cli).
