@@ -29,7 +29,7 @@ return {
 						},
 						schema = {
 							model = {
-								default = "deepseek-r1-distill-llama-70b", -- define llm model to be used
+								default = "llama-3.3-70b-versatile", -- define llm model to be used
 							},
 						},
 					}
