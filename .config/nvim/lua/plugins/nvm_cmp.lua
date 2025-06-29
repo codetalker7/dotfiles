@@ -39,7 +39,9 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-b>"] = cmp.mapping.scroll_docs(-4),
 				["<C-f>"] = cmp.mapping.scroll_docs(4),
-				["<C-Space>"] = cmp.mapping.complete(),
+				["<Tab>"] = cmp.mapping.select_next_item(), -- to select the next item
+				["<S-Tab>"] = cmp.mapping.select_prev_item(), -- to select the previous item
+				["<C-Space>"] = cmp.mapping.complete(), -- aka, if the completion menu doesn't show up itself, force open a completion menu to show suggestions
 				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 			}),
@@ -79,7 +81,8 @@ return {
 		})
 
 		-- Set up lspconfig.
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local capabilities =
+			require("cmp_nvim_lsp").default_capabilities()
 		-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 		require("lspconfig")["julials"].setup({
 			capabilities = capabilities,
