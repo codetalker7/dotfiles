@@ -1,0 +1,84 @@
+{
+    "border": "normal",
+    "current_border_width": 2,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "marks": [],
+    "name": "research-notes",
+    "percent": 0.5,
+    "swallows": [
+       {
+       "class": "^CodingNvimTerm$",
+       "instance": "^codingnvimterm$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "marks": [],
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "normal",
+            "floating": "auto_off",
+            "layout": "splith", "marks": [],
+            "percent": 0.9,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "normal",
+                    "current_border_width": 2,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 600,
+                       "width": 800,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "marks": [],
+                    "name": "zathura",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                       "class": "^Zathura$",
+                       "instance": "^org.pwmt.zathura$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "marks": [],
+            "name": "bookdown-render",
+            "percent": 0.1,
+            "swallows": [
+               {
+               "class": "^BookdownTerm$",
+               "instance": "^bookdownterm$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
