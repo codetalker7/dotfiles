@@ -90,6 +90,8 @@ correct order using `yadm bootstrap`.
 
         $ cryfs --version
         CryFS Version 0.10.2
+  - [`pdftk`](https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/), working
+    with pdfs.
 
 - **Signing commits**: I use my GPG key to sign `git` commits. More information
   is available in
@@ -118,12 +120,17 @@ correct order using `yadm bootstrap`.
   [More details are available in my old branch](https://github.com/codetalker7/dotfiles/tree/old-dotfiles?tab=readme-ov-file#latex-installation-and-setup).
   - `zathura`.
   - [`latexmk`](https://mg.readthedocs.io/latexmk.html#).
+  - [Overleaf](https://www.overleaf.com/) for colabs.
+  - [Typst](https://typst.app/), a seemingly faster online LaTeX compiler (also
+    has colabs).
 
 - **Sync**: [`rclone`](https://rclone.org/) for cloud,
   [`syncthing`](https://syncthing.net/), `rsync` for device sync.
 
 - **Knowledge Base management:** [`obsidian`](https://obsidian.md/) and
   [`papis`](https://github.com/papis/papis).
+
+- **Markdown Colabs**: for this, I use [hackmd.io](https://hackmd.io/).
 
 > [!CAUTION]
 > Make sure to keep track of all crypto-related tools you're using to

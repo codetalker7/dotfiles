@@ -73,7 +73,7 @@
   "Square brackets": {
     "prefix": ["["],
     "body": [
-        "\\left\\[$1\\right\\]"
+        "\\left[$1\\right]"
     ],
     "description": "Square braces"
   },
