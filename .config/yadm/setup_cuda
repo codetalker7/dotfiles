@@ -1,0 +1,77 @@
+#!/usr/bin/env fish
+# see this guide: https://docs.nvidia.com/cuda/cuda-installation-guide-linux/
+# update as of 13 September 2025: see this guide: https://gist.github.com/garg-aayush/156ec6ddda3d62e2c0ddad00b7e66956
+# we follow the steps in the above
+
+# verifying that we have a cuda capable gpu
+lspci | grep -i nvidia
+
+# verifying that we have a supported version of linux
+hostnamectl
+
+# gcc should be installed
+gcc --version
+
+# common installation instructions
+sudo apt update
+
+# setting some variables
+set distro ubuntu2204
+set arch x86_64
+set arch_ext amd64
+set X 12
+set Y 9
+
+# knowing which nvidia driver version to install
+## get the gpu device id with the following
+## the gpu pci id will be in square brackets; eg [10de:25ac]. in this case, my pci id is
+## 10de25ac
+lspci -nn | grep -i nvidia
+
+## look up the gpu on the pci database
+## visit https://admin.pci-ids.ucw.cz/read/PC/10de/25ac
+## to get the gpu information
+## also see: https://pci-ids.ucw.cz/
+
+## alternatively, do the following
+sudo update-pciids
+lspci -nn | grep -i nvidia
+## the above should also give you the name of the gpu card
+
+## next, visit the nvidia website to get the latest driver version
+## https://www.nvidia.com/en-us/drivers/
+## in my case, the driver version was 570.169
+## so, we set $driver_version to 570.169
+set driver_version 570
+
+# installing the nvidia driver
+## see this guide: https://documentation.ubuntu.com/server/how-to/graphics/install-nvidia-drivers/
+sudo ubuntu-drivers list
+
+## then, try to install the latest server
+## remember to do a sudo apt update or similar commands
+sudo ubuntu-drivers install nvidia:570
+
+# installing cuda libs and toolkit
+## pre-installation actions
+## we'll be using a distribution specific installer; for ubuntu
+## downloading the nvidia-toolkit
+## visit https://developer.nvidia.com/cuda-downloads; select linux as the os,
+## x86_64 as the arch, your version of ubuntu, and the deb(network) installer
+## this is what i got
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-9
+
+## the ubuntu package manager installer
+## see https://docs.nvidia.com/cuda/cuda-installation-guide-linux/#ubuntu
+
+# ## we'll pick the network repository installer
+# ## Install network repository installer
+# ## some of the steps are the same as above; we just have this as well
+# sudo dpkg -i cuda-keyring_2.1-1_all.deb
+
+## post installation actions
+## adding the binaries to path
+fish_add_path /usr/local/cuda-12.9/bin
