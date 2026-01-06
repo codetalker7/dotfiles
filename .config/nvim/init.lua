@@ -51,61 +51,65 @@ require("config.lazy")
 -- gen prompts
 -- require("gen_prompts")
 
--- a minimal black theme which gemini made for me 
--- 1. Basic Settings for Color Support
-vim.opt.termguicolors = true -- Enable 24-bit RGB color
+-- a minimal black theme which gemini made for me
+-- 1. Basic Settings
+vim.opt.termguicolors = true
 vim.opt.background = "dark"
 
 -- 2. Clear existing highlights
 vim.cmd("hi clear")
 if vim.fn.exists("syntax_on") == 1 then
-    vim.cmd("syntax reset")
+	vim.cmd("syntax reset")
 end
 
--- 3. Define the Palette (True Black)
+-- 3. Define the Palette
 local colors = {
-    bg = "#000000",
-    fg = "#e0e0e0",       -- Soft white
-    dim = "#666666",      -- Comments/Non-essential text
-    accent = "#ffffff",   -- High contrast for keywords
-    line = "#1a1a1a",     -- Subtle line highlights
-    border = "#333333",   -- Split borders
+	bg = "#000000",
+	fg = "#e0e0e0", -- Standard text (Soft White)
+	dim = "#666666", -- Comments
+	bright = "#ffffff", -- Keywords (Pure White)
+	search = "#FFFF00", -- BRIGHT YELLOW for search matches
+	line = "#1a1a1a",
+	border = "#333333",
 }
 
 -- 4. Set Highlights
 local hl = vim.api.nvim_set_hl
-local opts = { val = 0 } -- Helper to apply to global scope
 
--- Base UI
-hl(0, "Normal",       { bg = colors.bg, fg = colors.fg })
-hl(0, "NormalFloat",  { bg = colors.bg, fg = colors.fg }) -- Floating windows
-hl(0, "FloatBorder",  { bg = colors.bg, fg = colors.border })
-hl(0, "SignColumn",   { bg = colors.bg })
-hl(0, "EndOfBuffer",  { bg = colors.bg, fg = colors.line }) -- Hide ~ at end of buffer
-hl(0, "CursorLine",   { bg = colors.line })
-hl(0, "LineNr",       { fg = colors.dim })
-hl(0, "CursorLineNr", { fg = colors.accent, bold = true })
-hl(0, "VertSplit",    { fg = colors.border, bg = colors.bg }) -- Split dividers
-hl(0, "WinSeparator", { fg = colors.border, bg = colors.bg }) -- Modern split dividers
-hl(0, "StatusLine",   { bg = colors.line, fg = colors.fg })
-hl(0, "StatusLineNC", { bg = colors.bg, fg = colors.dim })    -- Inactive status line
+-- Base UI (Monochrome)
+hl(0, "Normal", { bg = colors.bg, fg = colors.fg })
+hl(0, "NormalFloat", { bg = colors.bg, fg = colors.fg })
+hl(0, "FloatBorder", { bg = colors.bg, fg = colors.border })
+hl(0, "SignColumn", { bg = colors.bg })
+hl(0, "EndOfBuffer", { bg = colors.bg, fg = colors.line })
+hl(0, "CursorLine", { bg = colors.line })
+hl(0, "LineNr", { fg = colors.dim })
+hl(0, "CursorLineNr", { fg = colors.bright, bold = true })
+hl(0, "StatusLine", { bg = colors.line, fg = colors.fg })
+hl(0, "StatusLineNC", { bg = colors.bg, fg = colors.dim })
+hl(0, "VertSplit", { fg = colors.border, bg = colors.bg })
+hl(0, "WinSeparator", { fg = colors.border, bg = colors.bg })
 
--- Syntax Highlighting (Minimal/Monochrome approach)
-hl(0, "Comment",      { fg = colors.dim, italic = true })
-hl(0, "String",       { fg = "#999999" }) -- Slightly dimmer than normal text
-hl(0, "Identifier",   { fg = colors.fg })
-hl(0, "Function",     { fg = colors.fg, bold = true })
-hl(0, "Statement",    { fg = colors.accent, bold = true }) -- Keywords like if, else, for
-hl(0, "PreProc",      { fg = colors.accent })
-hl(0, "Type",         { fg = colors.fg, bold = true })
-hl(0, "Constant",     { fg = colors.fg })
-hl(0, "Special",      { fg = colors.fg })
+-- Syntax Highlighting (Restored to Monochrome)
+hl(0, "Comment", { fg = colors.dim, italic = true })
+hl(0, "String", { fg = "#999999" })
+hl(0, "Identifier", { fg = colors.fg })
+hl(0, "Function", { fg = colors.bright, bold = true })
+hl(0, "Statement", { fg = colors.bright, bold = true }) -- if, else, etc. (White)
+hl(0, "PreProc", { fg = colors.bright })
+hl(0, "Type", { fg = colors.bright, bold = true })
+hl(0, "Constant", { fg = colors.fg })
+hl(0, "Special", { fg = colors.fg })
 
--- Search / Visual Mode
-hl(0, "Search",       { bg = "#333333", fg = colors.accent })
-hl(0, "CurSearch",    { bg = "#555555", fg = colors.accent })
-hl(0, "Visual",       { bg = "#222222" })
+-- Search Highlighting (THE YELLOW PART)
+-- 'Search' is for all matches, 'CurSearch' is the one under your cursor
+hl(0, "Search", { bg = colors.search, fg = "#000000" })
+hl(0, "CurSearch", { bg = colors.search, fg = "#000000" })
+hl(0, "IncSearch", { bg = colors.search, fg = "#000000" })
 
--- Popups (Pmenu)
-hl(0, "Pmenu",        { bg = "#111111", fg = colors.fg })
-hl(0, "PmenuSel",     { bg = "#333333", fg = colors.accent })
+-- Visual Mode (Dark Grey to avoid confusion with yellow search)
+hl(0, "Visual", { bg = "#333333" })
+
+-- Popups
+hl(0, "Pmenu", { bg = "#111111", fg = colors.fg })
+hl(0, "PmenuSel", { bg = "#333333", fg = colors.bright })
