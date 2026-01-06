@@ -80,25 +80,25 @@ return {
 			}),
 		})
 
-		-- Set up lspconfig.
-		local capabilities =
-			require("cmp_nvim_lsp").default_capabilities()
-		-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-		require("lspconfig")["julials"].setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig")["pyright"].setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig")["marksman"].setup({
-			capabilities = capabilities,
-		})
-		require("lspconfig")["clangd"].setup({
-			capabilities = capabilities,
-			cmd = { "clangd-12" },
-		})
-		require("lspconfig")["texlab"].setup({
-			capabilities = capabilities,
-		})
+		-- -- Set up lspconfig.
+		-- local capabilities =
+		-- 	require("cmp_nvim_lsp").default_capabilities()
+		-- -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+		-- require("lspconfig")["julials"].setup({
+		-- 	capabilities = capabilities,
+		-- })
+		-- require("lspconfig")["pyright"].setup({
+		-- 	capabilities = capabilities,
+		-- })
+		-- require("lspconfig")["marksman"].setup({
+		-- 	capabilities = capabilities,
+		-- })
+		-- require("lspconfig")["clangd"].setup({
+		-- 	capabilities = capabilities,
+		-- 	cmd = { "clangd-12" },
+		-- })
+		-- require("lspconfig")["texlab"].setup({
+		-- 	capabilities = capabilities,
+		-- })
 	end,
 }
