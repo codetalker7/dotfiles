@@ -29,3 +29,6 @@ set -gx OLLAMA_MODELS $HOME/models/ollama/
 
 # source private vars
 source $HOME/.config/fish/private.fish
+
+# OpenClaw Completion
+source "/home/codetalker7/.openclaw/completions/openclaw.fish"
