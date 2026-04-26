@@ -15,7 +15,7 @@ apptainer shell --fakeroot -w ubuntu2204-sbx           # install stuff here now;
 
 # installing some standard stuff
 apt update
-apt install curl unzip software-properties-common
+apt install curl unzip software-properties-common rsync
 apt-get install ca-certificates build-essential
 
 # from this point on, you can use your usual dotfiles
