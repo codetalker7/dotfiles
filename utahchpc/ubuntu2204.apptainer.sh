@@ -11,7 +11,7 @@ mkdir ubuntu2204-sbx/scratch
 # load the container; after loading, make any necessary installations and stuff
 # here, we don't need the --nv flag for the gpu; that will be used later when we're only
 # running the container; make sure to use --fakeroot here to have root-like privileges inside the container
-apptainer shell --fakeroot -w ubuntu2204-sbx           # install stuff here now; follow your usual setup; no need to use sudo
+apptainer shell --fakeroot -w --home /scratch/general/vast/$USER/ubuntu2204-sbx-home ubuntu2204-sbx           # install stuff here now; follow your usual setup; no need to use sudo
 
 # installing some standard stuff
 apt update
