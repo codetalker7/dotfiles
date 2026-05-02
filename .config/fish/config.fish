@@ -7,28 +7,14 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 
 # gpg-agent; see https://stackoverflow.com/questions/17769831/how-to-make-gpg-prompt-for-passphrase-on-cli and https://stackoverflow.com/questions/17769831/how-to-make-gpg-prompt-for-passphrase-on-cli
 set -gx GPG_TTY $(tty)
-
 set -g fish_key_bindings fish_vi_key_bindings 
 
 # editors; invoke with Alt+E to edit command in fish
 set -gx VISUAL "nvim"
 set -gx EDITOR "nvim"
 
-# load pyenv
-pyenv init - | source
-
-# # starship prompt
-# starship init fish | source
-source $HOME/.config/fish/prompt.fish
-
 # aliases
 source $HOME/.config/fish/aliases.fish
 
-# ollama models dir
-set -gx OLLAMA_MODELS $HOME/models/ollama/
-
 # source private vars
 source $HOME/.config/fish/private.fish
-
-# OpenClaw Completion
-source "/home/codetalker7/.openclaw/completions/openclaw.fish"
