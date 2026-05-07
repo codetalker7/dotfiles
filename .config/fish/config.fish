@@ -8,6 +8,8 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 # gpg-agent; see https://stackoverflow.com/questions/17769831/how-to-make-gpg-prompt-for-passphrase-on-cli and https://stackoverflow.com/questions/17769831/how-to-make-gpg-prompt-for-passphrase-on-cli
 set -gx GPG_TTY $(tty)
 set -g fish_key_bindings fish_vi_key_bindings 
+bind -M default k up-or-search
+bind -M default j down-or-search
 
 # editors; invoke with Alt+E to edit command in fish
 set -gx VISUAL "nvim"
