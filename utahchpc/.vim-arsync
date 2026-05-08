@@ -1,0 +1,6 @@
+remote_host    uutah_chpc_notchpeak 
+remote_user    $UNID
+remote_passwd  $UTAH_CHPC_PASSWORD
+remote_path    /scratch/general/vast/$UNID/<project_name>
+ignore_path     [".vim-arsync", ".git"]
+remote_or_local remote
