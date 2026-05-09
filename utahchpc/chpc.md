@@ -32,7 +32,13 @@ debug gpus: t4 (16GB), 1080ti (11GB). 1080ti will not work due to low compute ca
     cd /scratch/general/vast/$USER/
     apptainer exec --fakeroot --nv --home /scratch/general/vast/$USER/ubuntu2204-sbx-home ubuntu2204-sbx.sif /usr/bin/fish
 
-# virtual environment as a user
+# setting up a uv env
+    
+    uv venv --python 3.11
+    source .venv/bin/activate.fish
+    uv pip install <package name>
+
+# conda virtual environment as a user
 
     module load miniforge3
     module load cuda/12.8.1
