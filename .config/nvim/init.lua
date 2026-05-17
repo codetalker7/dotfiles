@@ -1,7 +1,3 @@
--- disable netrw at the very start of your init.lua; for nvim-tree.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 -- some indentation settings
 vim.o.expandtab = true -- on pressing tab, insert spaces
 vim.o.smartindent = true
