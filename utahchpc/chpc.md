@@ -2,6 +2,10 @@
 
 ## notchpeak
 
+quickly access cpu (use notchpeak-shared-short):
+    
+    salloc --time=01:00:00 --nodes=1 --ntasks=1 --mem=50G --account=notchpeak-shared-short --partition=notchpeak-shared-short --job=name=quick_test
+
 quickly access any gpu:
 
     salloc --time=01:00:00 --nodes=1 --ntasks=1 --account=soc-gpu-np --partition=soc-gpu-np --qos=soc-gpu-np --gres=gpu:1 --job=name=vllm
@@ -30,7 +34,7 @@ debug gpus: t4 (16GB), 1080ti (11GB). 1080ti will not work due to low compute ca
 
     module load apptainer
     cd /scratch/general/vast/$USER/
-    apptainer exec --fakeroot --nv --home /scratch/general/vast/$USER/ubuntu2204-sbx-home ubuntu2204-sbx.sif /usr/bin/fish
+    apptainer exec --fakeroot --nv --home /scratch/general/vast/$USER/ubuntulatest-sbx-home ubuntulatest-sbx.sif /usr/bin/fish
 
 # setting up a uv env
     

@@ -15,7 +15,7 @@ apptainer shell --fakeroot -w --home /scratch/general/vast/$USER/ubuntulatest-sb
 
 # installing some standard stuff
 apt update
-apt install curl unzip software-properties-common rsync htop nvtop ncdu fzf fish yadm tmux clang llvm
+apt install curl unzip software-properties-common rsync htop nvtop ncdu fzf fish yadm tmux clang llvm git git-secret xclip
 apt-get install ca-certificates build-essential
 
 # setup fish things
