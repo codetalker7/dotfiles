@@ -1,3 +1,7 @@
+" Force Vim to use bash for executing background system commands.
+" This prevents syntax failures when executing system() calls.
+set shell=/bin/bash
+
 " some indentation settings
 set expandtab     " on pressing tab, insert spaces
 set smartindent

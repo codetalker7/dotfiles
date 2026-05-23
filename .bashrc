@@ -1,3 +1,6 @@
+# vim mode
+set -o vi
+
 ## SMARTER TAB-COMPLETION (Readline bindings) ##
 
 # Perform file completion in a case insensitive fashion
