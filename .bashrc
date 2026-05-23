@@ -1,5 +1,6 @@
 # vim mode
 set -o vi
+bind '"\C-l": clear-screen'         # vim binding resets the clear screen key binding
 
 ## SMARTER TAB-COMPLETION (Readline bindings) ##
 
