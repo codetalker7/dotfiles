@@ -1,0 +1,15 @@
+# Show all completion options on the first Tab press (no need to double-tap)
+set show-all-if-ambiguous on
+
+# Show the menu first without immediately filling in the first option
+set menu-complete-display-prefix on
+
+# Bind Tab to cycle forward through the completion menu
+"\t": menu-complete
+
+# Bind Shift-Tab to cycle backward through the menu
+"\e[Z": menu-complete-backward
+
+# Optional: Add colors to the completion menu to make it easier to read
+set colored-stats on
+set colored-completion-prefix on
