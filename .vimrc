@@ -39,50 +39,13 @@ syntax enable
 " Note: Your Vim build must support the '+clipboard' feature for this to work.
 set clipboard=unnamedplus
 
-" a minimal black theme which gemini made for me
-" 1. Basic Settings
-set termguicolors
-set background=dark
+" blue colorscheme
+colorscheme blue
 
-" 2. Clear existing highlights
-hi clear
-if exists("syntax_on")
-    syntax reset
+" temporary; only for chromebook
+if executable('wl-copy') && !empty($WAYLAND_DISPLAY)
+    augroup WaylandClipboard
+        autocmd!
+        autocmd TextYankPost * if v:event.operator ==# 'y' | call system('wl-copy', @") | endif
+    augroup END
 endif
-
-" 3 & 4. Palette & Highlights
-" In Vimscript, we apply the hex codes directly using guibg/guifg/gui
-
-" Base UI (Monochrome)
-hi Normal guibg=#000000 guifg=#e0e0e0
-hi SignColumn guibg=#000000
-hi EndOfBuffer guibg=#000000 guifg=#1a1a1a
-hi CursorLine guibg=#1a1a1a
-hi LineNr guifg=#666666
-hi CursorLineNr guifg=#ffffff gui=bold
-hi StatusLine guibg=#1a1a1a guifg=#e0e0e0
-hi StatusLineNC guibg=#000000 guifg=#666666
-hi VertSplit guibg=#000000 guifg=#333333
-
-" Syntax Highlighting (Restored to Monochrome)
-hi Comment guifg=#666666 gui=italic
-hi String guifg=#999999
-hi Identifier guifg=#e0e0e0
-hi Function guifg=#ffffff gui=bold
-hi Statement guifg=#ffffff gui=bold
-hi PreProc guifg=#ffffff
-hi Type guifg=#ffffff gui=bold
-hi Constant guifg=#e0e0e0
-hi Special guifg=#e0e0e0
-
-" Search Highlighting (THE YELLOW PART)
-hi Search guibg=#FFFF00 guifg=#000000
-hi CurSearch guibg=#FFFF00 guifg=#000000
-hi IncSearch guibg=#FFFF00 guifg=#000000
-
-" Visual Mode (Dark Grey to avoid confusion with yellow search)
-hi Visual guibg=#333333
-
-" Popups
-hi Pmenu guibg=#111111 guifg=#e0e0e0
-hi PmenuSel guibg=#333333 guifg=#ffffff
