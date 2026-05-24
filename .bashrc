@@ -1,6 +1,7 @@
-# load private vars and path vars
+# load private, env and path vars
 source $HOME/private.sh
 source $HOME/path.sh
+source $HOME/env.sh
 
 # vim mode
 set -o vi
