@@ -5,3 +5,4 @@
 vpn/pass.txt
 vpn/*.ovpn
 vpn/vpn.md
+private.sh
