@@ -1,3 +1,7 @@
+# load private vars and path vars
+source $HOME/private.sh
+source $HOME/path.sh
+
 # vim mode
 set -o vi
 bind '"\C-l": clear-screen'         # vim binding resets the clear screen key binding
