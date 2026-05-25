@@ -1,6 +1,7 @@
 " Force Vim to use bash for executing background system commands.
 " This prevents syntax failures when executing system() calls.
 set shell=/bin/bash
+set mouse=a
 
 " some indentation settings
 set expandtab     " on pressing tab, insert spaces
@@ -10,6 +11,7 @@ set shiftwidth=4  " number of spaces per indent level
 
 " some search settings
 set hlsearch      " highlight text during search
+set incsearch     " high as you type
 nnoremap <CR> :noh<CR><CR> " remove the search highlight
 
 " spell check
