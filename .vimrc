@@ -51,3 +51,8 @@ if executable('wl-copy') && !empty($WAYLAND_DISPLAY)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system('wl-copy', @") | endif
     augroup END
 endif
+
+" vim slime
+"" Set the target to tmux
+let g:slime_target = "tmux"
+let g:slime_bracketed_paste = 1             " no indent on sending to say a python repl
