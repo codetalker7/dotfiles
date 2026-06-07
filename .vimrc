@@ -14,6 +14,24 @@ set hlsearch      " highlight text during search
 set incsearch     " high as you type
 nnoremap <CR> :noh<CR><CR> " remove the search highlight
 
+" tab-autocompletions using pure vim and no plugins
+" 1. Map <Tab> to open command-line window and trigger auto-complete
+cnoremap <expr> <Tab> getcmdtype() =~ '[/?]' ? "\<C-f>a\<C-n>" : "\<Tab>"
+
+" 2. Control behavior inside the search completion window
+augroup SearchCompletion
+  autocmd!
+
+  " Execute the search immediately with Enter
+  autocmd CmdwinEnter [/?] inoremap <expr> <buffer> <CR> pumvisible() ? "\<C-y>\<C-c>\<CR>" : "\<C-c>\<CR>"
+
+  " Cycle forward through matches with Tab
+  autocmd CmdwinEnter [/?] inoremap <buffer> <Tab> <C-n>
+
+  " Cycle backward through matches with Shift-Tab
+  autocmd CmdwinEnter [/?] inoremap <buffer> <S-Tab> <C-p>
+augroup END
+
 " spell check
 " set spell
 
