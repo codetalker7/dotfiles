@@ -8,57 +8,100 @@
 #forced_session=“screen”
 #forced_session=“tmux”
 
-# colors in bash
-case "$TERM" in
-	xterm-color|*-256color) color_prompt=yes;;
-esac
+# load private, env and path vars
+source $HOME/private.sh
+source $HOME/path.sh
+source $HOME/env.sh
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-	else
-	color_prompt=
-	fi
-fi
-
-if [ "$color_prompt" = yes ]; then
-	PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-else
-	PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-fi
-unset color_prompt force_color_prompt
-
-# vim mode in bash
+# vim mode
 set -o vi
-bind -m vi-insert '"\C-l": clear-screen'
+bind '"\C-l": clear-screen'         # vim binding resets the clear screen key binding
+
+## SMARTER TAB-COMPLETION (Readline bindings) ##
+
+# Perform file completion in a case insensitive fashion
+bind "set completion-ignore-case on"
+
+# Treat hyphens and underscores as equivalent
+bind "set completion-map-case on"
+
+# Display matches for ambiguous patterns at first tab press
+bind "set show-all-if-ambiguous on"
+
+# Immediately add a trailing slash when autocompleting symlinks to directories
+bind "set mark-symlinked-directories on"
+
+## SANE HISTORY DEFAULTS ##
+
+# Append to the history file, don't overwrite it
+shopt -s histappend
+
+# Save multi-line commands as one command
+shopt -s cmdhist
+
+# Record each line as it gets issued
+PROMPT_COMMAND='history -a'
+
+# Huge history. Doesn't appear to slow things down, so why not?
+HISTSIZE=500000
+HISTFILESIZE=100000
+
+# Avoid duplicate entries
+HISTCONTROL="erasedups:ignoreboth"
+
+# Don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history:clear"
+
+# Use standard ISO 8601 timestamp
+# %F equivalent to %Y-%m-%d
+# %T equivalent to %H:%M:%S (24-hours format)
+HISTTIMEFORMAT='%F %T '
+
+# Enable incremental history search with up/down arrows (also Readline goodness)
+# Learn more about this here: http://codeinthehole.com/writing/the-most-important-command-line-tip-incremental-history-searching-with-inputrc/
+bind '"\e[A": history-search-backward'
+bind '"\e[B": history-search-forward'
+bind '"\e[C": forward-char'
+bind '"\e[D": backward-char'
+
+## BETTER DIRECTORY NAVIGATION ##
+
+# Prepend cd to directory names automatically
+shopt -s autocd 2> /dev/null
+# Correct spelling errors during tab-completion
+shopt -s dirspell 2> /dev/null
+# Correct spelling errors in arguments supplied to cd
+shopt -s cdspell 2> /dev/null
+
+## GENERAL OPTIONS ##
+
+# Prevent file overwrite on stdout redirection
+# Use `>|` to force redirection to an existing file; just a safety net
+set -o noclobber
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# Turn on recursive globbing (enables ** to recurse all directories)
+shopt -s globstar 2> /dev/null
+
+# Automatically trim long paths in the prompt (requires Bash 4.x)
+PROMPT_DIRTRIM=2
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# globals for moving cache dirs to scratch
-export SCRATCH_DIR=/scratch/general/vast/$USER
-export PIP_CACHE_DIR=/scratch/general/nfs1/$USER/pip_cache
-export HF_HOME="/scratch/general/vast/$USER/hf_home"
-export UV_CACHE_DIR="/scratch/general/vast/$USER/.cache/uv"
-export APPTAINER_CACHEDIR="/scratch/general/vast/$USER/.apptainer/cache"
-export APPTAINER_TMPDIR="/scratch/general/vast/$USER/.apptainer/tmp"
-
-# loading the environment variables
-. "$HOME/.local/bin/env"
+eval "$(fzf --bash)"
 
 # sourcing the tmux config file
 tmux source-file ~/.config/tmux/tmux.conf
-
-# for a fish-like experience, I'm using ble.sh: https://github.com/akinomyoga/ble.sh
-# source -- ~/.local/share/blesh/ble.sh
 
 # ----------------------------------------------------------------------
 if [[ "$UUFSCELL" = "kingspeak.peaks" ]] ; then

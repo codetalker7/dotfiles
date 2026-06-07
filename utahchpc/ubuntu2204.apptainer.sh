@@ -11,24 +11,24 @@ mkdir ubuntulatest-sbx/scratch
 # load the container; after loading, make any necessary installations and stuff
 # here, we don't need the --nv flag for the gpu; that will be used later when we're only
 # running the container; make sure to use --fakeroot here to have root-like privileges inside the container
-apptainer shell --fakeroot -w --home /scratch/general/vast/$USER/ubuntulatest-sbx-home ubuntulatest-sbx          # install stuff here now; follow your usual setup; no need to use sudo
+apptainer shell --fakeroot -w ubuntulatest-sbx          # install stuff here now; follow your usual setup; no need to use sudo
 
 # installing some standard stuff
 apt update
 apt install curl unzip software-properties-common rsync htop nvtop ncdu fzf fish yadm tmux clang llvm git git-secret xclip
-apt-get install ca-certificates build-essential
+# apt-get install ca-certificates build-essential
 
 # setup fish things
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher install PatrickF1/fzf.fish
+# curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+# fisher install PatrickF1/fzf.fish
 # after this, clone the fish config file from your dotfiles (i have a separate config file for the server); see the steps below
 
 # from this point on, you can use your usual dotfiles
 # first, let's do bob and nvim
-curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh | bash
-fish_add_path $HOME/.local/bin
-bob use latest
-fish_add_path $HOME/.local/share/bob/nvim-bin
+# curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh | bash
+# fish_add_path $HOME/.local/bin
+# bob use latest
+# fish_add_path $HOME/.local/share/bob/nvim-bin
 
 # get dotfiles
 yadm clone https://github.com/codetalker7/dotfiles.git
@@ -39,10 +39,10 @@ yadm clone https://github.com/codetalker7/dotfiles.git
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # install conda
-curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-bash Miniconda3-latest-Linux-x86_64.sh
-fish_add_path $HOME/miniconda3/bin
-conda init fish
+# curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# bash Miniconda3-latest-Linux-x86_64.sh
+# fish_add_path $HOME/miniconda3/bin
+# conda init fish
 
 # uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -55,7 +55,8 @@ cp ubuntulatest-sbx.sif $HOME/
 cp -r ubuntulatest-sbx-home $HOME/
 
 # can access the container using the sif file now;
-apptainer exec --fakeroot --nv --home /scratch/general/vast/$USER/ubuntulatest-sbx-home ubuntulatest-sbx.sif /usr/bin/fish          # install stuff here now; follow your usual setup; no need to use sudo
+# apptainer exec --fakeroot --nv --home /scratch/general/vast/$USER/ubuntulatest-sbx-home ubuntulatest-sbx.sif /usr/bin/fish          # install stuff here now; follow your usual setup; no need to use sudo
+apptainer exec --fakeroot --nv ubuntulatest-sbx.sif /usr/bin/bash          # install stuff here now; follow your usual setup; no need to use sudo
 
 # later, can re-build the writeable sandbox from .sif file (to install additional stuff)
 apptainer build --fakeroot --sandbox /scratch/general/vast/$USER/ubuntulatest-sbx ubuntulatest-sbx.sif
