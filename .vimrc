@@ -15,8 +15,15 @@ set incsearch     " high as you type
 nnoremap <CR> :noh<CR><CR> " remove the search highlight
 
 " tab-autocompletions using pure vim and no plugins
-" 1. Map <Tab> to open command-line window and trigger auto-complete
-cnoremap <expr> <Tab> getcmdtype() =~ '[/?]' ? "\<C-f>a\<C-n>" : "\<Tab>"
+" Set a secondary completion key specifically for mappings (Ctrl-Z is standard)
+set wildcharm=<C-z>
+
+" Optional but highly recommended: gives you a nice horizontal menu for command completions
+set wildmenu 
+
+" 1. Map <Tab> to open command-line window and trigger auto-complete for / and ?
+" For standard commands (:), trigger the native completion using the wildcharm
+cnoremap <expr> <Tab> getcmdtype() =~ '[/?]' ? "\<C-f>a\<C-n>" : "\<C-z>"
 
 " 2. Control behavior inside the search completion window
 augroup SearchCompletion
