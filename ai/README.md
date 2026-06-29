@@ -20,3 +20,13 @@ agent, then just put the PDFs in your current working directory.
 
 3. Use separate chats/agent contexts for LaTex related/filesystem/any technical
 issues which are not directly related to the math.
+
+4. Make small steps, and verify each small step. If you ask the model to "do a
+full analysis, or write the complete proof" or something along these lines,
+you're probably just wasting your time. Instead, do the following:
+    - Ask the model to devise a plan first. Even better, devise the plan
+      yourself, and break it into steps.
+    - Ask the model to implement your plan step by step. Verify each step
+      independently. This is crucial to not waste your time.
+    - Once each of the individual steps are verified, you can even fire up a new
+      context on the verified work.
