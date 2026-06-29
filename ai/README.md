@@ -1,10 +1,22 @@
-# The AI tools I use currently
+# Workflow for theory research with AI agents/chat
 
-1. [ChatGPT](https://chatgpt.com/), for general purpose AI chats.
-2. [Perplexity](https://www.perplexity.ai/), for search.
-3. [Groq](https://groq.com/), for fast AI inference. Use this in conjunction
-   with something like
-   [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim).
-4. [NotebookLM](https://notebooklm.google/), for working with PDFs of papers.
-5. [Gemini CLI](https://github.com/google-gemini/gemini-cli).
-6. [`alphaXiv`](https://www.alphaxiv.org/), for reading papers.
+Here are some of my ideas on how to adequately use AI agents and chatbots to do
+theory research optimally. When using AI models for doing theory research, it is
+important for the user to keep the context clean (so that the model doesn't
+waste any tokens thinking about useless problems like writing things to LaTeX,
+spending time in reading/writing files etc. For LaTeX specific or writing, use a
+separate chat context. So, here is what I do:
+
+1. All math is to be written in LaTeX. I maintain a file usually called
+`main.tex` which contains the main problem statement. As quality progress is
+made, I add it up to `main.tex`; the point of `main.tex` is to only include
+proofs/theorems which are factually correct and verified. Use one chat/agent
+context to "think" about the problem; this context should only be used for
+thinking and making progress on the problem.
+
+2. Relevant citations, papers etc. should be given to the model/agent as PDF
+files. If using a chat interface, just upload the PDFs; if using a terminal
+agent, then just put the PDFs in your current working directory.
+
+3. Use separate chats/agent contexts for LaTex related/filesystem/any technical
+issues which are not directly related to the math.
