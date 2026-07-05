@@ -11,6 +11,7 @@ set shiftwidth=4  " number of spaces per indent level
 
 " some text width and line wrapping settings
 set textwidth=80            " after this, use the command gggqG to automatically wrap all lines to this limit
+autocmd FileType tex setlocal textwidth=0
 
 " some search settings
 set hlsearch      " highlight text during search
@@ -71,6 +72,9 @@ set clipboard=unnamedplus
 
 " blue colorscheme
 colorscheme blue
+
+" removing markdown italic highlighting
+autocmd FileType markdown highlight markdownItalic term=NONE cterm=NONE gui=NONE
 
 " temporary; only for chromebook
 if executable('wl-copy') && !empty($WAYLAND_DISPLAY)
