@@ -51,3 +51,7 @@ to write full-fledged research papers, specially for theory.
 3. However, a LaTeX codebase is not suitable for LLMs. The best math format for
 LLMs seems to be markdown. So, we need a way to convert our LaTeX codebase to
 markdown; use `pandoc` for this.
+
+4. Finally, if you have a PDF file that you want to convert to markdown (to be
+fed into LLMs), then you can use this really amazing tool:
+https://github.com/opendatalab/mineru.
