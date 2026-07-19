@@ -30,3 +30,24 @@ you're probably just wasting your time. Instead, do the following:
       independently. This is crucial to not waste your time.
     - Once each of the individual steps are verified, you can even fire up a new
       context on the verified work.
+
+# Tooling and pipelines
+
+Here's the overall tooling and workflow that I use:
+
+1. For active thinking, use a tablet/whiteboard interface. This simply cannot be
+replaced by typing/keyboard interfaces. Thinking is done best the old fashioned
+way.
+
+2. Use LaTeX to write the project. There's simply no better alternative to LaTeX
+to write full-fledged research papers, specially for theory.
+    
+    - Preferably, use a local tex installation; I prefer TexLive for this.
+    - Version control the project with `git`. This makes it easy to go back
+    in time if bugs in the proofs/anything else are found.
+    - Push to overleaf using `olcli`. Only do pushes, there's no need to pull
+      from overleaf as we'll be developing locally.
+
+3. However, a LaTeX codebase is not suitable for LLMs. The best math format for
+LLMs seems to be markdown. So, we need a way to convert our LaTeX codebase to
+markdown; use `pandoc` for this.
