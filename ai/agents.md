@@ -12,7 +12,8 @@ project-specific workflow.
 
 4. Distribute work amongst agents, don't use one agent for everything. Get used
 to an agent multiplexer like `herdr`. Restrict permissions for agents that don't
-need them.
+need them. `herdr` is good for TUIs, but GUIs are much better for this: use
+something like OpenHands.
 
 5. Use heavier/costlier models for hard problems: research + hard coding tasks.
 For easy tasks (easy re-writes, parsing files, bash commands etc.), use dumber
