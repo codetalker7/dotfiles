@@ -39,11 +39,11 @@ For complex coding/research tasks, I use:
 
 For simple coding tasks, I use:
 
-1. OpenRouter + OpenCode
+1. OpenRouter + OpenCode (see `.config/opencode/opencode.json` for the model)
 
 # IDEs with agentic workflows
 
-1. 
+1. Antigravity IDE
 
 # Online Chat Interfaces
 
