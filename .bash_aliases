@@ -1,6 +1,5 @@
 # general
 alias refresh="source $HOME/.bashrc"
-alias tm="tmux -u"
 alias ll="ls -al"
 alias md="mkdir -p"
 
@@ -12,3 +11,7 @@ alias gc="git commit -v"
 alias gp="git push"
 alias gl="git pull"
 alias gd="git diff"
+
+# tm
+alias tm="tmux -u new -A -s"            # create a new session, or attach to it if exists
+alias ta='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
