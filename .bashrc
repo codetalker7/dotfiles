@@ -89,3 +89,6 @@ fi
 
 # fzf
 eval "$(fzf --bash)"
+
+# zoxide
+eval "$(zoxide init bash)"
