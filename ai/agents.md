@@ -18,6 +18,8 @@ something like OpenHands.
     - `herdr` is the best option for a terminal based manager.
     - For `opencode` sessions, use the `opencode` browser chat UI.
     - For `codex` and `agy` CLIs, probably openhands is a great option.
+    - For `agy` CLIs, Antigravity 2.0 (yes, the naming sucks) is a web-based
+      agent manager. So probably use this?
 
 5. Use heavier/costlier models for hard problems: research + hard coding tasks.
 For easy tasks (easy re-writes, parsing files, bash commands etc.), use dumber
