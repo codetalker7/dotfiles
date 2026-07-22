@@ -24,6 +24,13 @@ debug gpus: t4 (16GB), 1080ti (11GB). 1080ti will not work due to low compute ca
     salloc --time=08:00:00 --nodes=1 --ntasks=1 --mem=40G --account=notchpeak-shared-short --partition=notchpeak-shared-short --gres=gpu:t4:1 --job=name=vllm
     salloc --time=08:00:00 --nodes=1 --ntasks=1 --mem=40G --account=notchpeak-shared-short --partition=notchpeak-shared-short --gres=gpu:1080ti:1 --job=name=vllm
 
+# using `sbatch` instead of `salloc` to hold sessions
+
+`salloc` is neat, but it is probably better to hold sessions using `sbatch`.
+With this, it becomes much easier for your compute nodes to persist even if
+there are accidental network issues or something. For instance, look at
+`tunnel.slr`. Create scripts like this for quick access.
+
 # scratch space
 
     export SCRDIR=/scratch/general/vast/$USER/vllm
