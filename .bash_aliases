@@ -17,3 +17,5 @@ alias tm="tmux -u new -A -s"            # create a new session, or attach to it 
 alias tml="tmux list-sessions"           
 alias tma='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
 
+# zoxide
+alias cd="z"
