@@ -100,6 +100,9 @@ fi
 # fzf
 eval "$(fzf --bash)"
 
+# zoxide
+eval "$(zoxide init bash)"
+
 # sourcing the tmux config file
 tmux source-file ~/.config/tmux/tmux.conf
 
