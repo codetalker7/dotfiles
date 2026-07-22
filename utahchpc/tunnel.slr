@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#SBATCH --job-name="tunnel"
+#SBATCH --time=4:00:00 # walltime
+#SBATCH --cpus-per-task=1 # number of cores
+#SBATCH --mem-per-cpu=16G # memory per CPU core
+#SBATCH --partition=notchpeak-shared-short
+#SBATCH --account=notchpeak-shared-short
+
+# Set job comment to BatchHost
+scontrol update JobId="$SLURM_JOB_ID" Comment="`hostname -s`"
+
+# Sleep.  This holds the job in running state, the user has to scancel their job if they are done early.
+sleep 4h
