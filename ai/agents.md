@@ -15,6 +15,10 @@ to an agent multiplexer like `herdr`. Restrict permissions for agents that don't
 need them. `herdr` is good for TUIs, but GUIs are much better for this: use
 something like OpenHands.
 
+    - `herdr` is the best option for a terminal based manager.
+    - For `opencode` sessions, use the `opencode` browser chat UI.
+    - For `codex` and `agy` CLIs, probably openhands is a great option.
+
 5. Use heavier/costlier models for hard problems: research + hard coding tasks.
 For easy tasks (easy re-writes, parsing files, bash commands etc.), use dumber
 models. Don't burn your strong tokens on easy tasks.
