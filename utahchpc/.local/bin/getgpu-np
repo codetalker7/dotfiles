@@ -2,29 +2,124 @@
 set -euo pipefail
 
 show_help() {
-  cat <<'EOF'
+cat <<'EOF'
 Usage:
-  getgpu-np [--help]
+getgpu-np [OPTIONS]
 
 Description:
-  Try the Notchpeak / np GPU pools in order, wait for the first job that starts,
-  and print the node name.
+Submit several Notchpeak / np GPU candidates in parallel, wait for the first
+one that actually starts running, and print the assigned node name.
 
-Notes:
-  - Does not SSH automatically.
-  - Requests 1 GPU, 1 CPU, and a small amount of memory by default.
+Options:
+-t, --time DURATION   Slurm wall time (default: 01:00:00)
+-m, --mem SIZE        Memory request (default: 8G)
+-c, --cpus N          CPUs per task (default: 1)
+-g, --gpus N          GPUs requested (default: 1)
+-h, --help            Show this help message and exit
+
+Examples:
+getgpu-np
+getgpu-np --time 00:30:00 --mem 4G
+getgpu-np -t 01:00:00 -m 8G -c 2
 EOF
 }
 
-if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
-  show_help
-  exit 0
-fi
+slurm_time_to_seconds() {
+  local t="$1"
+  local days=0 hours=0 minutes=0 seconds=0
+
+  if [[ "$t" =~ ^([0-9]+)-([0-9]{1,2}):([0-9]{2}):([0-9]{2})$ ]]; then
+    days="${BASH_REMATCH[1]}"
+    hours="${BASH_REMATCH[2]}"
+    minutes="${BASH_REMATCH[3]}"
+    seconds="${BASH_REMATCH[4]}"
+  elif [[ "$t" =~ ^([0-9]{1,2}):([0-9]{2}):([0-9]{2})$ ]]; then
+    hours="${BASH_REMATCH[1]}"
+    minutes="${BASH_REMATCH[2]}"
+    seconds="${BASH_REMATCH[3]}"
+  elif [[ "$t" =~ ^([0-9]{1,2}):([0-9]{2})$ ]]; then
+    minutes="${BASH_REMATCH[1]}"
+    seconds="${BASH_REMATCH[2]}"
+  elif [[ "$t" =~ ^([0-9]+)$ ]]; then
+    seconds="${BASH_REMATCH[1]}"
+  else
+    echo "Invalid Slurm time format: $t" >&2
+    exit 1
+  fi
+
+  echo $((10#$days * 86400 + 10#$hours * 3600 + 10#$minutes * 60 + 10#$seconds))
+}
 
 JOB_TIME="01:00:00"
 MEM="8G"
 CPUS="1"
 GPUS="1"
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -t|--time)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 1; }
+      JOB_TIME="$2"
+      shift 2
+      ;;
+    -m|--mem)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 1; }
+      MEM="$2"
+      shift 2
+      ;;
+    -c|--cpus)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 1; }
+      CPUS="$2"
+      shift 2
+      ;;
+    -g|--gpus)
+      [[ $# -ge 2 ]] || { echo "Missing value for $1" >&2; exit 1; }
+      GPUS="$2"
+      shift 2
+      ;;
+    -h|--help)
+      show_help
+      exit 0
+      ;;
+    *)
+      echo "Unknown option: $1" >&2
+      show_help >&2
+      exit 1
+      ;;
+  esac
+done
+
+HOLD_SECONDS="$(slurm_time_to_seconds "$JOB_TIME")"
+
+tmpdir="$(mktemp -d)"
+worker_pids=()
+
+cleanup() {
+  local winner_jobid=""
+  if [[ -f "$tmpdir/result" ]]; then
+    winner_jobid="$(cut -f1 "$tmpdir/result" 2>/dev/null || true)"
+  fi
+
+  shopt -s nullglob
+  for f in "$tmpdir"/job_*; do
+    [[ -f "$f" ]] || continue
+    jid="$(cat "$f" 2>/dev/null || true)"
+    [[ -n "$jid" ]] || continue
+    if [[ -n "$winner_jobid" && "$jid" == "$winner_jobid" ]]; then
+      continue
+    fi
+    scancel "$jid" 2>/dev/null || true
+  done
+  shopt -u nullglob
+
+  for pid in "${worker_pids[@]}"; do
+    kill "$pid" 2>/dev/null || true
+  done
+
+  rm -rf "$tmpdir" 2>/dev/null || true
+}
+
+trap cleanup EXIT INT TERM
 
 wait_for_node() {
   local jobid="$1"
@@ -50,28 +145,43 @@ wait_for_node() {
   done
 }
 
-submit_one() {
-  local partition="$1"
-  local account="$2"
-  local qos="$3"
+submit_and_wait() {
+  local idx="$1"
+  local partition="$2"
+  local account="$3"
+  local qos="$4"
 
-  local jobid
+  local jobscript jobid node
+  jobscript="$(mktemp "$tmpdir/jobscript_${idx}.XXXXXX.sh")"
+
+  cat >"$jobscript" <<EOF
+#!/usr/bin/env bash
+set -euo pipefail
+sleep "$HOLD_SECONDS"
+EOF
+
   jobid="$(
     sbatch --parsable \
       --job-name="getgpu-np" \
       --partition="$partition" \
       --account="$account" \
       --qos="$qos" \
-      --gres="gpu:1" \
+      --gres="gpu:${GPUS}" \
       --cpus-per-task="$CPUS" \
       --mem="$MEM" \
       --time="$JOB_TIME" \
-      --wrap "sleep $HOLD_SECONDS"
+      "$jobscript"
   )"
   jobid="${jobid%%;*}"
 
+  printf '%s\n' "$jobid" >"$tmpdir/job_$idx"
+
   if node="$(wait_for_node "$jobid")"; then
-    echo "$node"
+    if mkdir "$tmpdir/winner" 2>/dev/null; then
+      printf '%s\t%s\t%s\t%s\n' "$jobid" "$partition" "$qos" "$node" >"$tmpdir/result"
+    else
+      scancel "$jobid" 2>/dev/null || true
+    fi
     return 0
   fi
 
@@ -81,19 +191,39 @@ submit_one() {
 
 # Only Notchpeak / np GPU pools.
 CANDIDATES=(
+  "notchpeak-shared-short notchpeak-shared-short notchpeak-shared-short"
   "notchpeak-gpu-guest owner-gpu-guest notchpeak-gpu-guest"
   "notchpeak-gpu notchpeak-gpu notchpeak-gpu"
   "soc-gpu-np soc-gpu-np soc-gpu-np"
   "soc-gpu-np soc-gpu-np soc-gpushort-np"
 )
 
-for entry in "${CANDIDATES[@]}"; do
-  read -r PARTITION ACCOUNT QOS <<<"$entry"
+for i in "${!CANDIDATES[@]}"; do
+  read -r PARTITION ACCOUNT QOS <<<"${CANDIDATES[$i]}"
   echo "Trying $PARTITION ($QOS) ..." >&2
-  if submit_one "$PARTITION" "$ACCOUNT" "$QOS"; then
-    exit 0
-  fi
+  submit_and_wait "$i" "$PARTITION" "$ACCOUNT" "$QOS" &
+  worker_pids+=("$!")
 done
 
-echo "No Notchpeak / np GPU allocation succeeded." >&2
-exit 1
+while :; do
+  if [[ -f "$tmpdir/result" ]]; then
+    cut -f4 "$tmpdir/result"
+    exit 0
+  fi
+
+  any_alive=0
+  for pid in "${worker_pids[@]}"; do
+    if kill -0 "$pid" 2>/dev/null; then
+      any_alive=1
+      break
+    fi
+  done
+
+  if [[ "$any_alive" -eq 0 ]]; then
+    echo "No Notchpeak / np GPU allocation succeeded." >&2
+    exit 1
+  fi
+
+  sleep 1
+done
+
