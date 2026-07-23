@@ -87,8 +87,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# fzf
 eval "$(fzf --bash)"
-
-# zoxide
 eval "$(zoxide init bash)"
+eval "$(direnv hook bash)"
