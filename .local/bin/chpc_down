@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage:
+  chpc_down SOURCE DESTINATION [REMOTE]
+
+Examples:
+  chpc_down /scratch/u123456/project/data ./data
+  chpc_down /scratch/u123456/project/file.txt ./file.txt notchpeak
+
+Notes:
+  - SOURCE is the path on the remote CHPC system.
+  - DESTINATION is the local path.
+  - REMOTE defaults to "notchpeak" if omitted.
+  - rsync only copies files that are newer on SOURCE.
+EOF
+}
+
+if [[ $# -lt 2 || $# -gt 3 ]]; then
+  usage
+  exit 1
+fi
+
+src="$1"
+dst="$2"
+remote="${3:-notchpeak}"
+
+rsync -aP -u --protect-args -e ssh -- "${remote}:$src" "$dst"
