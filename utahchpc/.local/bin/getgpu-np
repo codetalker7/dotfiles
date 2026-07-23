@@ -1,0 +1,99 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+show_help() {
+  cat <<'EOF'
+Usage:
+  getgpu-np [--help]
+
+Description:
+  Try the Notchpeak / np GPU pools in order, wait for the first job that starts,
+  and print the node name.
+
+Notes:
+  - Does not SSH automatically.
+  - Requests 1 GPU, 1 CPU, and a small amount of memory by default.
+EOF
+}
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+  show_help
+  exit 0
+fi
+
+JOB_TIME="${JOB_TIME:-00:10:00}"
+HOLD_SECONDS="${HOLD_SECONDS:-600}"
+CPUS="${CPUS:-1}"
+MEM="${MEM:-2G}"
+
+wait_for_node() {
+  local jobid="$1"
+  local state node
+
+  while :; do
+    state="$(squeue -j "$jobid" -h -o "%T" 2>/dev/null | head -n1 | tr -d '[:space:]' || true)"
+
+    case "$state" in
+      RUNNING)
+        node="$(squeue -j "$jobid" -h -o "%N" 2>/dev/null | head -n1 | tr -d '[:space:]' || true)"
+        if [[ -n "$node" ]]; then
+          echo "$node"
+          return 0
+        fi
+        ;;
+      FAILED|CANCELLED|TIMEOUT|NODE_FAIL|PREEMPTED)
+        return 1
+        ;;
+    esac
+
+    sleep 2
+  done
+}
+
+submit_one() {
+  local partition="$1"
+  local account="$2"
+  local qos="$3"
+
+  local jobid
+  jobid="$(
+    sbatch --parsable \
+      --job-name="getgpu-np" \
+      --partition="$partition" \
+      --account="$account" \
+      --qos="$qos" \
+      --gres="gpu:1" \
+      --cpus-per-task="$CPUS" \
+      --mem="$MEM" \
+      --time="$JOB_TIME" \
+      --wrap "sleep $HOLD_SECONDS"
+  )"
+  jobid="${jobid%%;*}"
+
+  if node="$(wait_for_node "$jobid")"; then
+    echo "$node"
+    return 0
+  fi
+
+  scancel "$jobid" 2>/dev/null || true
+  return 1
+}
+
+# Only Notchpeak / np GPU pools.
+CANDIDATES=(
+  "notchpeak-gpu-guest owner-gpu-guest notchpeak-gpu-guest"
+  "notchpeak-gpu notchpeak-gpu notchpeak-gpu"
+  "soc-gpu-np soc-gpu-np soc-gpu-np"
+  "soc-gpu-np soc-gpu-np soc-gpushort-np"
+)
+
+for entry in "${CANDIDATES[@]}"; do
+  read -r PARTITION ACCOUNT QOS <<<"$entry"
+  echo "Trying $PARTITION ($QOS) ..." >&2
+  if submit_one "$PARTITION" "$ACCOUNT" "$QOS"; then
+    exit 0
+  fi
+done
+
+echo "No Notchpeak / np GPU allocation succeeded." >&2
+exit 1
