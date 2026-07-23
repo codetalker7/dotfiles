@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+show_help() {
+    cat <<'EOF'
+    Usage:
+    getnode [PATH_TO_TUNNEL_SLR]
+
+    Description:
+    Submit a Slurm job using tunnel.slr, wait until Slurm assigns a compute node,
+    and print the node name.
+
+    Arguments:
+    PATH_TO_TUNNEL_SLR   Path to the Slurm script to submit.
+    Defaults to $HOME/tunnel.slr if omitted.
+
+    Options:
+    -h, --help           Show this help message and exit.
+
+    Examples:
+    getnode
+    getnode ~/tunnel.slr
+
+    Notes:
+    The script only prints the assigned node name.
+    It does not SSH automatically.
+    EOF
+}
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
+    show_help
+    exit 0
+fi
+
+SLR_FILE="${1:-$HOME/tunnel.slr}"
+
+if [[ ! -f "$SLR_FILE" ]]; then
+  echo "Usage: $0 [path/to/tunnel.slr]" >&2
+  exit 1
+fi
+
+jobid="$(sbatch --parsable "$SLR_FILE")"
+jobid="${jobid%%;*}"
+
+echo "Submitted job: $jobid"
+echo "Waiting for node assignment..." >&2
+
+host=""
+
+while [[ -z "$host" ]]; do
+  state="$(squeue -j "$jobid" -h -o "%T" 2>/dev/null | head -n1 | tr -d '[:space:]' || true)"
+
+  case "$state" in
+    RUNNING)
+      host="$(squeue -j "$jobid" -h -o "%N" 2>/dev/null | head -n1 | tr -d '[:space:]' || true)"
+      ;;
+    FAILED|CANCELLED|TIMEOUT|NODE_FAIL|PREEMPTED)
+      echo "Job $jobid ended with state: $state" >&2
+      exit 1
+      ;;
+  esac
+
+  sleep 2
+done
+
+echo "$host"
