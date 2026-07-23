@@ -21,10 +21,10 @@ if [[ "${1:-}" == "-h" || "${1:-}" == "--help" ]]; then
   exit 0
 fi
 
-JOB_TIME="${JOB_TIME:-00:10:00}"
-HOLD_SECONDS="${HOLD_SECONDS:-600}"
-CPUS="${CPUS:-1}"
-MEM="${MEM:-2G}"
+JOB_TIME="01:00:00"
+MEM="8G"
+CPUS="1"
+GPUS="1"
 
 wait_for_node() {
   local jobid="$1"
