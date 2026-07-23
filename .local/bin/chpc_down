@@ -8,12 +8,12 @@ Usage:
 
 Examples:
   chpc_down /scratch/u123456/project/data ./data
-  chpc_down /scratch/u123456/project/file.txt ./file.txt notchpeak
+  chpc_down /scratch/u123456/project/file.txt ./file.txt uutah_chpc_notchpeak
 
 Notes:
   - SOURCE is the path on the remote CHPC system.
   - DESTINATION is the local path.
-  - REMOTE defaults to "notchpeak" if omitted.
+  - REMOTE defaults to "uutah_chpc_notchpeak" if omitted.
   - rsync only copies files that are newer on SOURCE.
 EOF
 }
@@ -25,6 +25,6 @@ fi
 
 src="$1"
 dst="$2"
-remote="${3:-notchpeak}"
+remote="${3:-uutah_chpc_notchpeak}"
 
 rsync -aP -u --protect-args -e ssh -- "${remote}:$src" "$dst"

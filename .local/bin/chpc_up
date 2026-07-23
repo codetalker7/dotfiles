@@ -8,12 +8,12 @@ Usage:
 
 Examples:
   chpc_up ./data /scratch/u123456/project/data
-  chpc_up ./file.txt /scratch/u123456/project/file.txt notchpeak
+  chpc_up ./file.txt /scratch/u123456/project/file.txt uutah_chpc_notchpeak
 
 Notes:
   - SOURCE can be a file or directory.
   - DESTINATION is the path on the remote CHPC system.
-  - REMOTE defaults to "notchpeak" if omitted.
+  - REMOTE defaults to "uutah_chpc_notchpeak" if omitted.
   - rsync only copies files that are newer on SOURCE.
 EOF
 }
@@ -25,7 +25,7 @@ fi
 
 src="$1"
 dst="$2"
-remote="${3:-notchpeak}"
+remote="${3:-uutah_chpc_notchpeak}"
 
 if [[ ! -e "$src" ]]; then
   echo "Error: source does not exist: $src" >&2
