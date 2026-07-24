@@ -26,3 +26,6 @@ alias tma='tmux attach -t $(tmux list-sessions -F "#{session_name}" | fzf)'
 
 # zoxide
 alias cd="z"
+
+# yazi
+alias fm="yazi"
