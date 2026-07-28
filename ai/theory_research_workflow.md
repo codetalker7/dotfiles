@@ -55,3 +55,21 @@ markdown; use `pandoc` for this.
 4. Finally, if you have a PDF file that you want to convert to markdown (to be
 fed into LLMs), then you can use this really amazing tool:
 https://github.com/opendatalab/mineru.
+
+# Flatting latex project to raw markdown
+
+Here is a step-by-step guide on how you can convert an entire LaTeX project to raw
+markdown code (to feed to LLMs/agents). This is assuming that the main entrypoint
+to the LaTeX project is `main.tex`.
+
+1. Flatten `main.tex` into one tex file (this removes all `\input` and `\include` calls):
+
+    sudo $(which tlmgr) install latexpand           # skip if already installed
+    latexpand main.tex > flat_main.tex
+
+2. Expand your LaTeX macros: create a file called `flat_main-private.sty` and put all of your
+    custom macros in that file (`\newcommand`, `\renewcommand`, `\newenvironment` and `\renewenvironment`).
+    Then, include this `flat_main-private.sty` in `flat_main.tex`. Then, do:
+    
+    sudo $(which tlgmr) install de-macro            # skip if already installed
+    de-macro flat_main.tex

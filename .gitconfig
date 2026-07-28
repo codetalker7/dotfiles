@@ -2,7 +2,10 @@
 	gpgsign = true
 
 [core]
-	editor = nvim
+	editor = vim
+
+[delta]
+    side-by-side = true
 
 [diff "jupyternotebook"]
 	command = git-nbdiffdriver diff
@@ -42,9 +45,9 @@
 	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
 
 [pager]
-	diff = riff
-	show = riff
-	log = riff
+	diff = delta
+	show = delta
+	log = delta
 
 [user]
 	name = Siddhant Chaudhary
